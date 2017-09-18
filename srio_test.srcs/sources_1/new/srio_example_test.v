@@ -1,0 +1,225 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 14.09.2017 09:33:27
+// Design Name: 
+// Module Name: srio_example_test
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments: Try to implement SRIO data transfer between FPGA and DSP
+// FPGA must be slave
+//////////////////////////////////////////////////////////////////////////////////
+`timescale 1ps/1ps
+(* DowngradeIPIdentifiedWarnings = "yes" *)
+
+module srio_example_test(
+    // Clocks and Resets
+    input  sys_clkp,         // MMCM reference clock
+    input  sys_clkn,         // MMCM reference clock
+    
+    // high-speed IO
+    input  srio_rxn0,        // Serial Receive Data
+    input  srio_rxp0,        // Serial Receive Data
+    
+    output srio_txn0,        // Serial Transmit Data
+    output srio_txp0         // Serial Transmit Data       
+    );
+    
+    // wire declarations
+    wire        log_clk;
+    wire        phy_clk;
+    wire        gt_pcs_clk;
+    wire        log_rst;
+    wire        phy_rst;
+    wire        sys_rst = 1'b0;               // Global reset signal
+    wire        clk_lock;              // asserts from the MMCM
+    
+    // signals into the DUT
+    wire        iotx_tvalid = 1'b1;
+    wire        iotx_tready;
+    wire        iotx_tlast = 1'b1;    
+    wire [63:0] iotx_tdata = 64'b0;
+    wire [7:0]  iotx_tkeep = 8'hFF;
+    wire [31:0] iotx_tuser = 32'b0;
+    
+    wire        iorx_tvalid;
+    wire        iorx_tready = 1'b1;
+    wire        iorx_tlast;
+    wire [63:0] iorx_tdata;
+    wire [7:0]  iorx_tkeep;
+    wire [31:0] iorx_tuser;
+    
+    wire        maintr_rst = 1'b0;
+    
+    wire        maintr_awvalid = 1'b0;
+    wire        maintr_awready;
+    wire [31:0] maintr_awaddr = 32'b0;
+    wire        maintr_wvalid = 1'b0;
+    wire        maintr_wready;
+    wire [31:0] maintr_wdata = 32'b0;
+    wire        maintr_bvalid;
+    wire        maintr_bready = 1'b0;
+    wire [1:0]  maintr_bresp;
+
+    wire        maintr_arvalid = 1'b0;
+    wire        maintr_arready;
+    wire [31:0] maintr_araddr = 32'b0;
+    wire        maintr_rvalid;
+    wire        maintr_rready = 1'b0;
+    wire [31:0] maintr_rdata;
+    wire [1:0]  maintr_rresp;
+    
+    // PHY control signals
+    wire         phy_mce = 1'b0;         // Send MCE control symbol == broadcast
+    wire         phy_link_reset = 1'b0;  // Send link reset control symbols
+    wire         force_reinit = 1'b0;    // Force reinitialization    
+    wire         sim_train_en = 1'b0;    // Set this only when simulating to reduce the size of counters
+    // debug wires    
+    wire         phy_rcvd_mce;        // MCE control symbol received
+    wire         phy_rcvd_link_reset; // Received 4 consecutive reset symbols
+    wire [223:0] phy_debug;           // Usefull debug signals
+    wire         gtrx_disperr_or;     // GT disparity error (reduce ORed)
+    wire         gtrx_notintable_or;  // GT not in table error
+    
+    wire         port_error;          // In Port Error State
+    wire [23:0]  port_timeout;        // Timeout value from Port Response Timeout CSR   
+    wire         srio_host;           // Endpoint is the system host
+    
+    wire         port_decode_error;   // Received transaction did not match a valid port   
+    wire [15:0]  deviceid;            // Device ID
+    
+    wire         idle2_selected;      // The PHY is operating in IDLE2 mode
+    
+    wire         port_init;           // Port is Initialized
+    wire         link_init;           // Link is Initialized
+    wire         mode_1x;             // Link is trained down to 1x mode
+    wire         idle_selected;       // The IDLE sequence has been selected
+    
+    vio_0 vio_ip(
+        .clk (log_clk),
+        .probe_in0 (mode_1x),
+        .probe_in1 (port_init),
+        .probe_in2 (link_init),
+        .probe_in3 (port_error)
+    );
+    
+    ila_0 ila_ip(
+        .clk (log_clk),
+        .probe0 (iotx_tdata),
+        .probe1 (iorx_tdata),
+        .probe2 (iotx_tuser),
+        .probe3 (iorx_tuser),
+        .probe4 (iotx_tready),
+        .probe5 (iorx_tready),
+        .probe6 (iotx_tvalid),
+        .probe7 (iorx_tvalid)
+    );
+    
+    
+    
+    srio_gen2_0 srio_ip(
+        .sys_clkp                (sys_clkp),
+        .sys_clkn                (sys_clkn),
+        .sys_rst                 (sys_rst),
+        // all clocks as output in shared logic mode
+        .log_clk_out             (log_clk),
+        .phy_clk_out             (phy_clk),
+        .gt_clk_out              (gt_clk),
+        .gt_pcs_clk_out          (gt_pcs_clk),
+        .drpclk_out              (drpclk),
+        .refclk_out              (refclk),
+        .clk_lock_out            (clk_lock),
+        // all resets as output in shared logic mode
+        .log_rst_out             (log_rst   ),
+        .phy_rst_out             (phy_rst   ),
+        .buf_rst_out             (buf_rst   ),
+        .cfg_rst_out             (cfg_rst   ),
+        .gt_pcs_rst_out          (gt_pcs_rst),
+        //
+        .gt0_qpll_clk_out        (gt0_qpll_clk_out        ),
+        .gt0_qpll_out_refclk_out (gt0_qpll_out_refclk_out ),
+        // Serial IO Interface
+        .srio_rxn0               (srio_rxn0),
+        .srio_rxp0               (srio_rxp0),
+    
+        .srio_txn0               (srio_txn0),
+        .srio_txp0               (srio_txp0),
+        // LOG User I/O Interface
+        .s_axis_iotx_tvalid           (iotx_tvalid),
+        .s_axis_iotx_tready           (iotx_tready),
+        .s_axis_iotx_tlast            (iotx_tlast),
+        .s_axis_iotx_tdata            (iotx_tdata),
+        .s_axis_iotx_tkeep            (iotx_tkeep),
+        .s_axis_iotx_tuser            (iotx_tuser),
+    
+        .m_axis_iorx_tvalid           (iorx_tvalid),
+        .m_axis_iorx_tready           (iorx_tready),
+        .m_axis_iorx_tlast            (iorx_tlast),
+        .m_axis_iorx_tdata            (iorx_tdata),
+        .m_axis_iorx_tkeep            (iorx_tkeep),
+        .m_axis_iorx_tuser            (iorx_tuser),
+        // Maintenance Port Interface    
+        .s_axi_maintr_rst              (maintr_rst),
+    
+        .s_axi_maintr_awvalid          (maintr_awvalid),
+        .s_axi_maintr_awready          (maintr_awready),
+        .s_axi_maintr_awaddr           (maintr_awaddr),
+        .s_axi_maintr_wvalid           (maintr_wvalid),
+        .s_axi_maintr_wready           (maintr_wready),
+        .s_axi_maintr_wdata            (maintr_wdata),
+        .s_axi_maintr_bvalid           (maintr_bvalid),
+        .s_axi_maintr_bready           (maintr_bready),
+        .s_axi_maintr_bresp            (maintr_bresp),
+    
+        .s_axi_maintr_arvalid          (maintr_arvalid),
+        .s_axi_maintr_arready          (maintr_arready),
+        .s_axi_maintr_araddr           (maintr_araddr),
+        .s_axi_maintr_rvalid           (maintr_rvalid),
+        .s_axi_maintr_rready           (maintr_rready),
+        .s_axi_maintr_rdata            (maintr_rdata),
+        .s_axi_maintr_rresp            (maintr_rresp),
+        // PHY control signals
+        .sim_train_en                  (sim_train_en),
+        .phy_mce                       (phy_mce),
+        .phy_link_reset                (phy_link_reset),
+        .force_reinit                  (force_reinit),
+        // Core debug signals
+        .phy_rcvd_mce                  (phy_rcvd_mce       ),
+        .phy_rcvd_link_reset           (phy_rcvd_link_reset),
+        .phy_debug                     (phy_debug          ),
+        .gtrx_disperr_or               (gtrx_disperr_or    ),
+        .gtrx_notintable_or            (gtrx_notintable_or ),
+        // Side band signals
+        .port_error                    (port_error         ),
+        .port_timeout                  (port_timeout       ),
+        .srio_host                     (srio_host          ),
+        // LOG Informational signals
+        .port_decode_error             (port_decode_error  ),
+        .deviceid                      (deviceid           ),
+        .idle2_selected                (idle2_selected     ),
+        .phy_lcl_master_enable_out     (), // these are side band output only signals
+        .buf_lcl_response_only_out     (),
+        .buf_lcl_tx_flow_control_out   (),
+        .buf_lcl_phy_buf_stat_out      (),
+        .phy_lcl_phy_next_fm_out       (),
+        .phy_lcl_phy_last_ack_out      (),
+        .phy_lcl_phy_rewind_out        (),
+        .phy_lcl_phy_rcvd_buf_stat_out (),
+        .phy_lcl_maint_only_out        (),
+        // PHY Informational signals
+        .port_initialized              (port_init  ),
+        .link_initialized              (link_init  ),
+        .idle_selected                 (idle_selected     ),
+        .mode_1x                       (mode_1x           )
+    );
+    
+endmodule

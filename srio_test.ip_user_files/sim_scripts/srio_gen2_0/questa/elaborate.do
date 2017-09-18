@@ -1,0 +1,1 @@
+vopt -64 +acc -l elaborate.log -L xil_defaultlib -L xpm -L blk_mem_gen_v8_3_4 -L fifo_generator_v13_1_2 -L srio_gen2_v4_0_5 -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.srio_gen2_0 xil_defaultlib.glbl -o srio_gen2_0_opt

@@ -1,0 +1,102 @@
+
+*** Running vivado
+    with args -log srio_gen2_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source srio_gen2_0.tcl
+
+
+****** Vivado v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source srio_gen2_0.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 339.566 ; gain = 129.914
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_support' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_support.v:52]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_block' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_block.v:53]
+INFO: [Synth 8-638] synthesizing module 'srio_gt_wrapper_srio_gen2_0_k7_1x' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gt_wrapper_srio_gen2_0_k7_1x.v:51]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_init' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_init.v:72]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_multi_gt' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtx_multi_gt.v:72]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_GT' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtx_GT.v:118]
+INFO: [Synth 8-638] synthesizing module 'GTXE2_CHANNEL' [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:10526]
+INFO: [Synth 8-256] done synthesizing module 'GTXE2_CHANNEL' (79#1) [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:10526]
+INFO: [Synth 8-638] synthesizing module 'FD' [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:3723]
+INFO: [Synth 8-256] done synthesizing module 'FD' (80#1) [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:3723]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_GT' (81#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtx_GT.v:118]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_multi_gt' (82#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtx_multi_gt.v:72]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_TX_STARTUP_FSM' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_tx_startup_fsm.v:74]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_sync_block' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_sync_block.v:78]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_sync_block' (83#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_sync_block.v:78]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_TX_STARTUP_FSM' (84#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_tx_startup_fsm.v:74]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_RX_STARTUP_FSM' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_rx_startup_fsm.v:74]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_RX_STARTUP_FSM' (85#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_rx_startup_fsm.v:74]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_init' (86#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_init.v:72]
+INFO: [Synth 8-256] done synthesizing module 'srio_gt_wrapper_srio_gen2_0_k7_1x' (87#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gt_wrapper_srio_gen2_0_k7_1x.v:51]
+INFO: [Synth 8-638] synthesizing module 'cfg_fabric_srio_gen2_0' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/cfg_fabric_srio_gen2_0.v:61]
+INFO: [Synth 8-256] done synthesizing module 'cfg_fabric_srio_gen2_0' (88#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/cfg_fabric_srio_gen2_0.v:61]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_block' (89#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_block.v:53]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_srio_clk' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_srio_clk.v:4]
+INFO: [Synth 8-638] synthesizing module 'IBUFDS_GTE2' [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:14298]
+INFO: [Synth 8-256] done synthesizing module 'IBUFDS_GTE2' (90#1) [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:14298]
+INFO: [Synth 8-638] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-256] done synthesizing module 'BUFG' (91#1) [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:20414]
+INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (92#1) [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:20414]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_srio_clk' (93#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_srio_clk.v:4]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_srio_rst' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_srio_rst.v:50]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_srio_rst' (94#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_srio_rst.v:50]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0_k7_v7_gtxe2_common' [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_k7_v7_gtxe2_common.v:57]
+INFO: [Synth 8-638] synthesizing module 'GTXE2_COMMON' [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:11199]
+INFO: [Synth 8-256] done synthesizing module 'GTXE2_COMMON' (95#1) [C:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:11199]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_k7_v7_gtxe2_common' (96#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_k7_v7_gtxe2_common.v:57]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0_support' (97#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_support.v:52]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0' (98#1) [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0.v:57]
+Finished RTL Elaboration : Time (s): cpu = 00:01:31 ; elapsed = 00:01:41 . Memory (MB): peak = 595.250 ; gain = 385.598
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:33 ; elapsed = 00:01:43 . Memory (MB): peak = 595.250 ; gain = 385.598
+INFO: [Device 21-403] Loading part xc7k325tffg676-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.250 . Memory (MB): peak = 847.043 ; gain = 1.789
+Finished Constraint Validation : Time (s): cpu = 00:01:48 ; elapsed = 00:01:59 . Memory (MB): peak = 847.043 ; gain = 637.391
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:48 ; elapsed = 00:01:59 . Memory (MB): peak = 847.043 ; gain = 637.391
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:48 ; elapsed = 00:01:59 . Memory (MB): peak = 847.043 ; gain = 637.391
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:59 ; elapsed = 00:02:11 . Memory (MB): peak = 847.043 ; gain = 637.391
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:41 ; elapsed = 00:02:56 . Memory (MB): peak = 850.977 ; gain = 641.324
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:50 ; elapsed = 00:03:05 . Memory (MB): peak = 929.031 ; gain = 719.379
+Finished Timing Optimization : Time (s): cpu = 00:02:58 ; elapsed = 00:03:43 . Memory (MB): peak = 950.953 ; gain = 741.301
+Finished Technology Mapping : Time (s): cpu = 00:03:05 ; elapsed = 00:03:51 . Memory (MB): peak = 1007.543 ; gain = 797.891
+Finished IO Insertion : Time (s): cpu = 00:03:07 ; elapsed = 00:03:52 . Memory (MB): peak = 1007.543 ; gain = 797.891
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:07 ; elapsed = 00:03:53 . Memory (MB): peak = 1007.543 ; gain = 797.891
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:09 ; elapsed = 00:03:54 . Memory (MB): peak = 1007.543 ; gain = 797.891
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:09 ; elapsed = 00:03:54 . Memory (MB): peak = 1007.543 ; gain = 797.891
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:09 ; elapsed = 00:03:55 . Memory (MB): peak = 1007.543 ; gain = 797.891
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:10 ; elapsed = 00:03:55 . Memory (MB): peak = 1007.543 ; gain = 797.891
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |BUFG          |     6|
+|2     |CARRY4        |    90|
+|3     |GTXE2_CHANNEL |     1|
+|4     |GTXE2_COMMON  |     1|
+|5     |IBUFDS_GTE2   |     1|
+|6     |LUT1          |   268|
+|7     |LUT2          |   553|
+|8     |LUT3          |   768|
+|9     |LUT4          |  1080|
+|10    |LUT5          |  1326|
+|11    |LUT6          |  2749|
+|12    |MMCME2_ADV    |     1|
+|13    |MUXF7         |    14|
+|14    |RAM32M        |    17|
+|15    |RAM32X1D      |     4|
+|16    |RAMB36E1      |     4|
+|17    |RAMB36E1_1    |     4|
+|18    |SRL16E        |     1|
+|19    |SRLC32E       |     7|
+|20    |FD            |    90|
+|21    |FDCE          |   290|
+|22    |FDPE          |   127|
+|23    |FDRE          |  6239|
+|24    |FDSE          |   288|
++------+--------------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:10 ; elapsed = 00:03:55 . Memory (MB): peak = 1007.543 ; gain = 797.891
+synth_design: Time (s): cpu = 00:03:13 ; elapsed = 00:03:57 . Memory (MB): peak = 1007.543 ; gain = 751.523
