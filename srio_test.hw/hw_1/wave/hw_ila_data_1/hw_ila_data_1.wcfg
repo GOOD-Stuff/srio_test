@@ -3,74 +3,66 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="D:/project/srio_test/srio_test.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+      <db_ref path="C:/Projects/srio_test/srio_test/srio_test.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="5151fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomEndTime time="2048001fs"></ZoomEndTime>
+      <Cursor1Time time="1128000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="152"></NameColumnWidth>
-      <ValueColumnWidth column_width="262"></ValueColumnWidth>
+      <NameColumnWidth column_width="147"></NameColumnWidth>
+      <ValueColumnWidth column_width="266"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
-   <wvobject fp_name="iotx_tdata" type="array">
+   <WVObjectSize size="7" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject fp_name="srio_rx/din_fifo" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">iotx_tdata[63:0]</obj_property>
-      <obj_property name="ObjectShortName">iotx_tdata[63:0]</obj_property>
+      <obj_property name="ElementShortName">srio_rx/din_fifo[63:0]</obj_property>
+      <obj_property name="ObjectShortName">din_fifo[63:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject fp_name="iorx_tdata" type="array">
+   <wvobject fp_name="srio_rx/dout_fifo" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">iorx_tdata[63:0]</obj_property>
-      <obj_property name="ObjectShortName">iorx_tdata[63:0]</obj_property>
+      <obj_property name="ElementShortName">srio_rx/dout_fifo[63:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_fifo[63:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject fp_name="iotx_tuser" type="array">
+   <wvobject fp_name="srio_rx/rd_fifo" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">iotx_tuser[31:0]</obj_property>
-      <obj_property name="ObjectShortName">iotx_tuser[31:0]</obj_property>
+      <obj_property name="ElementShortName">srio_rx/rd_fifo</obj_property>
+      <obj_property name="ObjectShortName">rd_fifo</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/wr_fifo" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/wr_fifo</obj_property>
+      <obj_property name="ObjectShortName">wr_fifo</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/gvn_iorx_tlast" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/gvn_iorx_tlast</obj_property>
+      <obj_property name="ObjectShortName">gvn_iorx_tlast</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/current_ftype" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/current_ftype[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_ftype[3:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject fp_name="iorx_tuser" type="array">
+   <wvobject fp_name="srio_rx/current_ttype" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">iorx_tuser[31:0]</obj_property>
-      <obj_property name="ObjectShortName">iorx_tuser[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="iotx_tready" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">iotx_tready</obj_property>
-      <obj_property name="ObjectShortName">iotx_tready</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="iorx_tready" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">iorx_tready</obj_property>
-      <obj_property name="ObjectShortName">iorx_tready</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="iotx_tvalid" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">iotx_tvalid</obj_property>
-      <obj_property name="ObjectShortName">iotx_tvalid</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="iorx_tvalid" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">iorx_tvalid</obj_property>
-      <obj_property name="ObjectShortName">iorx_tvalid</obj_property>
+      <obj_property name="ElementShortName">srio_rx/current_ttype[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_ttype[3:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>

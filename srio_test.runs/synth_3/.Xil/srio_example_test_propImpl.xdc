@@ -11,7 +11,7 @@ set_property src_info {type:XDC file:1 line:34 export:INPUT save:INPUT read:READ
 set_property LOC P2  [get_ports srio_txp0]
 set_property src_info {type:XDC file:1 line:35 export:INPUT save:INPUT read:READ} [current_design]
 set_property LOC P1  [get_ports srio_txn0]
-set_property src_info {type:XDC file:1 line:38 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:1 line:42 export:INPUT save:INPUT read:READ} [current_design]
 set_property LOC GTXE2_CHANNEL_X0Y0 [get_cells -hier -nocase -regexp {.*/gt_wrapper_i/gt0_gt_wrapper_i/gt.e2_i}]
 set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
 set_case_analysis 0 [get_pins srio_ip/mode_1x]

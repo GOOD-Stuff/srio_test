@@ -1,0 +1,6 @@
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+Block Memory Generator module srio_example_test.srio_ip.inst.srio_gen2_0_block_inst.srio_gen2_v4_0_5_unifiedtop_inst.buf_core_inst.buf_top_inst.buf_tx_inst.buf_tx_bram_bank_inst.blk_mem_inst.native_mem_module.blk_mem_gen_v8_3_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module srio_example_test.srio_ip.inst.srio_gen2_0_block_inst.srio_gen2_v4_0_5_unifiedtop_inst.buf_core_inst.buf_top_inst.buf_rx_inst.buf_rx_bram_bank_inst.blk_mem_inst.native_mem_module.blk_mem_gen_v8_3_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.

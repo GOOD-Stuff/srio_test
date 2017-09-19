@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Mon Sep 18 12:35:25 2017
+| Date         : Tue Sep 19 17:41:06 2017
 | Host         : vldmr-PC running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file srio_example_test_utilization_synth.rpt -pb srio_example_test_utilization_synth.pb
 | Design       : srio_example_test
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   98 |     0 |    203800 |  0.05 |
-|   LUT as Logic          |   98 |     0 |    203800 |  0.05 |
+| Slice LUTs*             |   10 |     0 |    203800 | <0.01 |
+|   LUT as Logic          |   10 |     0 |    203800 | <0.01 |
 |   LUT as Memory         |    0 |     0 |     64000 |  0.00 |
-| Slice Registers         |    0 |     0 |    407600 |  0.00 |
-|   Register as Flip Flop |    0 |     0 |    407600 |  0.00 |
+| Slice Registers         |    2 |     0 |    407600 | <0.01 |
+|   Register as Flip Flop |    2 |     0 |    407600 | <0.01 |
 |   Register as Latch     |    0 |     0 |    407600 |  0.00 |
 | F7 Muxes                |    0 |     0 |    101900 |  0.00 |
 | F8 Muxes                |    0 |     0 |     50950 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 0     |          Yes |       Reset |            - |
+| 2     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,22 +151,26 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT1     |   98 |                 LUT |
+| LUT1     |    8 |                 LUT |
 | OBUF     |    2 |                  IO |
 | IBUF     |    2 |                  IO |
+| FDRE     |    2 |        Flop & Latch |
+| LUT5     |    1 |                 LUT |
+| LUT4     |    1 |                 LUT |
 +----------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+-------------+------+
-|   Ref Name  | Used |
-+-------------+------+
-| vio_0       |    1 |
-| srio_gen2_0 |    1 |
-| ila_0       |    1 |
-+-------------+------+
++------------------------+------+
+|        Ref Name        | Used |
++------------------------+------+
+| vio_0                  |    1 |
+| srio_gen2_0            |    1 |
+| ila_0                  |    1 |
+| fifo_generator_rx_inst |    1 |
++------------------------+------+
 
 
 9. Instantiated Netlists

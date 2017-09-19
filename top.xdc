@@ -33,7 +33,11 @@ set_property LOC R3  [get_ports srio_rxn0]
 
 set_property LOC P2  [get_ports srio_txp0]
 set_property LOC P1  [get_ports srio_txn0]
-
+#set_property PACKAGE_PIN P1 [get_ports srio_txn0]
+#set_property PACKAGE_PIN P2 [get_ports srio_txp0]
+                                                 
+#set_property PACKAGE_PIN R3 [get_ports srio_rxn0]
+#set_property PACKAGE_PIN R4 [get_ports srio_rxp0]
 
 set_property LOC GTXE2_CHANNEL_X0Y0 [get_cells -hier -nocase -regexp {.*/gt_wrapper_i/gt0_gt_wrapper_i/gt.e2_i}]
 
