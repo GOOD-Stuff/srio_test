@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_3" LaunchPart="xc7k325tffg676-1" LaunchTime="1505832035">
+<GenRun Id="impl_3" LaunchPart="xc7k325tffg676-1" LaunchTime="1506076244">
   <File Type="PWROPT-DRC" Name="srio_example_test_drc_pwropted.rpt"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="srio_example_test_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="srio_example_test_timing_summary_init.rpt"/>
@@ -62,13 +62,6 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/srio_response.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -138,4 +131,5 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="vio_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fifo_generator_rx_inst"/>
 </GenRun>

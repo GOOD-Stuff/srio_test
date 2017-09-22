@@ -19,8 +19,8 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Projects/srio_test/srio_test/srio_test.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.xci
-set_property is_locked true [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.xci]
+read_ip -quiet C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.xci
+set_property is_locked true [get_files C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.xci]
 
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
@@ -63,32 +63,32 @@ write_checkpoint -force -noxdef fifo_generator_rx_inst.dcp
 catch { report_utilization -file fifo_generator_rx_inst_utilization_synth.rpt -pb fifo_generator_rx_inst_utilization_synth.pb }
 
 if { [catch {
-  file copy -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst.dcp c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.dcp
+  file copy -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst.dcp C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.v
+  write_verilog -force -mode synth_stub C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.vhdl
+  write_vhdl -force -mode synth_stub C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_sim_netlist.v
+  write_verilog -force -mode funcsim C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -98,32 +98,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst.dcp c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.dcp
+  file copy -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst.dcp C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst_stub.v c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.v
+  file rename -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst_stub.v C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst_stub.vhdl c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.vhdl
+  file rename -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst_stub.vhdl C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst_sim_netlist.v c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_sim_netlist.v
+  file rename -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst_sim_netlist.v C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst_sim_netlist.vhdl c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_sim_netlist.vhdl
+  file rename -force C:/Projects/srio_test/srio_test/srio_test.runs/fifo_generator_rx_inst_synth_1/fifo_generator_rx_inst_sim_netlist.vhdl C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -132,12 +132,12 @@ if { [catch {
 
 if {[file isdir C:/Projects/srio_test/srio_test/srio_test.ip_user_files/ip/fifo_generator_rx_inst]} {
   catch { 
-    file copy -force c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.v C:/Projects/srio_test/srio_test/srio_test.ip_user_files/ip/fifo_generator_rx_inst
+    file copy -force C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.v C:/Projects/srio_test/srio_test/srio_test.ip_user_files/ip/fifo_generator_rx_inst
   }
 }
 
 if {[file isdir C:/Projects/srio_test/srio_test/srio_test.ip_user_files/ip/fifo_generator_rx_inst]} {
   catch { 
-    file copy -force c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.vhdl C:/Projects/srio_test/srio_test/srio_test.ip_user_files/ip/fifo_generator_rx_inst
+    file copy -force C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.vhdl C:/Projects/srio_test/srio_test/srio_test.ip_user_files/ip/fifo_generator_rx_inst
   }
 }

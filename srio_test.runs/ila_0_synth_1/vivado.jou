@@ -2,8 +2,8 @@
 # Vivado v2016.3 (64-bit)
 # SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
 # IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
-# Start of session at: Tue Sep 19 16:50:27 2017
-# Process ID: 3676
+# Start of session at: Fri Sep 22 13:28:01 2017
+# Process ID: 1956
 # Current directory: C:/Projects/srio_test/srio_test/srio_test.runs/ila_0_synth_1
 # Command line: vivado.exe -log ila_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_0.tcl
 # Log file: C:/Projects/srio_test/srio_test/srio_test.runs/ila_0_synth_1/ila_0.vds

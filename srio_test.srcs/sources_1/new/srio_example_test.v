@@ -45,15 +45,15 @@ module srio_example_test(
     
     // signals into the DUT
     // From FPGA to DSP
-    wire        iotx_tvalid;  // Indicates that the information on the channel is valid
+    wire        iotx_tvalid;         // Indicates that the information on the channel is valid
     wire        iotx_tready;         // Indicates that the data from the source is accepted (if valid)
-    wire        iotx_tlast;   // Indicates the last beat of a packet    
-    wire [63:0] iotx_tdata;  // Packet header and data
-    wire [7:0]  iotx_tkeep;  // Indicates whether the content of the associated byte of data is valid
-    wire [31:0] iotx_tuser;  // Consists of the Source ID and Destination ID
+    wire        iotx_tlast;          // Indicates the last beat of a packet    
+    wire [63:0] iotx_tdata;          // Packet header and data
+    wire [7:0]  iotx_tkeep;          // Indicates whether the content of the associated byte of data is valid
+    wire [31:0] iotx_tuser;          // Consists of the Source ID and Destination ID
     // From DSP to FPGA
     wire        iorx_tvalid;         // Indicates that the information on the channel is valid
-    wire        iorx_tready = 1'b1;  // Indicates that the data from the source is accepted (if valid)
+    wire        iorx_tready;  // Indicates that the data from the source is accepted (if valid)
     wire        iorx_tlast;          // Indicates the last beat of a packet  
     wire [63:0] iorx_tdata;          // Packet header and data
     wire [7:0]  iorx_tkeep;          // Indicates whether the content of the associated byte of data is valid
@@ -138,7 +138,7 @@ module srio_example_test(
         .log_clk            (log_clk),
         .log_rst            (log_rst),
     
-        .dst_id             (8'hAB),
+        .dst_id             (8'hCB),
         .src_id             (deviceid),
         .id_override        (1'b0),
         
@@ -214,14 +214,14 @@ module srio_example_test(
         .srio_txp0               (srio_txp0),
         // LOG User I/O Interface
         .s_axis_iotx_tvalid           (iotx_tvalid),
-        .s_axis_iotx_tready           (iotx_tready),
+        .s_axis_iotx_tready           (iotx_tready), // output
         .s_axis_iotx_tlast            (iotx_tlast),
         .s_axis_iotx_tdata            (iotx_tdata),
         .s_axis_iotx_tkeep            (iotx_tkeep),
         .s_axis_iotx_tuser            (iotx_tuser),
     
         .m_axis_iorx_tvalid           (iorx_tvalid),
-        .m_axis_iorx_tready           (iorx_tready),
+        .m_axis_iorx_tready           (iorx_tready), // input
         .m_axis_iorx_tlast            (iorx_tlast),
         .m_axis_iorx_tdata            (iorx_tdata),
         .m_axis_iorx_tkeep            (iorx_tkeep),

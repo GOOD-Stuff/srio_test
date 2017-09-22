@@ -1,10 +1,10 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
--- Date        : Tue Sep 19 09:37:07 2017
+-- Date        : Tue Sep 19 17:53:12 2017
 -- Host        : vldmr-PC running 64-bit Service Pack 1  (build 7601)
--- Command     : write_vhdl -force -mode synth_stub -rename_top fifo_generator_rx_inst -prefix
---               fifo_generator_rx_inst_ fifo_generator_rx_inst_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub
+--               C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_stub.vhdl
 -- Design      : fifo_generator_rx_inst
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7k325tffg676-1

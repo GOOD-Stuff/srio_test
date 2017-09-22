@@ -36,12 +36,21 @@
     <Object name="mode_1x" gui_info="hw_vios/hw_vio_1=1"/>
     <Object name="port_error" gui_info="hw_vios/hw_vio_1=3"/>
     <Object name="port_init" gui_info="hw_vios/hw_vio_1=2"/>
-    <Object name="srio_rx/din_fifo[63:0]" gui_info="Trigger Setup=0"/>
-    <Object name="srio_rx/dout_fifo[63:0]" gui_info="Trigger Setup=3"/>
+    <Object name="srio_rx/axis_iorx_tlast" gui_info=""/>
+    <Object name="srio_rx/axis_iorx_tvalid" gui_info=""/>
+    <Object name="srio_rx/axis_iotx_tdata[63:0]" gui_info="Trigger Setup=2"/>
+    <Object name="srio_rx/din_fifo[63:0]" gui_info=""/>
+    <Object name="srio_rx/din_fifo_1[63:0]" gui_info="Trigger Setup=1"/>
+    <Object name="srio_rx/dout_fifo[63:0]" gui_info=""/>
     <Object name="srio_rx/fifo_EMPTY" gui_info=""/>
     <Object name="srio_rx/fifo_FULL" gui_info="Trigger Setup=0"/>
-    <Object name="srio_rx/rd_fifo" gui_info="Trigger Setup=1"/>
-    <Object name="srio_rx/wr_fifo" gui_info="Trigger Setup=2"/>
+    <Object name="srio_rx/first_packet_transfer" gui_info="Trigger Setup=1"/>
+    <Object name="srio_rx/need_a_response" gui_info="Trigger Setup=0"/>
+    <Object name="srio_rx/rd_fifo" gui_info="Trigger Setup=0"/>
+    <Object name="srio_rx/request_ftype[3:0]" gui_info=""/>
+    <Object name="srio_rx/request_size[7:0]" gui_info=""/>
+    <Object name="srio_rx/request_tid[7:0]" gui_info=""/>
+    <Object name="srio_rx/wr_fifo" gui_info=""/>
     <Object name="srio_tx/din_fifo[63:0]" gui_info="Trigger Setup=0"/>
     <Object name="srio_tx/dout_fifo[63:0]" gui_info="Trigger Setup=1"/>
     <Object name="srio_tx/rd_fifo" gui_info="Trigger Setup=0"/>
@@ -373,7 +382,390 @@
         <net name="iotx_tvalid"/>
       </nets>
     </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe10[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/&lt;const0>"/>
+      </nets>
+    </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe7[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iorx_tkeep[7]"/>
+        <net name="srio_rx/axis_iorx_tkeep[6]"/>
+        <net name="srio_rx/axis_iorx_tkeep[5]"/>
+        <net name="srio_rx/axis_iorx_tkeep[4]"/>
+        <net name="srio_rx/axis_iorx_tkeep[3]"/>
+        <net name="srio_rx/axis_iorx_tkeep[2]"/>
+        <net name="srio_rx/axis_iorx_tkeep[1]"/>
+        <net name="srio_rx/axis_iorx_tkeep[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iorx_tlast"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe6[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iorx_tready"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe9[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iorx_tuser[31]"/>
+        <net name="srio_rx/axis_iorx_tuser[30]"/>
+        <net name="srio_rx/axis_iorx_tuser[29]"/>
+        <net name="srio_rx/axis_iorx_tuser[28]"/>
+        <net name="srio_rx/axis_iorx_tuser[27]"/>
+        <net name="srio_rx/axis_iorx_tuser[26]"/>
+        <net name="srio_rx/axis_iorx_tuser[25]"/>
+        <net name="srio_rx/axis_iorx_tuser[24]"/>
+        <net name="srio_rx/axis_iorx_tuser[23]"/>
+        <net name="srio_rx/axis_iorx_tuser[22]"/>
+        <net name="srio_rx/axis_iorx_tuser[21]"/>
+        <net name="srio_rx/axis_iorx_tuser[20]"/>
+        <net name="srio_rx/axis_iorx_tuser[19]"/>
+        <net name="srio_rx/axis_iorx_tuser[18]"/>
+        <net name="srio_rx/axis_iorx_tuser[17]"/>
+        <net name="srio_rx/axis_iorx_tuser[16]"/>
+        <net name="srio_rx/axis_iorx_tuser[15]"/>
+        <net name="srio_rx/axis_iorx_tuser[14]"/>
+        <net name="srio_rx/axis_iorx_tuser[13]"/>
+        <net name="srio_rx/axis_iorx_tuser[12]"/>
+        <net name="srio_rx/axis_iorx_tuser[11]"/>
+        <net name="srio_rx/axis_iorx_tuser[10]"/>
+        <net name="srio_rx/axis_iorx_tuser[9]"/>
+        <net name="srio_rx/axis_iorx_tuser[8]"/>
+        <net name="srio_rx/axis_iorx_tuser[7]"/>
+        <net name="srio_rx/axis_iorx_tuser[6]"/>
+        <net name="srio_rx/axis_iorx_tuser[5]"/>
+        <net name="srio_rx/axis_iorx_tuser[4]"/>
+        <net name="srio_rx/axis_iorx_tuser[3]"/>
+        <net name="srio_rx/axis_iorx_tuser[2]"/>
+        <net name="srio_rx/axis_iorx_tuser[1]"/>
+        <net name="srio_rx/axis_iorx_tuser[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iorx_tvalid"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq64&apos;h00D8_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe14[63:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq64&apos;h00D8_XXXX_XXXX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iotx_tdata[63]"/>
+        <net name="srio_rx/axis_iotx_tdata[62]"/>
+        <net name="srio_rx/axis_iotx_tdata[61]"/>
+        <net name="srio_rx/axis_iotx_tdata[60]"/>
+        <net name="srio_rx/axis_iotx_tdata[59]"/>
+        <net name="srio_rx/axis_iotx_tdata[58]"/>
+        <net name="srio_rx/axis_iotx_tdata[57]"/>
+        <net name="srio_rx/axis_iotx_tdata[56]"/>
+        <net name="srio_rx/axis_iotx_tdata[55]"/>
+        <net name="srio_rx/axis_iotx_tdata[54]"/>
+        <net name="srio_rx/axis_iotx_tdata[53]"/>
+        <net name="srio_rx/axis_iotx_tdata[52]"/>
+        <net name="srio_rx/axis_iotx_tdata[51]"/>
+        <net name="srio_rx/axis_iotx_tdata[50]"/>
+        <net name="srio_rx/axis_iotx_tdata[49]"/>
+        <net name="srio_rx/axis_iotx_tdata[48]"/>
+        <net name="srio_rx/axis_iotx_tdata[47]"/>
+        <net name="srio_rx/axis_iotx_tdata[46]"/>
+        <net name="srio_rx/axis_iotx_tdata[45]"/>
+        <net name="srio_rx/axis_iotx_tdata[44]"/>
+        <net name="srio_rx/axis_iotx_tdata[43]"/>
+        <net name="srio_rx/axis_iotx_tdata[42]"/>
+        <net name="srio_rx/axis_iotx_tdata[41]"/>
+        <net name="srio_rx/axis_iotx_tdata[40]"/>
+        <net name="srio_rx/axis_iotx_tdata[39]"/>
+        <net name="srio_rx/axis_iotx_tdata[38]"/>
+        <net name="srio_rx/axis_iotx_tdata[37]"/>
+        <net name="srio_rx/axis_iotx_tdata[36]"/>
+        <net name="srio_rx/axis_iotx_tdata[35]"/>
+        <net name="srio_rx/axis_iotx_tdata[34]"/>
+        <net name="srio_rx/axis_iotx_tdata[33]"/>
+        <net name="srio_rx/axis_iotx_tdata[32]"/>
+        <net name="srio_rx/axis_iotx_tdata[31]"/>
+        <net name="srio_rx/axis_iotx_tdata[30]"/>
+        <net name="srio_rx/axis_iotx_tdata[29]"/>
+        <net name="srio_rx/axis_iotx_tdata[28]"/>
+        <net name="srio_rx/axis_iotx_tdata[27]"/>
+        <net name="srio_rx/axis_iotx_tdata[26]"/>
+        <net name="srio_rx/axis_iotx_tdata[25]"/>
+        <net name="srio_rx/axis_iotx_tdata[24]"/>
+        <net name="srio_rx/axis_iotx_tdata[23]"/>
+        <net name="srio_rx/axis_iotx_tdata[22]"/>
+        <net name="srio_rx/axis_iotx_tdata[21]"/>
+        <net name="srio_rx/axis_iotx_tdata[20]"/>
+        <net name="srio_rx/axis_iotx_tdata[19]"/>
+        <net name="srio_rx/axis_iotx_tdata[18]"/>
+        <net name="srio_rx/axis_iotx_tdata[17]"/>
+        <net name="srio_rx/axis_iotx_tdata[16]"/>
+        <net name="srio_rx/axis_iotx_tdata[15]"/>
+        <net name="srio_rx/axis_iotx_tdata[14]"/>
+        <net name="srio_rx/axis_iotx_tdata[13]"/>
+        <net name="srio_rx/axis_iotx_tdata[12]"/>
+        <net name="srio_rx/axis_iotx_tdata[11]"/>
+        <net name="srio_rx/axis_iotx_tdata[10]"/>
+        <net name="srio_rx/axis_iotx_tdata[9]"/>
+        <net name="srio_rx/axis_iotx_tdata[8]"/>
+        <net name="srio_rx/axis_iotx_tdata[7]"/>
+        <net name="srio_rx/axis_iotx_tdata[6]"/>
+        <net name="srio_rx/axis_iotx_tdata[5]"/>
+        <net name="srio_rx/axis_iotx_tdata[4]"/>
+        <net name="srio_rx/axis_iotx_tdata[3]"/>
+        <net name="srio_rx/axis_iotx_tdata[2]"/>
+        <net name="srio_rx/axis_iotx_tdata[1]"/>
+        <net name="srio_rx/axis_iotx_tdata[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe13[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iotx_tkeep[7]"/>
+        <net name="srio_rx/axis_iotx_tkeep[6]"/>
+        <net name="srio_rx/axis_iotx_tkeep[5]"/>
+        <net name="srio_rx/axis_iotx_tkeep[4]"/>
+        <net name="srio_rx/axis_iotx_tkeep[3]"/>
+        <net name="srio_rx/axis_iotx_tkeep[2]"/>
+        <net name="srio_rx/axis_iotx_tkeep[1]"/>
+        <net name="srio_rx/axis_iotx_tkeep[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe10[0]"/>
+        <Option Id="NAME.CUSTOM" value="srio_rx/axis_iotx_tlast"/>
+        <Option Id="NAME.SELECT" value="Custom"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iotx_tlast"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe12[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iotx_tready"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe15[23:16]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iotx_tuser[23]"/>
+        <net name="srio_rx/axis_iotx_tuser[22]"/>
+        <net name="srio_rx/axis_iotx_tuser[21]"/>
+        <net name="srio_rx/axis_iotx_tuser[20]"/>
+        <net name="srio_rx/axis_iotx_tuser[19]"/>
+        <net name="srio_rx/axis_iotx_tuser[18]"/>
+        <net name="srio_rx/axis_iotx_tuser[17]"/>
+        <net name="srio_rx/axis_iotx_tuser[16]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe11[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/axis_iotx_tvalid"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe9[1:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq2&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/current_bit_cnt[1]"/>
+        <net name="srio_rx/current_bit_cnt[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq6&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq6&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe9[5:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq6&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/current_bit_cnt[5]"/>
+        <net name="srio_rx/current_bit_cnt[4]"/>
+        <net name="srio_rx/current_bit_cnt[3]"/>
+        <net name="srio_rx/current_bit_cnt[2]"/>
+        <net name="srio_rx/current_bit_cnt[1]"/>
+        <net name="srio_rx/current_bit_cnt[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe21[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/current_bit_cnt[7]"/>
+        <net name="srio_rx/current_bit_cnt[6]"/>
+        <net name="srio_rx/current_bit_cnt[5]"/>
+        <net name="srio_rx/current_bit_cnt[4]"/>
+        <net name="srio_rx/current_bit_cnt[3]"/>
+        <net name="srio_rx/current_bit_cnt[2]"/>
+        <net name="srio_rx/current_bit_cnt[1]"/>
+        <net name="srio_rx/current_bit_cnt[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
@@ -393,7 +785,7 @@
         <net name="srio_rx/current_ftype[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
@@ -413,10 +805,44 @@
         <net name="srio_rx/current_ttype[0]"/>
       </nets>
     </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe18[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/d_treq_advance_condition"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe9[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/dd_rd_fifo"/>
+      </nets>
+    </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
-        <Option Id="COMPARE_VALUE.0" value="neq64&apos;h0000_0000_0000_0000"/>
+        <Option Id="COMPARE_VALUE.0" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
@@ -424,7 +850,7 @@
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="neq64&apos;h0000_0000_0000_0000"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
       </probeOptions>
       <nets>
         <net name="srio_rx/din_fifo[63]"/>
@@ -493,7 +919,7 @@
         <net name="srio_rx/din_fifo[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
@@ -514,6 +940,86 @@
       </nets>
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq64&apos;h0024_20F0_0A10_0000"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe8[63:0]"/>
+        <Option Id="NAME.CUSTOM" value="srio_rx/axis_iorx_tdata[63:0]"/>
+        <Option Id="NAME.SELECT" value="Custom"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq64&apos;h0024_20F0_0A10_0000"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/din_fifo_1[63]"/>
+        <net name="srio_rx/din_fifo_1[62]"/>
+        <net name="srio_rx/din_fifo_1[61]"/>
+        <net name="srio_rx/din_fifo_1[60]"/>
+        <net name="srio_rx/din_fifo_1[59]"/>
+        <net name="srio_rx/din_fifo_1[58]"/>
+        <net name="srio_rx/din_fifo_1[57]"/>
+        <net name="srio_rx/din_fifo_1[56]"/>
+        <net name="srio_rx/din_fifo_1[55]"/>
+        <net name="srio_rx/din_fifo_1[54]"/>
+        <net name="srio_rx/din_fifo_1[53]"/>
+        <net name="srio_rx/din_fifo_1[52]"/>
+        <net name="srio_rx/din_fifo_1[51]"/>
+        <net name="srio_rx/din_fifo_1[50]"/>
+        <net name="srio_rx/din_fifo_1[49]"/>
+        <net name="srio_rx/din_fifo_1[48]"/>
+        <net name="srio_rx/din_fifo_1[47]"/>
+        <net name="srio_rx/din_fifo_1[46]"/>
+        <net name="srio_rx/din_fifo_1[45]"/>
+        <net name="srio_rx/din_fifo_1[44]"/>
+        <net name="srio_rx/din_fifo_1[43]"/>
+        <net name="srio_rx/din_fifo_1[42]"/>
+        <net name="srio_rx/din_fifo_1[41]"/>
+        <net name="srio_rx/din_fifo_1[40]"/>
+        <net name="srio_rx/din_fifo_1[39]"/>
+        <net name="srio_rx/din_fifo_1[38]"/>
+        <net name="srio_rx/din_fifo_1[37]"/>
+        <net name="srio_rx/din_fifo_1[36]"/>
+        <net name="srio_rx/din_fifo_1[35]"/>
+        <net name="srio_rx/din_fifo_1[34]"/>
+        <net name="srio_rx/din_fifo_1[33]"/>
+        <net name="srio_rx/din_fifo_1[32]"/>
+        <net name="srio_rx/din_fifo_1[31]"/>
+        <net name="srio_rx/din_fifo_1[30]"/>
+        <net name="srio_rx/din_fifo_1[29]"/>
+        <net name="srio_rx/din_fifo_1[28]"/>
+        <net name="srio_rx/din_fifo_1[27]"/>
+        <net name="srio_rx/din_fifo_1[26]"/>
+        <net name="srio_rx/din_fifo_1[25]"/>
+        <net name="srio_rx/din_fifo_1[24]"/>
+        <net name="srio_rx/din_fifo_1[23]"/>
+        <net name="srio_rx/din_fifo_1[22]"/>
+        <net name="srio_rx/din_fifo_1[21]"/>
+        <net name="srio_rx/din_fifo_1[20]"/>
+        <net name="srio_rx/din_fifo_1[19]"/>
+        <net name="srio_rx/din_fifo_1[18]"/>
+        <net name="srio_rx/din_fifo_1[17]"/>
+        <net name="srio_rx/din_fifo_1[16]"/>
+        <net name="srio_rx/din_fifo_1[15]"/>
+        <net name="srio_rx/din_fifo_1[14]"/>
+        <net name="srio_rx/din_fifo_1[13]"/>
+        <net name="srio_rx/din_fifo_1[12]"/>
+        <net name="srio_rx/din_fifo_1[11]"/>
+        <net name="srio_rx/din_fifo_1[10]"/>
+        <net name="srio_rx/din_fifo_1[9]"/>
+        <net name="srio_rx/din_fifo_1[8]"/>
+        <net name="srio_rx/din_fifo_1[7]"/>
+        <net name="srio_rx/din_fifo_1[6]"/>
+        <net name="srio_rx/din_fifo_1[5]"/>
+        <net name="srio_rx/din_fifo_1[4]"/>
+        <net name="srio_rx/din_fifo_1[3]"/>
+        <net name="srio_rx/din_fifo_1[2]"/>
+        <net name="srio_rx/din_fifo_1[1]"/>
+        <net name="srio_rx/din_fifo_1[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
@@ -536,15 +1042,15 @@
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
-        <Option Id="COMPARE_VALUE.0" value="neq64&apos;h0000_0000_0000_0000"/>
+        <Option Id="COMPARE_VALUE.0" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="MAP" value="probe1[63:0]"/>
-        <Option Id="NAME.CUSTOM" value=""/>
-        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="NAME.CUSTOM" value="srio_rx/dout_fifo[63:0]"/>
+        <Option Id="NAME.SELECT" value="Custom"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="neq64&apos;h0000_0000_0000_0000"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
       </probeOptions>
       <nets>
         <net name="srio_rx/dout_fifo[63]"/>
@@ -615,6 +1121,135 @@
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe1[63:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/dout_fifo_1[63]"/>
+        <net name="srio_rx/dout_fifo_1[62]"/>
+        <net name="srio_rx/dout_fifo_1[61]"/>
+        <net name="srio_rx/dout_fifo_1[60]"/>
+        <net name="srio_rx/dout_fifo_1[59]"/>
+        <net name="srio_rx/dout_fifo_1[58]"/>
+        <net name="srio_rx/dout_fifo_1[57]"/>
+        <net name="srio_rx/dout_fifo_1[56]"/>
+        <net name="srio_rx/dout_fifo_1[55]"/>
+        <net name="srio_rx/dout_fifo_1[54]"/>
+        <net name="srio_rx/dout_fifo_1[53]"/>
+        <net name="srio_rx/dout_fifo_1[52]"/>
+        <net name="srio_rx/dout_fifo_1[51]"/>
+        <net name="srio_rx/dout_fifo_1[50]"/>
+        <net name="srio_rx/dout_fifo_1[49]"/>
+        <net name="srio_rx/dout_fifo_1[48]"/>
+        <net name="srio_rx/dout_fifo_1[47]"/>
+        <net name="srio_rx/dout_fifo_1[46]"/>
+        <net name="srio_rx/dout_fifo_1[45]"/>
+        <net name="srio_rx/dout_fifo_1[44]"/>
+        <net name="srio_rx/dout_fifo_1[43]"/>
+        <net name="srio_rx/dout_fifo_1[42]"/>
+        <net name="srio_rx/dout_fifo_1[41]"/>
+        <net name="srio_rx/dout_fifo_1[40]"/>
+        <net name="srio_rx/dout_fifo_1[39]"/>
+        <net name="srio_rx/dout_fifo_1[38]"/>
+        <net name="srio_rx/dout_fifo_1[37]"/>
+        <net name="srio_rx/dout_fifo_1[36]"/>
+        <net name="srio_rx/dout_fifo_1[35]"/>
+        <net name="srio_rx/dout_fifo_1[34]"/>
+        <net name="srio_rx/dout_fifo_1[33]"/>
+        <net name="srio_rx/dout_fifo_1[32]"/>
+        <net name="srio_rx/dout_fifo_1[31]"/>
+        <net name="srio_rx/dout_fifo_1[30]"/>
+        <net name="srio_rx/dout_fifo_1[29]"/>
+        <net name="srio_rx/dout_fifo_1[28]"/>
+        <net name="srio_rx/dout_fifo_1[27]"/>
+        <net name="srio_rx/dout_fifo_1[26]"/>
+        <net name="srio_rx/dout_fifo_1[25]"/>
+        <net name="srio_rx/dout_fifo_1[24]"/>
+        <net name="srio_rx/dout_fifo_1[23]"/>
+        <net name="srio_rx/dout_fifo_1[22]"/>
+        <net name="srio_rx/dout_fifo_1[21]"/>
+        <net name="srio_rx/dout_fifo_1[20]"/>
+        <net name="srio_rx/dout_fifo_1[19]"/>
+        <net name="srio_rx/dout_fifo_1[18]"/>
+        <net name="srio_rx/dout_fifo_1[17]"/>
+        <net name="srio_rx/dout_fifo_1[16]"/>
+        <net name="srio_rx/dout_fifo_1[15]"/>
+        <net name="srio_rx/dout_fifo_1[14]"/>
+        <net name="srio_rx/dout_fifo_1[13]"/>
+        <net name="srio_rx/dout_fifo_1[12]"/>
+        <net name="srio_rx/dout_fifo_1[11]"/>
+        <net name="srio_rx/dout_fifo_1[10]"/>
+        <net name="srio_rx/dout_fifo_1[9]"/>
+        <net name="srio_rx/dout_fifo_1[8]"/>
+        <net name="srio_rx/dout_fifo_1[7]"/>
+        <net name="srio_rx/dout_fifo_1[6]"/>
+        <net name="srio_rx/dout_fifo_1[5]"/>
+        <net name="srio_rx/dout_fifo_1[4]"/>
+        <net name="srio_rx/dout_fifo_1[3]"/>
+        <net name="srio_rx/dout_fifo_1[2]"/>
+        <net name="srio_rx/dout_fifo_1[1]"/>
+        <net name="srio_rx/dout_fifo_1[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe15[15:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/dst_id[15]"/>
+        <net name="srio_rx/dst_id[14]"/>
+        <net name="srio_rx/dst_id[13]"/>
+        <net name="srio_rx/dst_id[12]"/>
+        <net name="srio_rx/dst_id[11]"/>
+        <net name="srio_rx/dst_id[10]"/>
+        <net name="srio_rx/dst_id[9]"/>
+        <net name="srio_rx/dst_id[8]"/>
+        <net name="srio_rx/dst_id[7]"/>
+        <net name="srio_rx/dst_id[6]"/>
+        <net name="srio_rx/dst_id[5]"/>
+        <net name="srio_rx/dst_id[4]"/>
+        <net name="srio_rx/dst_id[3]"/>
+        <net name="srio_rx/dst_id[2]"/>
+        <net name="srio_rx/dst_id[1]"/>
+        <net name="srio_rx/dst_id[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe19[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/end_send"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_HINT" value=""/>
@@ -654,6 +1289,40 @@
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe15[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/first_bit"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe10[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/first_packet_transfer"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="MAP" value="probe4[0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -667,7 +1336,58 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe19[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/log_clk"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="neq1&apos;b0"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe17[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="neq1&apos;b0"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/need_a_response"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe16[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/need_response"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="neq1&apos;b0"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
@@ -675,7 +1395,7 @@
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="neq1&apos;b0"/>
       </probeOptions>
       <nets>
         <net name="srio_rx/rd_fifo"/>
@@ -683,8 +1403,197 @@
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/request_ftype[3]"/>
+        <net name="srio_rx/request_ftype[2]"/>
+        <net name="srio_rx/request_ftype[1]"/>
+        <net name="srio_rx/request_ftype[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe21[1:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq2&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/request_prio[1]"/>
+        <net name="srio_rx/request_prio[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe8[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/request_size[7]"/>
+        <net name="srio_rx/request_size[6]"/>
+        <net name="srio_rx/request_size[5]"/>
+        <net name="srio_rx/request_size[4]"/>
+        <net name="srio_rx/request_size[3]"/>
+        <net name="srio_rx/request_size[2]"/>
+        <net name="srio_rx/request_size[1]"/>
+        <net name="srio_rx/request_size[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe7[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/request_tid[7]"/>
+        <net name="srio_rx/request_tid[6]"/>
+        <net name="srio_rx/request_tid[5]"/>
+        <net name="srio_rx/request_tid[4]"/>
+        <net name="srio_rx/request_tid[3]"/>
+        <net name="srio_rx/request_tid[2]"/>
+        <net name="srio_rx/request_tid[1]"/>
+        <net name="srio_rx/request_tid[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe6[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/request_ttype[3]"/>
+        <net name="srio_rx/request_ttype[2]"/>
+        <net name="srio_rx/request_ttype[1]"/>
+        <net name="srio_rx/request_ttype[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe15[1:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq2&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/response_prio[1]"/>
+        <net name="srio_rx/response_prio[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe20[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/srcTID[7]"/>
+        <net name="srio_rx/srcTID[6]"/>
+        <net name="srio_rx/srcTID[5]"/>
+        <net name="srio_rx/srcTID[4]"/>
+        <net name="srio_rx/srcTID[3]"/>
+        <net name="srio_rx/srcTID[2]"/>
+        <net name="srio_rx/srcTID[1]"/>
+        <net name="srio_rx/srcTID[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe15[31:24]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/src_id[7]"/>
+        <net name="srio_rx/src_id[6]"/>
+        <net name="srio_rx/src_id[5]"/>
+        <net name="srio_rx/src_id[4]"/>
+        <net name="srio_rx/src_id[3]"/>
+        <net name="srio_rx/src_id[2]"/>
+        <net name="srio_rx/src_id[1]"/>
+        <net name="srio_rx/src_id[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe17[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/treq_advance_condition"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
@@ -692,13 +1601,30 @@
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
       </probeOptions>
       <nets>
         <net name="srio_rx/wr_fifo"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe18[0]"/>
+        <Option Id="NAME.CUSTOM" value="treq_advance_condition"/>
+        <Option Id="NAME.SELECT" value="Custom"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/wr_fifo_1"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="neq64&apos;h0000_0000_0000_0000"/>
@@ -778,7 +1704,7 @@
         <net name="srio_tx/din_fifo[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq64&apos;hXXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="neq64&apos;h0000_0000_0000_0000"/>
