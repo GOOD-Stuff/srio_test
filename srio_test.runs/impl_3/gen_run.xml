@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_3" LaunchPart="xc7k325tffg676-1" LaunchTime="1506076244">
-  <File Type="PWROPT-DRC" Name="srio_example_test_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="srio_example_test_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="srio_example_test_timing_summary_init.rpt"/>
+<GenRun Id="impl_3" LaunchPart="xc7k325tffg676-1" LaunchTime="1506336913">
   <File Type="ROUTE-PWR-RPX" Name="srio_example_test_power_routed.rpx"/>
   <File Type="PA-TCL" Name="srio_example_test.tcl"/>
-  <File Type="OPT-HWDEF" Name="srio_example_test.hwdef"/>
+  <File Type="INIT-TIMING" Name="srio_example_test_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="srio_example_test_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="srio_example_test_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="srio_example_test.vdi"/>
   <File Type="OPT-DCP" Name="srio_example_test_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="srio_example_test.hwdef"/>
   <File Type="OPT-DRC" Name="srio_example_test_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="srio_example_test_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="srio_example_test_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="srio_example_test_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="srio_example_test_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="srio_example_test_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="srio_example_test.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="srio_example_test_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="srio_example_test.drc"/>
+  <File Type="BG-BIN" Name="srio_example_test.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="srio_example_test_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="srio_example_test.msk"/>
+  <File Type="BG-DRC" Name="srio_example_test.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="srio_example_test_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="srio_example_test.bgn"/>
+  <File Type="BITSTR-MSK" Name="srio_example_test.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="srio_example_test_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="srio_example_test.bgn"/>
   <File Type="ROUTE-PWR" Name="srio_example_test_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="srio_example_test_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="srio_example_test_route_status.rpt"/>
@@ -62,8 +62,10 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/srio_response.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/srio_response.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/imports/new/srio_response.v"/>
+        <Attr Name="ImportTime" Val="1506326079"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -80,6 +82,19 @@
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../Users/vldmr/Desktop/generator.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/test.vhd">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -102,7 +117,6 @@
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="srio_example_test"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -130,6 +144,7 @@
     <Step Id="write_bitstream"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="vio_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="tx_axis_gen"/>
   <BlockFileSet Type="BlockSrcs" Name="fifo_generator_rx_inst"/>
+  <BlockFileSet Type="BlockSrcs" Name="dbg_ila"/>
 </GenRun>

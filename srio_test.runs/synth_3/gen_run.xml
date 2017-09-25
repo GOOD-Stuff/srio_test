@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_3" LaunchPart="xc7k325tffg676-1" LaunchTime="1506076244">
-  <File Type="RDS-PROPCONSTRS" Name="srio_example_test_drc_synth.rpt"/>
+<GenRun Id="synth_3" LaunchPart="xc7k325tffg676-1" LaunchTime="1506336913">
   <File Type="PA-TCL" Name="srio_example_test.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="srio_example_test_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="srio_example_test.vds"/>
   <File Type="RDS-UTIL" Name="srio_example_test_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="srio_example_test_utilization_synth.pb"/>
@@ -10,8 +10,10 @@
   <File Type="VDS-TIMING-PB" Name="srio_example_test_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/srio_response.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/srio_response.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/imports/new/srio_response.v"/>
+        <Attr Name="ImportTime" Val="1506326079"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -28,6 +30,19 @@
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../Users/vldmr/Desktop/generator.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/test.vhd">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -50,7 +65,6 @@
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="srio_example_test"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -70,6 +84,7 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="vio_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="tx_axis_gen"/>
   <BlockFileSet Type="BlockSrcs" Name="fifo_generator_rx_inst"/>
+  <BlockFileSet Type="BlockSrcs" Name="dbg_ila"/>
 </GenRun>

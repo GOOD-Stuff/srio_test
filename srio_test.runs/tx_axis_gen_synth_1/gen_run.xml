@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="tx_axis_gen_synth_1" LaunchPart="xc7k325tffg676-1" LaunchTime="1506100242">
+  <File Type="RDS-PROPCONSTRS" Name="tx_axis_gen_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="tx_axis_gen.tcl"/>
+  <File Type="RDS-RDS" Name="tx_axis_gen.vds"/>
+  <File Type="RDS-UTIL" Name="tx_axis_gen_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="tx_axis_gen_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="tx_axis_gen.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="tx_axis_gen_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="tx_axis_gen_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/tx_axis_gen">
+    <File Path="$PSRCDIR/sources_1/ip/tx_axis_gen/tx_axis_gen.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="tx_axis_gen"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/tx_axis_gen">
+    <File Path="$PSRCDIR/sources_1/ip/tx_axis_gen/tx_axis_gen.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="tx_axis_gen"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

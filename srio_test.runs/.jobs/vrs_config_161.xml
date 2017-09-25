@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="dbg_ila_synth_1" LaunchDir="C:/Projects/srio_test/srio_test/srio_test.runs/dbg_ila_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+

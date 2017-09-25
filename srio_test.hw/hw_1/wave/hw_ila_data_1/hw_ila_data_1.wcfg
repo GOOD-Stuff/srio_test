@@ -10,12 +10,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="19581fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomEndTime time="6336001fs"></ZoomEndTime>
+      <Cursor1Time time="203000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="212"></NameColumnWidth>
-      <ValueColumnWidth column_width="137"></ValueColumnWidth>
+      <NameColumnWidth column_width="207"></NameColumnWidth>
+      <ValueColumnWidth column_width="131"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="21" />
    <wave_markers>
@@ -26,21 +26,16 @@
       <obj_property name="ObjectShortName">din_fifo_1[63:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="label">srio_rx/axis_iorx_tdata[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject fp_name="srio_rx/axis_iorx_tkeep" type="array">
+   <wvobject fp_name="srio_rx/axis_iorx_tready" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/axis_iorx_tkeep[7:0]</obj_property>
-      <obj_property name="ObjectShortName">axis_iorx_tkeep[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">srio_rx/axis_iorx_tready</obj_property>
+      <obj_property name="ObjectShortName">axis_iorx_tready</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/axis_iorx_tlast" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/axis_iorx_tlast</obj_property>
-      <obj_property name="ObjectShortName">axis_iorx_tlast</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="CustomSignalColor">#A52A2A</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="srio_rx/axis_iorx_tvalid" type="logic">
@@ -48,13 +43,71 @@
       <obj_property name="ElementShortName">srio_rx/axis_iorx_tvalid</obj_property>
       <obj_property name="ObjectShortName">axis_iorx_tvalid</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="CustomSignalColor">#A52A2A</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="srio_rx/axis_iorx_tready" type="logic">
+   <wvobject fp_name="srio_rx/axis_iorx_tlast" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/axis_iorx_tready</obj_property>
-      <obj_property name="ObjectShortName">axis_iorx_tready</obj_property>
+      <obj_property name="ElementShortName">srio_rx/axis_iorx_tlast</obj_property>
+      <obj_property name="ObjectShortName">axis_iorx_tlast</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="CustomSignalColor">#A52A2A</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/axis_iotx_tdata" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/axis_iotx_tdata[63:0]</obj_property>
+      <obj_property name="ObjectShortName">axis_iotx_tdata[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/axis_iotx_tready" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/axis_iotx_tready</obj_property>
+      <obj_property name="ObjectShortName">axis_iotx_tready</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/axis_iotx_tvalid" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/axis_iotx_tvalid</obj_property>
+      <obj_property name="ObjectShortName">axis_iotx_tvalid</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/axis_iotx_tlast" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/axis_iotx_tlast</obj_property>
+      <obj_property name="ObjectShortName">axis_iotx_tlast</obj_property>
+      <obj_property name="label">srio_rx/axis_iotx_tlast</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/din_fifo" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/din_fifo[63:0]</obj_property>
+      <obj_property name="ObjectShortName">din_fifo[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/dout_fifo" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/dout_fifo[63:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_fifo[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="label">srio_rx/dout_fifo[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/current_bit_cnt" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/current_bit_cnt[7:0]</obj_property>
+      <obj_property name="ObjectShortName">current_bit_cnt[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
    <wvobject fp_name="srio_rx/first_bit" type="logic">
@@ -65,65 +118,10 @@
       <obj_property name="CustomSignalColor">#FF0000</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="srio_rx/dout_fifo" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">srio_rx/dout_fifo[63:0]</obj_property>
-      <obj_property name="ObjectShortName">dout_fifo[63:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="label">srio_rx/axis_iotx_tdata[63:0]</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/axis_iotx_tkeep" type="array">
+   <wvobject fp_name="srio_rx/d_rd_fifo" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/axis_iotx_tkeep[7:0]</obj_property>
-      <obj_property name="ObjectShortName">axis_iotx_tkeep[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/axis_iotx_tready" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/axis_iotx_tready</obj_property>
-      <obj_property name="ObjectShortName">axis_iotx_tready</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/axis_iotx_tvalid" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/axis_iotx_tvalid</obj_property>
-      <obj_property name="ObjectShortName">axis_iotx_tvalid</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/axis_iotx_tlast" type="logic">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">srio_rx/axis_iotx_tlast</obj_property>
-      <obj_property name="ObjectShortName">axis_iotx_tlast</obj_property>
-      <obj_property name="label">srio_rx/axis_iotx_tlast</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/din_fifo" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/din_fifo[63:0]</obj_property>
-      <obj_property name="ObjectShortName">din_fifo[63:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/rd_fifo" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/rd_fifo</obj_property>
-      <obj_property name="ObjectShortName">rd_fifo</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/dd_rd_fifo" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/dd_rd_fifo</obj_property>
-      <obj_property name="ObjectShortName">dd_rd_fifo</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/wr_fifo" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/wr_fifo</obj_property>
-      <obj_property name="ObjectShortName">wr_fifo</obj_property>
+      <obj_property name="ElementShortName">srio_rx/d_rd_fifo</obj_property>
+      <obj_property name="ObjectShortName">d_rd_fifo</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
    <wvobject fp_name="srio_rx/d_treq_advance_condition" type="logic">
@@ -132,10 +130,10 @@
       <obj_property name="ObjectShortName">d_treq_advance_condition</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject fp_name="srio_rx/treq_advance_condition" type="logic">
+   <wvobject fp_name="srio_rx/end_request" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/treq_advance_condition</obj_property>
-      <obj_property name="ObjectShortName">treq_advance_condition</obj_property>
+      <obj_property name="ElementShortName">srio_rx/end_request</obj_property>
+      <obj_property name="ObjectShortName">end_request</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
    <wvobject fp_name="srio_rx/need_response" type="logic">
@@ -143,11 +141,19 @@
       <obj_property name="ElementShortName">srio_rx/need_response</obj_property>
       <obj_property name="ObjectShortName">need_response</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="CustomSignalColor">#800000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="srio_rx/end_send" type="logic">
+   <wvobject fp_name="srio_rx/rd_fifo" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/end_send</obj_property>
-      <obj_property name="ObjectShortName">end_send</obj_property>
+      <obj_property name="ElementShortName">srio_rx/rd_fifo</obj_property>
+      <obj_property name="ObjectShortName">rd_fifo</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/wr_fifo" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/wr_fifo</obj_property>
+      <obj_property name="ObjectShortName">wr_fifo</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
    <wvobject fp_name="srio_rx/srcTID" type="array">
@@ -157,11 +163,16 @@
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject fp_name="srio_rx/current_bit_cnt" type="array">
+   <wvobject fp_name="srio_rx/treq_advance_condition" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/current_bit_cnt[7:0]</obj_property>
-      <obj_property name="ObjectShortName">current_bit_cnt[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">srio_rx/treq_advance_condition</obj_property>
+      <obj_property name="ObjectShortName">treq_advance_condition</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/tresp_advance_condition" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/tresp_advance_condition</obj_property>
+      <obj_property name="ObjectShortName">tresp_advance_condition</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
 </wave_config>

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Fri Sep 22 20:10:43 2017
+# Process ID: 5040
+# Current directory: C:/Projects/srio_test/srio_test/srio_test.runs/tx_axis_gen_synth_1
+# Command line: vivado.exe -log tx_axis_gen.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tx_axis_gen.tcl
+# Log file: C:/Projects/srio_test/srio_test/srio_test.runs/tx_axis_gen_synth_1/tx_axis_gen.vds
+# Journal file: C:/Projects/srio_test/srio_test/srio_test.runs/tx_axis_gen_synth_1\vivado.jou
+#-----------------------------------------------------------
+source tx_axis_gen.tcl -notrace
