@@ -188,7 +188,7 @@ module srio_example_test(
         .axis_iorx_tlast    ( iorx_tlast  ),
         .axis_iorx_tdata    ( iorx_tdata  ),
         .axis_iorx_tkeep    ( iorx_tkeep  ),
-        .axis_iorx_tuser    ( iorx_tvalid ),
+        .axis_iorx_tuser    ( iorx_tuser ),
         
         // Regs with response data (from FPGA to DSP)
         .axis_iotx_tvalid   ( iotx_tvalid ),

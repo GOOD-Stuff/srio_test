@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date             : Mon Sep 25 13:59:24 2017
+| Date             : Tue Sep 26 09:40:49 2017
 | Host             : vldmr-PC running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file srio_example_test_power_routed.rpt -pb srio_example_test_power_summary_routed.pb -rpx srio_example_test_power_routed.rpx
 | Design           : srio_example_test
@@ -31,7 +31,7 @@ Table of Contents
 
 +--------------------------+--------+
 | Total On-Chip Power (W)  | 0.617  |
-| Dynamic (W)              | 0.446  |
+| Dynamic (W)              | 0.445  |
 | Device Static (W)        | 0.172  |
 | Effective TJA (C/W)      | 1.9    |
 | Max Ambient (C)          | 83.8   |
@@ -50,15 +50,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.025 |        8 |       --- |             --- |
-| Slice Logic              |     0.007 |    21175 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     7301 |    203800 |            3.58 |
-|   Register               |    <0.001 |    10740 |    407600 |            2.63 |
+| Slice Logic              |     0.007 |    21260 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     7385 |    203800 |            3.62 |
+|   Register               |    <0.001 |    10741 |    407600 |            2.64 |
 |   LUT as Shift Register  |    <0.001 |      499 |     64000 |            0.78 |
-|   CARRY4                 |    <0.001 |      205 |     50950 |            0.40 |
+|   CARRY4                 |    <0.001 |      208 |     50950 |            0.41 |
 |   LUT as Distributed RAM |    <0.001 |       96 |     64000 |            0.15 |
 |   F7/F8 Muxes            |    <0.001 |      116 |    203800 |            0.06 |
-|   Others                 |     0.000 |      746 |       --- |             --- |
-| Signals                  |     0.009 |    15635 |       --- |             --- |
+|   Others                 |     0.000 |      747 |       --- |             --- |
+| Signals                  |     0.009 |    15653 |       --- |             --- |
 | Block RAM                |     0.010 |     35.5 |       445 |            7.98 |
 | MMCM                     |     0.125 |        1 |        10 |           10.00 |
 | GTX                      |     0.270 |        1 |         8 |           12.50 |
@@ -148,7 +148,7 @@ Table of Contents
 +--------------------------------------------------------------------------------------+-----------+
 | Name                                                                                 | Power (W) |
 +--------------------------------------------------------------------------------------+-----------+
-| srio_example_test                                                                    |     0.446 |
+| srio_example_test                                                                    |     0.445 |
 |   dbg_hub                                                                            |     0.002 |
 |     inst                                                                             |     0.002 |
 |       CORE_XSDB.UUT_MASTER                                                           |     0.001 |
@@ -230,8 +230,8 @@ Table of Contents
 |         U_SYNC                                                                       |    <0.001 |
 |       SWITCH_N_EXT_BSCAN.bscan_inst                                                  |    <0.001 |
 |       SWITCH_N_EXT_BSCAN.bscan_switch                                                |    <0.001 |
-|   srio_ip                                                                            |     0.430 |
-|     inst                                                                             |     0.430 |
+|   srio_ip                                                                            |     0.429 |
+|     inst                                                                             |     0.429 |
 |       k7_v7_gtxe2_common_inst                                                        |    <0.001 |
 |       srio_clk_inst                                                                  |     0.126 |
 |       srio_gen2_0_block_inst                                                         |     0.303 |
@@ -370,10 +370,10 @@ Table of Contents
 |                 ollm_tx_oplm_inst                                                    |    <0.001 |
 |                 ollm_tx_pkt_assembly_inst                                            |    <0.001 |
 |                 ollm_tx_pkt_stack_inst                                               |    <0.001 |
-|               oplm_top_inst                                                          |     0.007 |
+|               oplm_top_inst                                                          |     0.006 |
 |                 oplm_gtregisters_inst                                                |    <0.001 |
 |                 oplm_init_inst                                                       |    <0.001 |
-|                 oplm_rx_inst                                                         |     0.003 |
+|                 oplm_rx_inst                                                         |     0.002 |
 |                 oplm_tx_inst                                                         |     0.002 |
 |               phy_cfg_top_inst                                                       |    <0.001 |
 |                 phy_cfg_axi_inst                                                     |    <0.001 |
@@ -435,9 +435,9 @@ Table of Contents
 |                           prim_noinit.ram                                            |    <0.001 |
 |                         ramloop[7].ram.r                                             |    <0.001 |
 |                           prim_noinit.ram                                            |    <0.001 |
-|     ila_ip                                                                           |     0.013 |
-|       inst                                                                           |     0.013 |
-|         ila_core_inst                                                                |     0.013 |
+|     ila_ip                                                                           |     0.014 |
+|       inst                                                                           |     0.014 |
+|         ila_core_inst                                                                |     0.014 |
 |           ila_trace_memory_inst                                                      |     0.005 |
 |             SUBCORE_RAM_BLK_MEM_1.trace_block_memory                                 |     0.005 |
 |               inst_blk_mem_gen                                                       |     0.005 |

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_3" LaunchPart="xc7k325tffg676-1" LaunchTime="1506336913">
-  <File Type="PA-TCL" Name="srio_example_test.tcl"/>
+<GenRun Id="synth_3" LaunchPart="xc7k325tffg676-1" LaunchTime="1506407797">
   <File Type="RDS-PROPCONSTRS" Name="srio_example_test_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="srio_example_test.tcl"/>
   <File Type="RDS-RDS" Name="srio_example_test.vds"/>
   <File Type="RDS-UTIL" Name="srio_example_test_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="srio_example_test_utilization_synth.pb"/>
@@ -83,8 +83,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="vio_0"/>
   <BlockFileSet Type="BlockSrcs" Name="tx_axis_gen"/>
-  <BlockFileSet Type="BlockSrcs" Name="fifo_generator_rx_inst"/>
+  <BlockFileSet Type="BlockSrcs" Name="vio_0"/>
   <BlockFileSet Type="BlockSrcs" Name="dbg_ila"/>
+  <BlockFileSet Type="BlockSrcs" Name="fifo_generator_rx_inst"/>
 </GenRun>
