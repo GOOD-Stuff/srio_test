@@ -102,7 +102,7 @@ module srio_response(
     
     reg         response_tlast = 1'b0;
     
-    reg  [7:0]  current_bit_cnt;
+    reg  [8:0]  current_bit_cnt;
     reg  [7:0]  srcTID;  
     reg         first_bit;    
     wire        end_request; // end of request packet
@@ -310,30 +310,30 @@ module srio_response(
             end
             
             WAIT_REQ_S: begin                       // 1
-                axis_iotx_tdata     <= 64'h00;                
-                only_header_sent    <= 1'b0;
-                rd_fifo             <= 1'b0;            
+                axis_iotx_tdata      <= 64'h00;                
+                only_header_sent     <= 1'b0;
+                rd_fifo              <= 1'b0;            
             end
             
             SEND_HD_S: begin                        // 2
                 if( request_ftype != NREAD ) begin
                     axis_iotx_tdata  <= { srcTID, RESP, TNDATA, 1'b0, response_prio, 
-                                                               1'b0, 8'h00, RESERVE, 35'h0 };
+                                                                1'b0, 8'h00, RESERVE, 35'h0 };
                     only_header_sent <= 1'b1;
                 end else begin
                     rd_fifo          <= ( ( !fifo_EMPTY ) && axis_iotx_tready );                      
-                    axis_iotx_tdata  <= { srcTID, RESP, TWDATA, 1'b0, response_prio, 
-                                                                1'b0, 8'h00, RESERVE, 35'h0 };                                      
+                    axis_iotx_tdata  <= { 8'h00, RESP, TWDATA, 1'b0, response_prio, 
+                                                               1'b0, 8'h00, RESERVE, 35'h0 };                                      
                 end          
             end
             
             SEND_DT_S: begin                        // 4
                 if( axis_iotx_tready )
-                    axis_iotx_tdata     <= dout_fifo;                                           
+                    axis_iotx_tdata  <= dout_fifo;                                           
                 if( fifo_EMPTY || ( !axis_iotx_tready ) )
-                    rd_fifo <= 1'b0;
+                    rd_fifo          <= 1'b0;
                 else
-                    rd_fifo <= 1'b1;
+                    rd_fifo          <= 1'b1;
             end
             
             default: begin
@@ -379,7 +379,8 @@ module srio_response(
         .probe21 ( state                    ),
         .probe22 ( next_state               ),
         .probe23 ( fifo_EMPTY               ),
-        .probe24 ( response_size            )
+        .probe24 ( response_size            ),
+        .probe25 ( fifo_FULL                )
         
     );
            
