@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="vio_0_synth_1" LaunchPart="xc7k325tffg676-1" LaunchTime="1505726724">
-  <File Type="RDS-PROPCONSTRS" Name="vio_0_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="vio_0.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="vio_0_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="vio_0.vds"/>
   <File Type="RDS-UTIL" Name="vio_0_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="vio_0_utilization_synth.pb"/>

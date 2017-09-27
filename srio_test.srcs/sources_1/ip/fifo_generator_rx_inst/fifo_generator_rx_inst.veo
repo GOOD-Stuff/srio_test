@@ -56,7 +56,7 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 fifo_generator_rx_inst your_instance_name (
   .clk(clk),      // input wire clk
-  .srst(srst),    // input wire srst
+  .rst(rst),      // input wire rst
   .din(din),      // input wire [63 : 0] din
   .wr_en(wr_en),  // input wire wr_en
   .rd_en(rd_en),  // input wire rd_en

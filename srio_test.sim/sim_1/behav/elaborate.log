@@ -1,8 +1,9 @@
 Vivado Simulator 2016.3
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 57c85ee0affe44c98a252c813579de81 --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_3_4 -L fifo_generator_v13_1_2 -L srio_gen2_v4_0_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot srio_example_test_behav xil_defaultlib.srio_example_test xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 57c85ee0affe44c98a252c813579de81 --debug typical --relax --mt 2 -L fifo_generator_v13_1_2 -L xil_defaultlib -L blk_mem_gen_v8_3_4 -L srio_gen2_v4_0_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot srio_example_test_behav xil_defaultlib.srio_example_test xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 8 differs from formal bit length 16 for port dst_id [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:181]
 WARNING: [VRFC 10-526] concatenation with unsized literal; will interpret as 32 bits [/wrk/2016.3/nightly/2016_10_10_1682563/packages/customer/vivado/data/ip/xilinx/srio_gen2_v4_0/hdl/srio_gen2_v4_0_rfs.v:32720]
 WARNING: [VRFC 10-1783] select index 2 into rrst_reg is out of bounds [/wrk/2016.3/nightly/2016_10_10_1682563/packages/customer/vivado/data/ip/xilinx/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:4885]
 WARNING: [VRFC 10-1783] select index 2 into rrst_q is out of bounds [/wrk/2016.3/nightly/2016_10_10_1682563/packages/customer/vivado/data/ip/xilinx/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:4895]
@@ -44,7 +45,13 @@ Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_signed
 Compiling module xil_defaultlib.vio_0
-Compiling module xil_defaultlib.ila_0
+Compiling module xil_defaultlib.dbg_ila
+Compiling module fifo_generator_v13_1_2.fifo_generator_v13_1_2_bhv_ver_s...
+Compiling module fifo_generator_v13_1_2.fifo_generator_v13_1_2_CONV_VER(...
+Compiling module fifo_generator_v13_1_2.fifo_generator_vlog_beh(C_COMMON...
+Compiling module fifo_generator_v13_1_2.fifo_generator_v13_1_2(C_COMMON_...
+Compiling module xil_defaultlib.fifo_generator_rx_inst
+Compiling module xil_defaultlib.srio_response
 Compiling module srio_gen2_v4_0_5.srio_gen2_v4_0_5_cfg_axi(TCQ=100...
 Compiling module srio_gen2_v4_0_5.srio_gen2_v4_0_5_log_cfg_reg(TCQ...
 Compiling module srio_gen2_v4_0_5.srio_gen2_v4_0_5_log_cfg_top(TCQ...

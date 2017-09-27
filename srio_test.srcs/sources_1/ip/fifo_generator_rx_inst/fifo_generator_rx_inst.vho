@@ -55,7 +55,7 @@
 COMPONENT fifo_generator_rx_inst
   PORT (
     clk : IN STD_LOGIC;
-    srst : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
     din : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
     wr_en : IN STD_LOGIC;
     rd_en : IN STD_LOGIC;
@@ -73,7 +73,7 @@ END COMPONENT;
 your_instance_name : fifo_generator_rx_inst
   PORT MAP (
     clk => clk,
-    srst => srst,
+    rst => rst,
     din => din,
     wr_en => wr_en,
     rd_en => rd_en,

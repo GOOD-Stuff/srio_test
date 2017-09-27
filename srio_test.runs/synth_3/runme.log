@@ -14,14 +14,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1812 
+INFO: Helper process launched with PID 1260 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 351.086 ; gain = 142.094
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 354.738 ; gain = 145.359
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'srio_example_test' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:24]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:112]
-INFO: [Synth 8-638] synthesizing module 'vio_0' [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/realtime/vio_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'vio_0' (1#1) [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/realtime/vio_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'vio_0' [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/realtime/vio_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'vio_0' (1#1) [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/realtime/vio_0_stub.v:6]
 INFO: [Synth 8-638] synthesizing module 'srio_response' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:25]
 	Parameter NREAD bound to: 4'b0010 
 	Parameter NWRITE bound to: 4'b0101 
@@ -37,14 +37,24 @@ INFO: [Synth 8-638] synthesizing module 'srio_response' [C:/Projects/srio_test/s
 	Parameter TWDATA bound to: 4'b1000 
 	Parameter RESERVE bound to: 1'b0 
 	Parameter ERROR bound to: 1'b1 
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:263]
-INFO: [Synth 8-638] synthesizing module 'dbg_ila' [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/realtime/dbg_ila_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'dbg_ila' (2#1) [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/realtime/dbg_ila_stub.v:6]
-INFO: [Synth 8-638] synthesizing module 'fifo_generator_rx_inst' [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/realtime/fifo_generator_rx_inst_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'fifo_generator_rx_inst' (3#1) [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/realtime/fifo_generator_rx_inst_stub.v:6]
+	Parameter IDLE_S bound to: 3'b000 
+	Parameter WAIT_REQ_S bound to: 3'b001 
+	Parameter SEND_HD_S bound to: 3'b010 
+	Parameter SEND_DT_S bound to: 3'b100 
+WARNING: [Synth 8-567] referenced signal 'request_ftype' should be on the sensitivity list [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:306]
+WARNING: [Synth 8-567] referenced signal 'srcTID' should be on the sensitivity list [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:306]
+WARNING: [Synth 8-567] referenced signal 'response_prio' should be on the sensitivity list [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:306]
+WARNING: [Synth 8-567] referenced signal 'fifo_EMPTY' should be on the sensitivity list [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:306]
+WARNING: [Synth 8-567] referenced signal 'axis_iotx_tready' should be on the sensitivity list [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:306]
+WARNING: [Synth 8-567] referenced signal 'dout_fifo' should be on the sensitivity list [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:306]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:348]
+INFO: [Synth 8-638] synthesizing module 'dbg_ila' [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/realtime/dbg_ila_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'dbg_ila' (2#1) [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/realtime/dbg_ila_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'fifo_generator_rx_inst' [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/realtime/fifo_generator_rx_inst_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fifo_generator_rx_inst' (3#1) [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/realtime/fifo_generator_rx_inst_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'srio_response' (4#1) [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:25]
-INFO: [Synth 8-638] synthesizing module 'srio_gen2_0' [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/realtime/srio_gen2_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0' (5#1) [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/realtime/srio_gen2_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'srio_gen2_0' [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/realtime/srio_gen2_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'srio_gen2_0' (5#1) [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/realtime/srio_gen2_0_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'srio_example_test' (6#1) [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:24]
 WARNING: [Synth 8-3331] design srio_response has unconnected port dst_id[15]
 WARNING: [Synth 8-3331] design srio_response has unconnected port dst_id[14]
@@ -87,8 +97,40 @@ WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkee
 WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[2]
 WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[1]
 WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[0]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[31]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[30]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[29]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[28]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[27]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[26]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[25]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[24]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[23]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[22]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[21]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[20]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[19]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[18]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[17]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[16]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[15]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[14]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[13]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[12]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[11]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[10]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[9]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[8]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[7]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[6]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[5]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[4]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[3]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[2]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[1]
+WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tuser[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 388.598 ; gain = 179.605
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 392.930 ; gain = 183.551
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -98,10 +140,10 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 388.598 ; gain = 179.605
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 392.930 ; gain = 183.551
 ---------------------------------------------------------------------------------
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'dbg_ila' instantiated as 'srio_rx/ila_ip' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:263]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fifo_generator_rx_inst' instantiated as 'srio_rx/fifo_rx_ip' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:298]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'dbg_ila' instantiated as 'srio_rx/ila_ip' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:348]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fifo_generator_rx_inst' instantiated as 'srio_rx/fifo_rx_ip' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:386]
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'srio_gen2_0' instantiated as 'srio_ip' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:228]
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'vio_0' instantiated as 'vio_ip' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:112]
 INFO: [Device 21-403] Loading part xc7k325tffg676-1
@@ -109,14 +151,14 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp/vio_0_in_context.xdc] for cell 'vio_ip'
-Finished Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp/vio_0_in_context.xdc] for cell 'vio_ip'
-Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp_2/fifo_generator_rx_inst_in_context.xdc] for cell 'srio_rx/fifo_rx_ip'
-Finished Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp_2/fifo_generator_rx_inst_in_context.xdc] for cell 'srio_rx/fifo_rx_ip'
-Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp_4/dbg_ila_in_context.xdc] for cell 'srio_rx/ila_ip'
-Finished Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp_4/dbg_ila_in_context.xdc] for cell 'srio_rx/ila_ip'
-Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp_5/srio_gen2_0_in_context.xdc] for cell 'srio_ip'
-Finished Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp_5/srio_gen2_0_in_context.xdc] for cell 'srio_ip'
+Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp/vio_0_in_context.xdc] for cell 'vio_ip'
+Finished Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp/vio_0_in_context.xdc] for cell 'vio_ip'
+Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp_2/fifo_generator_rx_inst_in_context.xdc] for cell 'srio_rx/fifo_rx_ip'
+Finished Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp_2/fifo_generator_rx_inst_in_context.xdc] for cell 'srio_rx/fifo_rx_ip'
+Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp_3/dbg_ila_in_context.xdc] for cell 'srio_rx/ila_ip'
+Finished Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp_3/dbg_ila_in_context.xdc] for cell 'srio_rx/ila_ip'
+Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp_4/srio_gen2_0_in_context.xdc] for cell 'srio_ip'
+Finished Parsing XDC File [C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp_4/srio_gen2_0_in_context.xdc] for cell 'srio_ip'
 Parsing XDC File [C:/Projects/srio_test/srio_test/top.xdc]
 Finished Parsing XDC File [C:/Projects/srio_test/srio_test/top.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Projects/srio_test/srio_test/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/srio_example_test_propImpl.xdc].
@@ -128,30 +170,35 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 731.098 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 729.531 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k325tffg676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for sys_clkn. (constraint file  C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp_5/srio_gen2_0_in_context.xdc, line 7).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clkn. (constraint file  C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp_5/srio_gen2_0_in_context.xdc, line 8).
-Applied set_property IO_BUFFER_TYPE = NONE for sys_clkp. (constraint file  C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp_5/srio_gen2_0_in_context.xdc, line 9).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clkp. (constraint file  C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-572-vldmr-PC/dcp_5/srio_gen2_0_in_context.xdc, line 10).
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clkn. (constraint file  C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp_4/srio_gen2_0_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clkn. (constraint file  C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp_4/srio_gen2_0_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clkp. (constraint file  C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp_4/srio_gen2_0_in_context.xdc, line 9).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clkp. (constraint file  C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/.Xil/Vivado-3504-vldmr-PC/dcp_4/srio_gen2_0_in_context.xdc, line 10).
 Applied set_property DONT_TOUCH = true for srio_ip. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'response_tlast_reg' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:133]
+WARNING: [Synth 8-327] inferring latch for variable 'axis_iotx_tdata_reg' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:313]
+WARNING: [Synth 8-327] inferring latch for variable 'rd_fifo_reg' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:315]
+WARNING: [Synth 8-327] inferring latch for variable 'only_header_sent_reg' [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v:314]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -168,14 +215,17 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit       Adders := 2     
 	   2 Input      2 Bit       Adders := 2     
 +---Registers : 
-	               64 Bit    Registers := 1     
 	                8 Bit    Registers := 2     
-	                1 Bit    Registers := 7     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
 +---Muxes : 
+	   5 Input     64 Bit        Muxes := 1     
 	   2 Input     64 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 4     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+	   5 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -190,14 +240,17 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit       Adders := 2     
 	   2 Input      2 Bit       Adders := 2     
 +---Registers : 
-	               64 Bit    Registers := 1     
 	                8 Bit    Registers := 2     
-	                1 Bit    Registers := 7     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
 +---Muxes : 
+	   5 Input     64 Bit        Muxes := 1     
 	   2 Input     64 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 4     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+	   5 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -240,22 +293,9 @@ WARNING: [Synth 8-3331] design srio_response has unconnected port src_id[8]
 WARNING: [Synth 8-3331] design srio_response has unconnected port src_id[7]
 WARNING: [Synth 8-3331] design srio_response has unconnected port src_id[6]
 WARNING: [Synth 8-3331] design srio_response has unconnected port src_id[5]
-WARNING: [Synth 8-3331] design srio_response has unconnected port src_id[4]
-WARNING: [Synth 8-3331] design srio_response has unconnected port src_id[3]
-WARNING: [Synth 8-3331] design srio_response has unconnected port src_id[2]
-WARNING: [Synth 8-3331] design srio_response has unconnected port src_id[1]
-WARNING: [Synth 8-3331] design srio_response has unconnected port src_id[0]
-WARNING: [Synth 8-3331] design srio_response has unconnected port id_override
-WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[7]
-WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[6]
-WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[5]
-WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[4]
-WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[3]
-WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[2]
-WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[1]
-WARNING: [Synth 8-3331] design srio_response has unconnected port axis_iorx_tkeep[0]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -277,10 +317,10 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'srio_ip/log_clk_out' to p
 INFO: [Synth 8-5578] Moved timing constraint from pin 'srio_ip/phy_clk_out' to pin 'srio_ip/bbstub_phy_clk_out/O'
 INFO: [Synth 8-5819] Moved 6 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -292,7 +332,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -316,7 +356,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -329,7 +369,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -341,25 +381,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -383,45 +423,49 @@ Report Cell Usage:
 |2     |fifo_generator_rx_inst |     1|
 |3     |srio_gen2_0            |     1|
 |4     |vio_0                  |     1|
-|5     |CARRY4                 |     3|
-|6     |LUT1                   |    34|
-|7     |LUT2                   |     8|
-|8     |LUT3                   |    12|
-|9     |LUT4                   |     7|
-|10    |LUT5                   |    63|
-|11    |LUT6                   |    23|
-|12    |FDCE                   |    13|
-|13    |FDPE                   |     1|
-|14    |FDRE                   |    73|
-|15    |IBUF                   |     2|
-|16    |OBUF                   |     2|
+|5     |BUFG                   |     1|
+|6     |CARRY4                 |     3|
+|7     |LUT1                   |     2|
+|8     |LUT2                   |     8|
+|9     |LUT3                   |    19|
+|10    |LUT4                   |    59|
+|11    |LUT5                   |    13|
+|12    |LUT6                   |    19|
+|13    |FDCE                   |    22|
+|14    |FDPE                   |     1|
+|15    |LD                     |    66|
+|16    |LDCP                   |     1|
+|17    |IBUF                   |     2|
+|18    |OBUF                   |     2|
 +------+-----------------------+------+
 
 Report Instance Areas: 
 +------+----------+--------------+------+
 |      |Instance  |Module        |Cells |
 +------+----------+--------------+------+
-|1     |top       |              |   776|
-|2     |  srio_rx |srio_response |   303|
+|1     |top       |              |   753|
+|2     |  srio_rx |srio_response |   280|
 +------+----------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 731.098 ; gain = 522.105
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 729.531 ; gain = 520.152
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 41 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 731.098 ; gain = 97.098
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 731.098 ; gain = 522.105
+Synthesis finished with 0 errors, 0 critical warnings and 77 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 729.531 ; gain = 96.996
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 729.531 ; gain = 520.152
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 72 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 67 instances were transformed.
+  LD => LDCE: 66 instances
+  LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 88 Warnings, 0 Critical Warnings and 0 Errors encountered.
+35 Infos, 116 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 731.098 ; gain = 455.215
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 729.531 ; gain = 449.527
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/srio_example_test.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 731.098 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Sep 26 09:37:10 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 729.531 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 27 13:58:59 2017...

@@ -1,5 +1,11 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/sim/fifo_generator_rx_inst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_generator_rx_inst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/sim/dbg_ila.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dbg_ila
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/vio_0/sim/vio_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module vio_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module srio_response
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_srio_clk.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module srio_gen2_0_srio_clk
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_srio_rst.v" into library xil_defaultlib
@@ -29,17 +35,15 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/sri
 INFO: [VRFC 10-311] analyzing module srio_gen2_0_block
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module srio_gen2_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/ila_0/sim/ila_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ila_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module srio_example_test
-INFO: [VRFC 10-2458] undeclared symbol gt_clk, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:145]
-INFO: [VRFC 10-2458] undeclared symbol drpclk, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:147]
-INFO: [VRFC 10-2458] undeclared symbol refclk, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:148]
-INFO: [VRFC 10-2458] undeclared symbol buf_rst, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:153]
-INFO: [VRFC 10-2458] undeclared symbol cfg_rst, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:154]
-INFO: [VRFC 10-2458] undeclared symbol gt_pcs_rst, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:155]
-INFO: [VRFC 10-2458] undeclared symbol gt0_qpll_clk_out, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:157]
-INFO: [VRFC 10-2458] undeclared symbol gt0_qpll_out_refclk_out, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:158]
+INFO: [VRFC 10-2458] undeclared symbol gt_clk, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:235]
+INFO: [VRFC 10-2458] undeclared symbol drpclk, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:237]
+INFO: [VRFC 10-2458] undeclared symbol refclk, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:238]
+INFO: [VRFC 10-2458] undeclared symbol buf_rst, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:243]
+INFO: [VRFC 10-2458] undeclared symbol cfg_rst, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:244]
+INFO: [VRFC 10-2458] undeclared symbol gt_pcs_rst, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:245]
+INFO: [VRFC 10-2458] undeclared symbol gt0_qpll_clk_out, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:247]
+INFO: [VRFC 10-2458] undeclared symbol gt0_qpll_out_refclk_out, assumed default net type wire [C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v:248]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/srio_test/srio_test/srio_test.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl
