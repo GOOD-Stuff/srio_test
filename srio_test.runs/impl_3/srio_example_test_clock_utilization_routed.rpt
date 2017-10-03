@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Wed Sep 27 14:02:46 2017
+| Date         : Tue Oct 03 11:05:33 2017
 | Host         : vldmr-PC running 64-bit Service Pack 1  (build 7601)
 | Command      : report_clock_utilization -file srio_example_test_clock_utilization_routed.rpt
 | Design       : srio_example_test
@@ -18,17 +18,18 @@ Table of Contents
 3. Global Clock Source Details
 4. Clock Regions: Key Resource Utilization
 5. Clock Regions : Global Clock Summary
-6. Cell Type Counts per Global Clock: Region X0Y2
-7. Cell Type Counts per Global Clock: Region X1Y2
-8. Cell Type Counts per Global Clock: Region X0Y3
-9. Cell Type Counts per Global Clock: Region X1Y3
-10. Cell Type Counts per Global Clock: Region X0Y6
-11. Load Cell Placement Summary for Global Clock g0
-12. Load Cell Placement Summary for Global Clock g1
-13. Load Cell Placement Summary for Global Clock g2
-14. Load Cell Placement Summary for Global Clock g3
-15. Load Cell Placement Summary for Global Clock g4
-16. Load Cell Placement Summary for Global Clock g5
+6. Cell Type Counts per Global Clock: Region X0Y1
+7. Cell Type Counts per Global Clock: Region X1Y1
+8. Cell Type Counts per Global Clock: Region X0Y2
+9. Cell Type Counts per Global Clock: Region X1Y2
+10. Cell Type Counts per Global Clock: Region X1Y3
+11. Cell Type Counts per Global Clock: Region X0Y6
+12. Load Cell Placement Summary for Global Clock g0
+13. Load Cell Placement Summary for Global Clock g1
+14. Load Cell Placement Summary for Global Clock g2
+15. Load Cell Placement Summary for Global Clock g3
+16. Load Cell Placement Summary for Global Clock g4
+17. Load Cell Placement Summary for Global Clock g5
 
 1. Clock Primitive Utilization
 ------------------------------
@@ -52,10 +53,10 @@ Table of Contents
 +-----------+-----------+-----------------+------------+----------------+--------------+------+-------------------+-------------------+-------------+-----------------+--------------+-------------------------------------------------------------------------+---------------------------------------------------+----------------------------------------+
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site           | Clock Region | Root | Clock Delay Group | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock                                                                   | Driver Pin                                        | Net                                    |
 +-----------+-----------+-----------------+------------+----------------+--------------+------+-------------------+-------------------+-------------+-----------------+--------------+-------------------------------------------------------------------------+---------------------------------------------------+----------------------------------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y30 | n/a          |      |                   |                 4 |       10288 |               0 |       25.600 | clkout1                                                                 | srio_ip/inst/srio_clk_inst/log_clk_bufg_inst/O    | srio_ip/inst/srio_clk_inst/log_clk     |
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y30 | n/a          |      |                   |                 5 |       10384 |               0 |       25.600 | clkout1                                                                 | srio_ip/inst/srio_clk_inst/log_clk_bufg_inst/O    | srio_ip/inst/srio_clk_inst/log_clk     |
 | g1        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y29 | n/a          |      |                   |                 2 |         585 |               0 |       12.800 | clkout2                                                                 | srio_ip/inst/srio_clk_inst/gt_pcs_clk_bufg_inst/O | srio_ip/inst/srio_clk_inst/gt_pcs_clk  |
-| g2        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |      |                   |                 2 |         323 |               0 |       33.000 | dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O | dbg_hub/inst/itck_i                    |
-| g3        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y21 | n/a          |      |                   |                 2 |          65 |               0 |              |                                                                         | srio_rx/n_0_31_BUFG_inst/O                        | srio_rx/n_0_31_BUFG                    |
+| g2        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |      |                   |                 3 |         323 |               0 |       33.000 | dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O | dbg_hub/inst/itck_i                    |
+| g3        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y21 | n/a          |      |                   |                 1 |          65 |               0 |              |                                                                         | srio_rx/n_0_57_BUFG_inst/O                        | srio_rx/n_0_57_BUFG                    |
 | g4        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y31 | n/a          |      |                   |                 1 |          62 |               0 |        6.400 | clkout0                                                                 | srio_ip/inst/srio_clk_inst/gt_clk_bufg_inst/O     | srio_ip/inst/srio_clk_inst/gt_clk      |
 | g5        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |      |                   |                 1 |           1 |               0 |        6.400 | sys_clkp                                                                | srio_ip/inst/srio_clk_inst/refclk_bufg_inst/O     | srio_ip/inst/srio_clk_inst/refclk_bufg |
 +-----------+-----------+-----------------+------------+----------------+--------------+------+-------------------+-------------------+-------------+-----------------+--------------+-------------------------------------------------------------------------+---------------------------------------------------+----------------------------------------+
@@ -73,7 +74,7 @@ Table of Contents
 | src0      | g0        | MMCME2_ADV/CLKOUT1 | None             | MMCME2_ADV_X0Y6  | X0Y6         |           1 |               0 |              25.600 | clkout1                                                                 | srio_ip/inst/srio_clk_inst/srio_mmcm_inst/CLKOUT1                       | srio_ip/inst/srio_clk_inst/clkout1                |
 | src0      | g1        | MMCME2_ADV/CLKOUT2 | None             | MMCME2_ADV_X0Y6  | X0Y6         |           1 |               0 |              12.800 | clkout2                                                                 | srio_ip/inst/srio_clk_inst/srio_mmcm_inst/CLKOUT2                       | srio_ip/inst/srio_clk_inst/clkout2                |
 | src1      | g2        | BSCANE2/TCK        | None             | BSCAN_X0Y0       | X0Y2         |           1 |               0 |              33.000 | dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs |
-| src2      | g3        | LUT3/O             | None             | SLICE_X79Y197    | X0Y3         |           1 |               0 |                     |                                                                         | srio_rx/n_0_31_BUFG_inst_i_1/O                                          | srio_rx/n_0_31_BUFG_inst_n_1                      |
+| src2      | g3        | LUT3/O             | None             | SLICE_X80Y197    | X1Y3         |           1 |               0 |                     |                                                                         | srio_rx/n_0_57_BUFG_inst_i_1/O                                          | srio_rx/n_0_57_BUFG_inst_n_1                      |
 | src3      | g5        | IBUFDS_GTE2/O      | IBUFDS_GTE2_X0Y0 | IBUFDS_GTE2_X0Y0 | X1Y3         |          18 |               0 |               6.400 | sys_clkp                                                                | srio_ip/inst/srio_clk_inst/u_refclk_ibufds/O                            | srio_ip/inst/srio_clk_inst/refclk                 |
 +-----------+-----------+--------------------+------------------+------------------+--------------+-------------+-----------------+---------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
@@ -90,12 +91,12 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | X0Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  4000 |    0 |  1150 |    0 |    60 |    0 |    30 |    0 |    60 |
 | X1Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  3700 |    0 |  1200 |    0 |    80 |    0 |    40 |    0 |    60 |
-| X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  4000 |    0 |  1150 |    0 |    60 |    0 |    30 |    0 |    60 |
-| X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  3700 |    0 |  1200 |    0 |    80 |    0 |    40 |    0 |    60 |
-| X0Y2              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  156 |  3400 |  164 |  1150 |    0 |    60 |    6 |    30 |    0 |    60 |
-| X1Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1375 |  3700 |  530 |  1200 |    0 |    80 |    3 |    40 |    0 |    60 |
-| X0Y3              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2260 |  3400 | 1059 |  1150 |    0 |    60 |   11 |    30 |    0 |    60 |
-| X1Y3              |    5 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    1 |     4 |    0 |     1 |    0 |     0 |    0 |     0 | 6773 |  3150 | 2297 |  1050 |    0 |    50 |    6 |    25 |    0 |    60 |
+| X0Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   18 |  4000 |   34 |  1150 |    0 |    60 |    4 |    30 |    0 |    60 |
+| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1150 |  3700 |  517 |  1200 |    0 |    80 |   10 |    40 |    0 |    60 |
+| X0Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  446 |  3400 |  276 |  1150 |    0 |    60 |    6 |    30 |    0 |    60 |
+| X1Y2              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 8301 |  3700 | 3043 |  1200 |    0 |    80 |   12 |    40 |    0 |    60 |
+| X0Y3              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  3400 |    0 |  1150 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X1Y3              |    4 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    1 |     4 |    0 |     1 |    0 |     0 |    0 |     0 |  720 |  3150 |  215 |  1050 |    0 |    50 |    0 |    25 |    0 |    60 |
 | X0Y4              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  4000 |    0 |  1150 |    0 |    60 |    0 |    30 |    0 |    60 |
 | X1Y4              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |  3300 |    0 |  1100 |    0 |    60 |    0 |    30 |    0 |    60 |
 | X0Y5              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  4000 |    0 |  1150 |    0 |    60 |    0 |    30 |    0 |    60 |
@@ -115,73 +116,86 @@ Table of Contents
 | Y6 |  1 |  0 |
 | Y5 |  0 |  0 |
 | Y4 |  0 |  0 |
-| Y3 |  3 |  5 |
-| Y2 |  1 |  2 |
-| Y1 |  0 |  0 |
+| Y3 |  0 |  4 |
+| Y2 |  2 |  4 |
+| Y1 |  1 |  1 |
 | Y0 |  0 |  0 |
 +----+----+----+
 
 
-6. Cell Type Counts per Global Clock: Region X0Y2
+6. Cell Type Counts per Global Clock: Region X0Y1
 -------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         226 |               0 | 156 |     64 |    6 |   0 |  0 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/log_clk |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |          38 |               0 | 18 |     16 |    4 |   0 |  0 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/log_clk |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
 
 
-7. Cell Type Counts per Global Clock: Region X1Y2
--------------------------------------------------
-
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+---------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                   |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+---------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        1354 |               0 | 1351 |      0 |    3 |   0 |  0 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/log_clk    |
-| g1        | n/a   | BUFG/O          | None       |          24 |               0 |   24 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/gt_pcs_clk |
-+-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+---------------------------------------+
-* Clock Loads column represents the clock pin loads (pin count)
-** Non-Clock Loads column represents the non-clock pin loads (pin count)
-*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
-
-
-8. Cell Type Counts per Global Clock: Region X0Y3
+7. Cell Type Counts per Global Clock: Region X1Y1
 -------------------------------------------------
 
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        2294 |               0 | 2030 |    253 |   11 |   0 |  0 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/log_clk |
-| g2        | n/a   | BUFG/O          | None       |         230 |               0 |  230 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                |
-| g3        | n/a   | BUFG/O          | None       |          62 |               0 |    0 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | srio_rx/n_0_31_BUFG                |
+| g0        | n/a   | BUFG/O          | None       |        1201 |               0 | 1150 |     40 |   10 |   0 |  0 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/log_clk |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
 
 
-9. Cell Type Counts per Global Clock: Region X1Y3
+8. Cell Type Counts per Global Clock: Region X0Y2
+-------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |         523 |               0 | 444 |     73 |    6 |   0 |  0 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/log_clk |
+| g2        | n/a   | BUFG/O          | None       |           2 |               0 |   2 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+9. Cell Type Counts per Global Clock: Region X1Y2
 -------------------------------------------------
 
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+---------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                   |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+---------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        6111 |               0 | 6065 |     38 |    6 |   0 |  1 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/log_clk    |
-| g1        | n/a   | BUFG/O          | None       |         560 |               0 |  558 |      1 |    0 |   0 |  1 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/gt_pcs_clk |
-| g2        | n/a   | BUFG/O          | None       |          90 |               0 |   90 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                   |
-| g3        | n/a   | BUFG/O          | None       |           3 |               0 |    0 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | srio_rx/n_0_31_BUFG                   |
-| g4        | n/a   | BUFG/O          | None       |          61 |               0 |   60 |      0 |    0 |   0 |  1 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/gt_clk     |
+| g0        | n/a   | BUFG/O          | None       |        7917 |               0 | 7676 |    229 |   12 |   0 |  0 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/log_clk    |
+| g1        | n/a   | BUFG/O          | None       |         504 |               0 |  503 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/gt_pcs_clk |
+| g2        | n/a   | BUFG/O          | None       |         122 |               0 |  122 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                   |
+| g3        | n/a   | BUFG/O          | None       |          65 |               0 |    0 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | srio_rx/n_0_57_BUFG                   |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+---------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
 
 
-10. Cell Type Counts per Global Clock: Region X0Y6
+10. Cell Type Counts per Global Clock: Region X1Y3
+--------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+---------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                   |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+---------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |         387 |               0 | 385 |      0 |    0 |   0 |  1 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/log_clk    |
+| g1        | n/a   | BUFG/O          | None       |          80 |               0 |  79 |      0 |    0 |   0 |  1 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/gt_pcs_clk |
+| g2        | n/a   | BUFG/O          | None       |         196 |               0 | 196 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/itck_i                   |
+| g4        | n/a   | BUFG/O          | None       |          61 |               0 |  60 |      0 |    0 |   0 |  1 |    0 |   0 |       0 | srio_ip/inst/srio_clk_inst/gt_clk     |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+---------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+11. Cell Type Counts per Global Clock: Region X0Y6
 --------------------------------------------------
 
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+----------------------------------------+
@@ -194,13 +208,13 @@ Table of Contents
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
 
 
-11. Load Cell Placement Summary for Global Clock g0
+12. Load Cell Placement Summary for Global Clock g0
 ---------------------------------------------------
 
 +-----------+-----------------+-------------------+---------+-------------+----------------+----------+-------------+----------+----------------+----------+------------------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock   | Period (ns) | Waveform (ns)  | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                |
 +-----------+-----------------+-------------------+---------+-------------+----------------+----------+-------------+----------+----------------+----------+------------------------------------+
-| g0        | BUFG/O          | n/a               | clkout1 |      25.600 | {0.000 12.800} |          |        9983 |        0 |              0 |        2 | srio_ip/inst/srio_clk_inst/log_clk |
+| g0        | BUFG/O          | n/a               | clkout1 |      25.600 | {0.000 12.800} |          |       10064 |        0 |              0 |        2 | srio_ip/inst/srio_clk_inst/log_clk |
 +-----------+-----------------+-------------------+---------+-------------+----------------+----------+-------------+----------+----------------+----------+------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -208,20 +222,20 @@ Table of Contents
 **** GT Loads column represents load cell count of GT types
 
 
-+----+-------+-------+
-|    | X0    | X1    |
-+----+-------+-------+
-| Y6 |     0 |     0 |
-| Y5 |     0 |     0 |
-| Y4 |     0 |     0 |
-| Y3 |  2294 |  6111 |
-| Y2 |   226 |  1354 |
-| Y1 |     0 |     0 |
-| Y0 |     0 |     0 |
-+----+-------+-------+
++----+------+-------+
+|    | X0   | X1    |
++----+------+-------+
+| Y6 |    0 |     0 |
+| Y5 |    0 |     0 |
+| Y4 |    0 |     0 |
+| Y3 |    0 |   387 |
+| Y2 |  523 |  7917 |
+| Y1 |   38 |  1201 |
+| Y0 |    0 |     0 |
++----+------+-------+
 
 
-12. Load Cell Placement Summary for Global Clock g1
+13. Load Cell Placement Summary for Global Clock g1
 ---------------------------------------------------
 
 +-----------+-----------------+-------------------+---------+-------------+---------------+----------+-------------+----------+----------------+----------+---------------------------------------+
@@ -241,14 +255,14 @@ Table of Contents
 | Y6 |  0 |    0 |
 | Y5 |  0 |    0 |
 | Y4 |  0 |    0 |
-| Y3 |  0 |  560 |
-| Y2 |  0 |   24 |
+| Y3 |  0 |   80 |
+| Y2 |  0 |  504 |
 | Y1 |  0 |    0 |
 | Y0 |  0 |    0 |
 +----+----+------+
 
 
-13. Load Cell Placement Summary for Global Clock g2
+14. Load Cell Placement Summary for Global Clock g2
 ---------------------------------------------------
 
 +-----------+-----------------+-------------------+-------------------------------------------------------------------------+-------------+----------------+----------+-------------+----------+----------------+----------+---------------------+
@@ -262,26 +276,26 @@ Table of Contents
 **** GT Loads column represents load cell count of GT types
 
 
-+----+------+-----+
-|    | X0   | X1  |
-+----+------+-----+
-| Y6 |    0 |   0 |
-| Y5 |    0 |   0 |
-| Y4 |    0 |   0 |
-| Y3 |  230 |  90 |
-| Y2 |    0 |   0 |
-| Y1 |    0 |   0 |
-| Y0 |    0 |   0 |
-+----+------+-----+
++----+----+------+
+|    | X0 | X1   |
++----+----+------+
+| Y6 |  0 |    0 |
+| Y5 |  0 |    0 |
+| Y4 |  0 |    0 |
+| Y3 |  0 |  196 |
+| Y2 |  2 |  122 |
+| Y1 |  0 |    0 |
+| Y0 |  0 |    0 |
++----+----+------+
 
 
-14. Load Cell Placement Summary for Global Clock g3
+15. Load Cell Placement Summary for Global Clock g3
 ---------------------------------------------------
 
 +-----------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+----------------+----------+---------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                 |
 +-----------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+----------------+----------+---------------------+
-| g3        | BUFG/O          | n/a               |       |             |               |          |          65 |        0 |              0 |        0 | srio_rx/n_0_31_BUFG |
+| g3        | BUFG/O          | n/a               |       |             |               |          |          65 |        0 |              0 |        0 | srio_rx/n_0_57_BUFG |
 +-----------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+----------------+----------+---------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -289,20 +303,20 @@ Table of Contents
 **** GT Loads column represents load cell count of GT types
 
 
-+----+-----+----+
-|    | X0  | X1 |
-+----+-----+----+
-| Y6 |   0 |  0 |
-| Y5 |   0 |  0 |
-| Y4 |   0 |  0 |
-| Y3 |  62 |  3 |
-| Y2 |   0 |  0 |
-| Y1 |   0 |  0 |
-| Y0 |   0 |  0 |
-+----+-----+----+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y6 |  0 |   0 |
+| Y5 |  0 |   0 |
+| Y4 |  0 |   0 |
+| Y3 |  0 |   0 |
+| Y2 |  0 |  65 |
+| Y1 |  0 |   0 |
+| Y0 |  0 |   0 |
++----+----+-----+
 
 
-15. Load Cell Placement Summary for Global Clock g4
+16. Load Cell Placement Summary for Global Clock g4
 ---------------------------------------------------
 
 +-----------+-----------------+-------------------+---------+-------------+---------------+----------+-------------+----------+----------------+----------+-----------------------------------+
@@ -329,7 +343,7 @@ Table of Contents
 +----+----+-----+
 
 
-16. Load Cell Placement Summary for Global Clock g5
+17. Load Cell Placement Summary for Global Clock g5
 ---------------------------------------------------
 
 +-----------+-----------------+-------------------+----------+-------------+---------------+----------+-------------+----------+----------------+----------+----------------------------------------+
@@ -358,7 +372,7 @@ Table of Contents
 
 
 # Location of BUFG Primitives 
-set_property LOC BUFGCTRL_X0Y21 [get_cells srio_rx/n_0_31_BUFG_inst]
+set_property LOC BUFGCTRL_X0Y21 [get_cells srio_rx/n_0_57_BUFG_inst]
 set_property LOC BUFGCTRL_X0Y0 [get_cells srio_ip/inst/srio_clk_inst/refclk_bufg_inst]
 set_property LOC BUFGCTRL_X0Y30 [get_cells srio_ip/inst/srio_clk_inst/log_clk_bufg_inst]
 set_property LOC BUFGCTRL_X0Y29 [get_cells srio_ip/inst/srio_clk_inst/gt_pcs_clk_bufg_inst]
@@ -371,18 +385,18 @@ set_property LOC BUFGCTRL_X0Y16 [get_cells dbg_hub/inst/SWITCH_N_EXT_BSCAN.u_buf
 set_property LOC IPAD_X1Y9 [get_ports sys_clkn]
 set_property LOC IPAD_X1Y8 [get_ports sys_clkp]
 
-# Clock net "srio_rx/n_0_31_BUFG" driven by instance "srio_rx/n_0_31_BUFG_inst" located at site "BUFGCTRL_X0Y21"
+# Clock net "srio_rx/n_0_57_BUFG" driven by instance "srio_rx/n_0_57_BUFG_inst" located at site "BUFGCTRL_X0Y21"
 #startgroup
-create_pblock {CLKAG_srio_rx/n_0_31_BUFG}
-add_cells_to_pblock [get_pblocks  {CLKAG_srio_rx/n_0_31_BUFG}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="srio_rx/n_0_31_BUFG"}]]]
-resize_pblock [get_pblocks {CLKAG_srio_rx/n_0_31_BUFG}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+create_pblock {CLKAG_srio_rx/n_0_57_BUFG}
+add_cells_to_pblock [get_pblocks  {CLKAG_srio_rx/n_0_57_BUFG}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="srio_rx/n_0_57_BUFG"}]]]
+resize_pblock [get_pblocks {CLKAG_srio_rx/n_0_57_BUFG}] -add {CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup
 
 # Clock net "srio_ip/inst/srio_clk_inst/log_clk" driven by instance "srio_ip/inst/srio_clk_inst/log_clk_bufg_inst" located at site "BUFGCTRL_X0Y30"
 #startgroup
 create_pblock {CLKAG_srio_ip/inst/srio_clk_inst/log_clk}
 add_cells_to_pblock [get_pblocks  {CLKAG_srio_ip/inst/srio_clk_inst/log_clk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="srio_ip/inst/srio_clk_inst/log_clk"}]]]
-resize_pblock [get_pblocks {CLKAG_srio_ip/inst/srio_clk_inst/log_clk}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_srio_ip/inst/srio_clk_inst/log_clk}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
 
 # Clock net "srio_ip/inst/srio_clk_inst/gt_pcs_clk" driven by instance "srio_ip/inst/srio_clk_inst/gt_pcs_clk_bufg_inst" located at site "BUFGCTRL_X0Y29"
@@ -403,5 +417,5 @@ resize_pblock [get_pblocks {CLKAG_srio_ip/inst/srio_clk_inst/gt_clk}] -add {CLOC
 #startgroup
 create_pblock {CLKAG_dbg_hub/inst/itck_i}
 add_cells_to_pblock [get_pblocks  {CLKAG_dbg_hub/inst/itck_i}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="dbg_hub/inst/itck_i"}]]]
-resize_pblock [get_pblocks {CLKAG_dbg_hub/inst/itck_i}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_dbg_hub/inst/itck_i}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup

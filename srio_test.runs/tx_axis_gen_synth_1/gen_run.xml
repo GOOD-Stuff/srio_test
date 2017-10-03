@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="tx_axis_gen_synth_1" LaunchPart="xc7k325tffg676-1" LaunchTime="1506100242">
-  <File Type="RDS-PROPCONSTRS" Name="tx_axis_gen_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="tx_axis_gen.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="tx_axis_gen_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="tx_axis_gen.vds"/>
   <File Type="RDS-UTIL" Name="tx_axis_gen_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="tx_axis_gen_utilization_synth.pb"/>

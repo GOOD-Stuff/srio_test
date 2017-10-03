@@ -93,18 +93,14 @@ module srio_response(
     wire [1:0]  request_prio;
     wire [33:0] request_addr;
     // outgoing packet fields
-    wire [7:0]  response_tid;
-    wire [3:0]  response_ftype;
-    wire [3:0]  response_ttype;
     wire [7:0]  response_size;
     wire [1:0]  response_prio;
-    reg  [63:0] response_data;
-    
+
     reg         response_tlast = 1'b0;
     
     reg  [8:0]  current_bit_cnt;
     reg  [7:0]  srcTID;  
-    reg         first_bit;    
+    reg         first_bit;   // first byte (header) in request packet 
     wire        end_request; // end of request packet
     reg         need_response;
     
@@ -113,9 +109,8 @@ module srio_response(
     reg  [2:0]  delay;
     
     reg  [2:0]  next_state, state;
-    // }}} End wire declarations ------------
-    
-    assign din_fifo = axis_iorx_tdata;//{ axis_iorx_tdata[31:0], axis_iorx_tdata[63:32]}; 
+    // }}} End wire declarations ------------   
+    assign din_fifo = axis_iorx_tdata;
     
     // get data from received packet
     assign request_tid   = axis_iorx_tdata[63:56];
@@ -125,27 +120,23 @@ module srio_response(
     assign request_prio  = axis_iorx_tdata[46:45] + 2'b01; 
     assign request_addr  = axis_iorx_tdata[33:0];
 
-    assign axis_iorx_tready = ( !fifo_FULL );
-    
+    assign axis_iorx_tready = ( !fifo_FULL );   
     assign axis_iotx_tkeep  = 8'hFF;
     assign axis_iotx_tuser  = { 8'h00, 8'hFF, 8'h00, 8'hCB };
-    //assign axis_iotx_tvalid = ;
     assign axis_iotx_tlast  = response_tlast;
-    //assign axis_iotx_tdata = response_data;
 
     assign response_prio = ( request_prio == 2'h03 ) ? ( 2'h03 ):
                                                        ( request_prio + 2'b01 ); // the priority of the answer should be greater by one
-    assign response_size = request_size; 
-    
-    assign wr_fifo = treq_advance_condition && d_treq_advance_condition && ( !fifo_FULL ); 
- //   assign rd_fifo = ( axis_iotx_tready || axis_iotx_tvalid ) && ( request_ftype == NREAD ) && ( !fifo_EMPTY );
-    
+    assign response_size = request_size;     
+    assign wr_fifo = treq_advance_condition && d_treq_advance_condition && ( !fifo_FULL );         
     assign end_request = d_treq_advance_condition && first_bit;
     
     always @( posedge log_clk or posedge log_rst ) begin
         if( log_rst ) begin
             d_rd_fifo    <= 1'b0;
             dd_rd_fifo   <= 1'b0;
+            ddd_rd_fifo  <= 1'b0;
+            dddd_rd_fifo <= 1'b0;
         end else begin
             d_rd_fifo    <= rd_fifo;
             dd_rd_fifo   <= d_rd_fifo;
@@ -198,15 +189,6 @@ module srio_response(
             current_bit_cnt <= current_bit_cnt + 4'h08;                
     end
     
-    /*always @( posedge log_clk or posedge log_rst ) begin
-        if( log_rst )
-            delay <= 2'h00;
-        else if( head_sent )
-            delay <= delay + 1'h01;
-        else
-            delay <= 2'h00;
-    end*/
-    
     // find the last bytes of packet    
     always @( * ) begin//posedge log_clk or posedge log_rst ) begin
         if( log_rst ) 
@@ -234,30 +216,7 @@ module srio_response(
         else if( axis_iotx_tlast && axis_iotx_tvalid ) 
             srcTID <= srcTID + 1'h01;
     end
-    
-    // TODO: !!!
-    // set response packet
-    /*
-    always @( posedge log_clk ) begin
-        if( log_rst ) begin
-            srcTID                <= 8'h00;
-            head_sent             <= 1'b0;
-            axis_iotx_tdata       <= 64'h00000;     
-            first_packet_transfer <= 1'b0;
-            //axis_iotx_tlast <= 1'b0;   
-        end else if( end_request && need_response ) begin // end_request
-            axis_iotx_tdata       <= { srcTID, RESP, TWDATA, 1'b0, response_prio, 1'b0, 8'h00, RESERVE, 35'h0 };
-            srcTID                <= srcTID + 1'b1;
-            head_sent             <= 1'b1;               
-        end else if( d_rd_fifo ) begin // delay[2]  
-            axis_iotx_tdata       <= dout_fifo;  
-            first_packet_transfer <= 1'b1;          
-        end else if( axis_iotx_tlast && axis_iotx_tvalid  ) begin
-            axis_iotx_tdata       <= 64'h00;
-            head_sent             <= 1'b0;        
-        end
-    end          */
-   
+       
     // {{{ FSM logic ------------
     // state register
     always @( posedge log_clk or posedge log_rst ) begin
@@ -283,9 +242,9 @@ module srio_response(
             end
             
             SEND_HD_S: begin
-                if( request_ftype == NREAD ) begin
+                if( request_ftype == NREAD ) 
                     next_state = SEND_DT_S;                    
-                end else
+                else
                     next_state = WAIT_REQ_S;                
             end
             
@@ -322,7 +281,7 @@ module srio_response(
                     only_header_sent <= 1'b1;
                 end else begin
                     rd_fifo          <= ( ( !fifo_EMPTY ) && axis_iotx_tready );                      
-                    axis_iotx_tdata  <= { 8'h00, RESP, TWDATA, 1'b0, response_prio, 
+                    axis_iotx_tdata  <= { request_tid, RESP, TWDATA, 1'b0, response_prio, 
                                                                1'b0, 8'h00, RESERVE, 35'h0 };                                      
                 end          
             end

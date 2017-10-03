@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LayoutPersistence>
-    <DockingManager frameState="6" version="7">
+    <DockingManager activeFrame="ILA_STATUS_1" frameState="6" version="7">
         <Bounds height="1062" width="1651" x="0" y="0"/>
         <DockContext autohideHeight="200" autohideWidth="200"
             available="1" canMode="15" currentDockSide="8"
@@ -10,7 +10,7 @@
             initPosition="1" initSide="4" key="VIO_PROBES_9">
             <DockPreviousState dockId="47212" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -105,7 +105,7 @@
             initPosition="1" initSide="4" key="ILA_TRIGGER_9">
             <DockPreviousState dockId="7452" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -199,7 +199,7 @@
             initPosition="1" initSide="4" key="ILA_TRIGGER_8">
             <DockPreviousState dockId="30599" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -291,7 +291,7 @@
             initIndex="0" initMode="4" initPosition="0" initSide="4" key="ILA_TRIGGER_1">
             <DockPreviousState dockId="38289" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -342,7 +342,7 @@
             initPosition="0" initSide="4" key="ILA_STATUS_3">
             <DockPreviousState dockId="50436" fcId="50627" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="7284"/>
                 <DockChild dockId="17891"/>
                 <DockChild dockId="65098"/>
@@ -409,7 +409,7 @@
             initPosition="0" initSide="4" key="ILA_STATUS_2">
             <DockPreviousState dockId="37594" fcId="50627" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="7284"/>
                 <DockChild dockId="17891"/>
                 <DockChild dockId="65098"/>
@@ -474,7 +474,7 @@
             initIndex="0" initMode="4" initPosition="0" initSide="4" key="ILA_STATUS_1">
             <DockPreviousState dockId="7284" fcId="50627" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="7284"/>
                 <DockChild dockId="17891"/>
                 <DockChild dockId="65098"/>
@@ -511,7 +511,7 @@
             initPosition="1" initSide="4" key="ILA_TRIGGER_3">
             <DockPreviousState dockId="4404" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -603,7 +603,7 @@
             initPosition="1" initSide="4" key="ILA_TRIGGER_2">
             <DockPreviousState dockId="4514" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -694,7 +694,7 @@
             initPosition="1" initSide="4" key="ILA_TRIGGER_5">
             <DockPreviousState dockId="15764" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -784,7 +784,7 @@
             initPosition="1" initSide="4" key="ILA_TRIGGER_4">
             <DockPreviousState dockId="35026" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -873,7 +873,7 @@
             initPosition="1" initSide="4" key="ILA_TRIGGER_7">
             <DockPreviousState dockId="11709" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -961,7 +961,7 @@
             initPosition="1" initSide="4" key="ILA_TRIGGER_6">
             <DockPreviousState dockId="34604" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -1048,7 +1048,7 @@
             initPosition="0" initSide="4" key="ILA_STATUS_9">
             <DockPreviousState dockId="53331" fcId="50627" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="7284"/>
                 <DockChild dockId="17891"/>
                 <DockChild dockId="65098"/>
@@ -1113,7 +1113,7 @@
             initPosition="0" initSide="4" key="ILA_STATUS_8">
             <DockPreviousState dockId="14829" fcId="50627" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="7284"/>
                 <DockChild dockId="17891"/>
                 <DockChild dockId="65098"/>
@@ -1177,7 +1177,7 @@
             initPosition="0" initSide="4" key="ILA_STATUS_7">
             <DockPreviousState dockId="62490" fcId="50627" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="7284"/>
                 <DockChild dockId="17891"/>
                 <DockChild dockId="65098"/>
@@ -1240,7 +1240,7 @@
             initPosition="0" initSide="4" key="ILA_STATUS_6">
             <DockPreviousState dockId="1953" fcId="50627" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="7284"/>
                 <DockChild dockId="17891"/>
                 <DockChild dockId="65098"/>
@@ -1302,7 +1302,7 @@
             initPosition="0" initSide="4" key="ILA_STATUS_5">
             <DockPreviousState dockId="24379" fcId="50627" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="7284"/>
                 <DockChild dockId="17891"/>
                 <DockChild dockId="65098"/>
@@ -1363,7 +1363,7 @@
             initPosition="1" initSide="4" key="ILA_WAVE_10">
             <DockPreviousState dockId="629" fcId="57739" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="14663"/>
                 <DockChild dockId="19206"/>
                 <DockChild dockId="2512"/>
@@ -1438,7 +1438,7 @@
             initPosition="0" initSide="4" key="ILA_STATUS_4">
             <DockPreviousState dockId="65098" fcId="50627" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="7284"/>
                 <DockChild dockId="17891"/>
                 <DockChild dockId="65098"/>
@@ -1498,7 +1498,7 @@
             initPosition="0" initSide="4" key="ILA_STATUS_10">
             <DockPreviousState dockId="17891" fcId="50627" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="7284"/>
                 <DockChild dockId="17891"/>
                 <DockChild dockId="65098"/>
@@ -1557,7 +1557,7 @@
             initPosition="1" initSide="4" key="ILA_SETTINGS_6">
             <DockPreviousState dockId="59434" fcId="1687" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="59434"/>
                 <DockChild dockId="38932"/>
                 <DockChild dockId="59546"/>
@@ -1600,7 +1600,7 @@
             initPosition="1" initSide="4" key="ILA_SETTINGS_5">
             <DockPreviousState dockId="38932" fcId="1687" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="59434"/>
                 <DockChild dockId="38932"/>
                 <DockChild dockId="59546"/>
@@ -1642,7 +1642,7 @@
             initPosition="1" initSide="4" key="ILA_SETTINGS_4">
             <DockPreviousState dockId="59546" fcId="1687" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="59434"/>
                 <DockChild dockId="38932"/>
                 <DockChild dockId="59546"/>
@@ -1683,7 +1683,7 @@
             initPosition="1" initSide="4" key="ILA_SETTINGS_3">
             <DockPreviousState dockId="6430" fcId="1687" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="59434"/>
                 <DockChild dockId="38932"/>
                 <DockChild dockId="59546"/>
@@ -1723,7 +1723,7 @@
             initPosition="1" initSide="4" key="ILA_SETTINGS_9">
             <DockPreviousState dockId="21201" fcId="1687" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="59434"/>
                 <DockChild dockId="38932"/>
                 <DockChild dockId="59546"/>
@@ -1762,7 +1762,7 @@
             initPosition="1" initSide="4" key="ILA_SETTINGS_8">
             <DockPreviousState dockId="42496" fcId="1687" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="59434"/>
                 <DockChild dockId="38932"/>
                 <DockChild dockId="59546"/>
@@ -1800,7 +1800,7 @@
             initPosition="1" initSide="4" key="ILA_SETTINGS_7">
             <DockPreviousState dockId="3494" fcId="1687" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="59434"/>
                 <DockChild dockId="38932"/>
                 <DockChild dockId="59546"/>
@@ -1837,7 +1837,7 @@
             initPosition="1" initSide="4" key="VIO_PROBES_3">
             <DockPreviousState dockId="40741" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -1923,7 +1923,7 @@
             initPosition="1" initSide="4" key="VIO_PROBES_4">
             <DockPreviousState dockId="49051" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -2007,7 +2007,7 @@
             initIndex="0" initMode="4" initPosition="0" initSide="4" key="VIO_PROBES_1">
             <DockPreviousState dockId="1471" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -2091,7 +2091,7 @@
             initPosition="1" initSide="4" key="VIO_PROBES_2">
             <DockPreviousState dockId="4065" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -2174,7 +2174,7 @@
             initPosition="1" initSide="4" key="VIO_PROBES_10">
             <DockPreviousState dockId="47222" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -2256,7 +2256,7 @@
             initPosition="1" initSide="4" key="ILA_SETTINGS_2">
             <DockPreviousState dockId="17314" fcId="1687" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="59434"/>
                 <DockChild dockId="38932"/>
                 <DockChild dockId="59546"/>
@@ -2292,7 +2292,7 @@
             initPosition="1" initSide="4" key="VIO_PROBES_7">
             <DockPreviousState dockId="36279" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -2378,7 +2378,7 @@
             </DockPreviousState>
             <DockPreviousState dockId="34543" fcId="1687" index="0"
                 mode="4" rootId="2" side="8" type="autohide">
-                <Bounds height="885" width="3579" x="0" y="0"/>
+                <Bounds height="884" width="1319" x="0" y="0"/>
                 <DockChild dockId="34543"/>
                 <DockParentState ccId="7593" dockId="1687" orientation="1">
                     <DockChild dockId="1687"/>
@@ -2395,7 +2395,7 @@
             initPosition="1" initSide="4" key="VIO_PROBES_8">
             <DockPreviousState dockId="53828" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -2475,7 +2475,7 @@
             initPosition="1" initSide="4" key="VIO_PROBES_5">
             <DockPreviousState dockId="12483" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -2554,7 +2554,7 @@
             initPosition="1" initSide="4" key="VIO_PROBES_6">
             <DockPreviousState dockId="23933" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -2632,7 +2632,7 @@
             initPosition="1" initSide="4" key="ILA_WAVE_5">
             <DockPreviousState dockId="42114" fcId="57739" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="14663"/>
                 <DockChild dockId="19206"/>
                 <DockChild dockId="2512"/>
@@ -2706,7 +2706,7 @@
             initPosition="1" initSide="4" key="ILA_CAPTURE_9">
             <DockPreviousState dockId="24577" fcId="62308" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="53452"/>
                 <DockChild dockId="7680"/>
                 <DockChild dockId="25866"/>
@@ -2781,7 +2781,7 @@
             initPosition="1" initSide="4" key="ILA_WAVE_6">
             <DockPreviousState dockId="43672" fcId="57739" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="14663"/>
                 <DockChild dockId="19206"/>
                 <DockChild dockId="2512"/>
@@ -2854,7 +2854,7 @@
             initPosition="1" initSide="4" key="ILA_CAPTURE_8">
             <DockPreviousState dockId="17567" fcId="62308" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="53452"/>
                 <DockChild dockId="7680"/>
                 <DockChild dockId="25866"/>
@@ -2928,7 +2928,7 @@
             initPosition="1" initSide="4" key="ILA_WAVE_7">
             <DockPreviousState dockId="1289" fcId="57739" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="14663"/>
                 <DockChild dockId="19206"/>
                 <DockChild dockId="2512"/>
@@ -3000,7 +3000,7 @@
             initPosition="1" initSide="4" key="ILA_CAPTURE_7">
             <DockPreviousState dockId="7263" fcId="62308" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="53452"/>
                 <DockChild dockId="7680"/>
                 <DockChild dockId="25866"/>
@@ -3073,7 +3073,7 @@
             initPosition="1" initSide="4" key="ILA_CAPTURE_6">
             <DockPreviousState dockId="12833" fcId="62308" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="53452"/>
                 <DockChild dockId="7680"/>
                 <DockChild dockId="25866"/>
@@ -3145,7 +3145,7 @@
             initPosition="1" initSide="4" key="ILA_WAVE_8">
             <DockPreviousState dockId="32836" fcId="57739" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="14663"/>
                 <DockChild dockId="19206"/>
                 <DockChild dockId="2512"/>
@@ -3216,7 +3216,7 @@
             initPosition="1" initSide="4" key="ILA_CAPTURE_5">
             <DockPreviousState dockId="22316" fcId="62308" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="53452"/>
                 <DockChild dockId="7680"/>
                 <DockChild dockId="25866"/>
@@ -3287,7 +3287,7 @@
             initPosition="1" initSide="4" key="ILA_WAVE_9">
             <DockPreviousState dockId="9249" fcId="57739" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="14663"/>
                 <DockChild dockId="19206"/>
                 <DockChild dockId="2512"/>
@@ -3357,7 +3357,7 @@
             initPosition="1" initSide="4" key="ILA_CAPTURE_4">
             <DockPreviousState dockId="44232" fcId="62308" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="53452"/>
                 <DockChild dockId="7680"/>
                 <DockChild dockId="25866"/>
@@ -3427,7 +3427,7 @@
             initPosition="1" initSide="4" key="ILA_CAPTURE_3">
             <DockPreviousState dockId="4905" fcId="62308" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="53452"/>
                 <DockChild dockId="7680"/>
                 <DockChild dockId="25866"/>
@@ -3496,7 +3496,7 @@
             initPosition="1" initSide="4" key="ILA_CAPTURE_2">
             <DockPreviousState dockId="25866" fcId="62308" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="53452"/>
                 <DockChild dockId="7680"/>
                 <DockChild dockId="25866"/>
@@ -3563,7 +3563,7 @@
             initIndex="0" initMode="4" initPosition="0" initSide="4" key="ILA_CAPTURE_1">
             <DockPreviousState dockId="53452" fcId="62308" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="53452"/>
                 <DockChild dockId="7680"/>
                 <DockChild dockId="25866"/>
@@ -3604,7 +3604,7 @@
             initPosition="1" initSide="4" key="ILA_SETTINGS_10">
             <DockPreviousState dockId="2677" fcId="1687" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="59434"/>
                 <DockChild dockId="38932"/>
                 <DockChild dockId="59546"/>
@@ -3639,7 +3639,7 @@
             initPosition="1" initSide="4" key="ILA_TRIGGER_10">
             <DockPreviousState dockId="19680" fcId="24295" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="38289"/>
                 <DockChild dockId="19680"/>
                 <DockChild dockId="23933"/>
@@ -3714,7 +3714,7 @@
             initIndex="0" initMode="4" initPosition="0" initSide="4" key="ILA_WAVE_1">
             <DockPreviousState dockId="14663" fcId="57739" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="14663"/>
                 <DockChild dockId="19206"/>
                 <DockChild dockId="2512"/>
@@ -3755,7 +3755,7 @@
             initPosition="1" initSide="4" key="ILA_WAVE_2">
             <DockPreviousState dockId="42213" fcId="57739" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="14663"/>
                 <DockChild dockId="19206"/>
                 <DockChild dockId="2512"/>
@@ -3823,7 +3823,7 @@
             initPosition="1" initSide="4" key="ILA_WAVE_3">
             <DockPreviousState dockId="2512" fcId="57739" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="14663"/>
                 <DockChild dockId="19206"/>
                 <DockChild dockId="2512"/>
@@ -3890,7 +3890,7 @@
             initPosition="1" initSide="4" key="ILA_WAVE_4">
             <DockPreviousState dockId="19206" fcId="57739" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="14663"/>
                 <DockChild dockId="19206"/>
                 <DockChild dockId="2512"/>
@@ -3956,7 +3956,7 @@
             initPosition="0" initSide="4" key="XADC_PLOT_10">
             <DockPreviousState dockId="42372" fcId="9773" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="42372"/>
                 <DockChild dockId="38888"/>
                 <DockChild dockId="22379"/>
@@ -4030,7 +4030,7 @@
             initPosition="0" initSide="4" key="XADC_PLOT_6">
             <DockPreviousState dockId="38888" fcId="9773" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="42372"/>
                 <DockChild dockId="38888"/>
                 <DockChild dockId="22379"/>
@@ -4103,7 +4103,7 @@
             initPosition="0" initSide="4" key="XADC_PLOT_5">
             <DockPreviousState dockId="22379" fcId="9773" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="42372"/>
                 <DockChild dockId="38888"/>
                 <DockChild dockId="22379"/>
@@ -4175,7 +4175,7 @@
             initPosition="1" initSide="4" key="ILA_CAPTURE_10">
             <DockPreviousState dockId="7680" fcId="62308" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="53452"/>
                 <DockChild dockId="7680"/>
                 <DockChild dockId="25866"/>
@@ -4241,7 +4241,7 @@
             initPosition="0" initSide="4" key="XADC_PLOT_4">
             <DockPreviousState dockId="24713" fcId="9773" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="42372"/>
                 <DockChild dockId="38888"/>
                 <DockChild dockId="22379"/>
@@ -4312,7 +4312,7 @@
             initPosition="0" initSide="4" key="XADC_PLOT_3">
             <DockPreviousState dockId="305" fcId="9773" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="42372"/>
                 <DockChild dockId="38888"/>
                 <DockChild dockId="22379"/>
@@ -4382,7 +4382,7 @@
             initPosition="0" initSide="4" key="XADC_PLOT_2">
             <DockPreviousState dockId="21966" fcId="9773" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="42372"/>
                 <DockChild dockId="38888"/>
                 <DockChild dockId="22379"/>
@@ -4451,7 +4451,7 @@
             initPosition="0" initSide="4" key="XADC_PLOT_1">
             <DockPreviousState dockId="57301" fcId="9773" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="42372"/>
                 <DockChild dockId="38888"/>
                 <DockChild dockId="22379"/>
@@ -4519,7 +4519,7 @@
             initPosition="0" initSide="4" key="XADC_PLOT_9">
             <DockPreviousState dockId="56876" fcId="9773" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="42372"/>
                 <DockChild dockId="38888"/>
                 <DockChild dockId="22379"/>
@@ -4586,7 +4586,7 @@
             initPosition="0" initSide="4" key="XADC_PLOT_8">
             <DockPreviousState dockId="62027" fcId="9773" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="42372"/>
                 <DockChild dockId="38888"/>
                 <DockChild dockId="22379"/>
@@ -4652,7 +4652,7 @@
             initPosition="0" initSide="4" key="XADC_PLOT_7">
             <DockPreviousState dockId="1590" fcId="9773" index="0"
                 mode="4" rootId="2" side="8" type="close">
-                <Bounds height="671" width="3555" x="0" y="0"/>
+                <Bounds height="884" width="1295" x="0" y="0"/>
                 <DockChild dockId="42372"/>
                 <DockChild dockId="38888"/>
                 <DockChild dockId="22379"/>

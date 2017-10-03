@@ -129,27 +129,7 @@ module srio_example_test(
         .probe7 (iorx_tvalid)
     );
   */  
-    
-    
-    /*
-  dbg_ila dbg_ila_register(
-      .clk(log_clk), // input wire clk
-  
-  
-  //    .probe0(dbg_s_axis_tdata) // input wire [63:0] probe0
-          .probe0 (iotx_tdata),
-          .probe1 (iorx_tdata),
-          .probe2 (iotx_tuser),
-          .probe3 (iorx_tuser),
-          .probe4 (iotx_tready),
-          .probe5 (iorx_tready),
-          .probe6 (iotx_tvalid),
-          .probe7 (iorx_tvalid),
-          .probe8 (iotx_tlast),
-          .probe9 (iorx_tlast)
-  );*/
-
-    
+      
     /*
         TODO: This module must to accept SRIO packet from DSP side, 
         save data (which was in packet) in DDR (on current time in FIFO),
@@ -157,23 +137,7 @@ module srio_example_test(
         In this part we accept packet by SRIO IP (srio_ip), 
         transfer data into srio_ 
     */
-    
-    /*response_generator generator(
-       .CLK                     ( log_clk   ), 
-       .RESET                   ( log_rst   ),
-       
-       .AXIS_IORX_TDATA         ( iorx_tdata  ),
-       .AXIS_IORX_TVALID        ( iorx_tvalid ),
-       .AXIS_IORX_TREADY        ( iorx_tready ),
-       .AXIS_IORX_TLAST         ( iorx_tlast  ),
-       
-       .AXIS_IOTX_TDATA         ( iotx_tdata  ),
-       .AXIS_IOTX_TVALID        ( iotx_tvalid ),
-       .AXIS_IOTX_TREADY        ( iotx_tready ),
-       .AXIS_IOTX_TLAST         ( iotx_tlast  ),
-       .AXIS_IOTX_TUSER         ( iotx_tuser  )
-    );*/
-              
+                  
     srio_response srio_rx(
         .log_clk            ( log_clk     ),
         .log_rst            ( log_rst     ),
@@ -198,33 +162,7 @@ module srio_example_test(
         .axis_iotx_tuser    ( iotx_tuser  ),
         .axis_iotx_tready   ( iotx_tready )      
     );
-    
-    /*srio_request srio_tx(
-        .log_clk            (log_clk),
-        .log_rst            (log_rst),
-    
-        .dst_id             (8'hAB),
-        .src_id             (deviceid),        
         
-        // Regs with request data (from DSP to FPGA)
-        .axis_iorx_tvalid   (iorx_tvalid),
-        .axis_iorx_tready   (iorx_tready),
-        .axis_iorx_tlast    (iorx_tlast),
-        .axis_iorx_tdata    (iorx_tdata),
-        .axis_iorx_tkeep    (iorx_tkeep),
-        .axis_iorx_tuser    (iorx_tvalid),
-        
-        // Regs with response data (from FPGA to DSP)
-        .axis_iotx_tvalid   (iotx_tvalid),
-        .axis_iotx_tlast    (iotx_tlast),
-        .axis_iotx_tdata    (iotx_tdata),
-        .axis_iotx_tkeep    (iotx_tkeep),
-        .axis_iotx_tuser    (iotx_tuser),
-        .axis_iotx_tready   (iotx_tready),
-        
-        .fifo_rd_ready      (fifo_rd_tranz)
-    );*/
-    
     srio_gen2_0 srio_ip(
         .sys_clkp                (sys_clkp),
         .sys_clkn                (sys_clkn),

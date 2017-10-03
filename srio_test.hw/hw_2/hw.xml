@@ -49,13 +49,14 @@
     <Object name="srio_rx/din_fifo_1[63:0]" gui_info="Trigger Setup=0"/>
     <Object name="srio_rx/dout_fifo[63:0]" gui_info=""/>
     <Object name="srio_rx/fifo_EMPTY" gui_info=""/>
-    <Object name="srio_rx/fifo_FULL" gui_info="Trigger Setup=0"/>
+    <Object name="srio_rx/fifo_FULL" gui_info=""/>
     <Object name="srio_rx/first_packet_transfer" gui_info="Trigger Setup=1"/>
     <Object name="srio_rx/need_a_response" gui_info="Trigger Setup=0"/>
     <Object name="srio_rx/rd_fifo" gui_info=""/>
     <Object name="srio_rx/request_ftype[3:0]" gui_info=""/>
     <Object name="srio_rx/request_size[7:0]" gui_info=""/>
     <Object name="srio_rx/request_tid[7:0]" gui_info=""/>
+    <Object name="srio_rx/treq_advance_condition" gui_info=""/>
     <Object name="srio_rx/wr_fifo" gui_info=""/>
     <Object name="srio_tx/din_fifo[63:0]" gui_info="Trigger Setup=0"/>
     <Object name="srio_tx/dout_fifo[63:0]" gui_info="Trigger Setup=1"/>
@@ -1453,7 +1454,7 @@
         <net name="srio_rx/current_bit_cnt[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
@@ -1467,6 +1468,31 @@
         <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
       </probeOptions>
       <nets>
+        <net name="srio_rx/current_bit_cnt[7]"/>
+        <net name="srio_rx/current_bit_cnt[6]"/>
+        <net name="srio_rx/current_bit_cnt[5]"/>
+        <net name="srio_rx/current_bit_cnt[4]"/>
+        <net name="srio_rx/current_bit_cnt[3]"/>
+        <net name="srio_rx/current_bit_cnt[2]"/>
+        <net name="srio_rx/current_bit_cnt[1]"/>
+        <net name="srio_rx/current_bit_cnt[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq9&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq9&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe19[8:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq9&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/current_bit_cnt[8]"/>
         <net name="srio_rx/current_bit_cnt[7]"/>
         <net name="srio_rx/current_bit_cnt[6]"/>
         <net name="srio_rx/current_bit_cnt[5]"/>
@@ -2055,15 +2081,15 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
-        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="MAP" value="probe25[0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
       </probeOptions>
       <nets>
         <net name="srio_rx/fifo_FULL"/>
@@ -2188,7 +2214,7 @@
         <net name="srio_rx/need_response"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq3&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq3&apos;hX"/>
