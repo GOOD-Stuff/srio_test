@@ -131,7 +131,11 @@ COMPONENT srio_gen2_0
     srio_txn0 : OUT STD_LOGIC;
     srio_txp0 : OUT STD_LOGIC;
     srio_rxn0 : IN STD_LOGIC;
-    srio_rxp0 : IN STD_LOGIC
+    srio_rxp0 : IN STD_LOGIC;
+    srio_txn1 : OUT STD_LOGIC;
+    srio_txp1 : OUT STD_LOGIC;
+    srio_rxn1 : IN STD_LOGIC;
+    srio_rxp1 : IN STD_LOGIC
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -219,7 +223,11 @@ your_instance_name : srio_gen2_0
     srio_txn0 => srio_txn0,
     srio_txp0 => srio_txp0,
     srio_rxn0 => srio_rxn0,
-    srio_rxp0 => srio_rxp0
+    srio_rxp0 => srio_rxp0,
+    srio_txn1 => srio_txn1,
+    srio_txp1 => srio_txp1,
+    srio_rxn1 => srio_rxn1,
+    srio_rxp1 => srio_rxp1
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
 

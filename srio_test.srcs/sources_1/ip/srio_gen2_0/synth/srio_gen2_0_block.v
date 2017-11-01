@@ -113,7 +113,7 @@ module srio_gen2_0_block
     parameter C_WM1                     = ( 2) ,
     parameter C_WM2                     = ( 1) ,
     parameter C_IDLE2                   = ( 0) ,
-    parameter C_LINK_WIDTH              = ( 1) ,
+    parameter C_LINK_WIDTH              = ( 2) ,
     parameter C_SIM_TRAIN               = ( 0) ,
     parameter C_IDLE1                   = ( 1) ,
     parameter C_SCRAM                   = ( 0) ,
@@ -180,9 +180,13 @@ module srio_gen2_0_block
     // Serial IO Interface
     input             srio_rxn0,               // Serial Receive Data
     input             srio_rxp0,               // Serial Receive Data
+    input             srio_rxn1,               // Serial Receive Data
+    input             srio_rxp1,               // Serial Receive Data
 
     output            srio_txn0,               // Serial Transmit Data
     output            srio_txp0,               // Serial Transmit Data
+    output            srio_txn1,               // Serial Transmit Data
+    output            srio_txp1,               // Serial Transmit Data
 
     // LOG User I/O Interface
     input             s_axis_iotx_tvalid,             // Indicates Valid Input on the Request Channel
@@ -272,7 +276,7 @@ module srio_gen2_0_block
 
   //  local parameters -----------------
 
-  localparam LINK_WIDTH = 1;
+  localparam LINK_WIDTH = 2;
 
   //  End local parameters -------------
 
@@ -862,7 +866,7 @@ module srio_gen2_0_block
 
 //------------------------------------------------------------------------------
   //  GT WRAPPER instantiation -----------------
-  srio_gt_wrapper_srio_gen2_0_k7_1x
+  srio_gt_wrapper_srio_gen2_0_k7_2x
     #(.TCQ                        (TCQ),
       .LINK_WIDTH                 (LINK_WIDTH))
     srio_gt_wrapper_inst
@@ -884,39 +888,44 @@ module srio_gen2_0_block
     .srio_rxn0                   (srio_rxn0    ),
     .srio_rxp0                   (srio_rxp0    ),
 
+      .srio_rxn1                 (srio_rxn1),
+      .srio_rxp1                 (srio_rxp1),
       .srio_txn0                 (srio_txn0),
       .srio_txp0                 (srio_txp0),
+      .srio_txn1                 (srio_txn1),
+      .srio_txp1                 (srio_txp1),
     //--------------------------------------------------------------------------1
     //--------------------------------------------------------------------------2
     //-------------newly added signals as per gt interface requirements for K7 -
     //-------------when transceiver debug option is disabled, these signals are tied to defaults
     .gt_drpdo_out               (),
     .gt_drprdy_out              (),
-    .gt_drpaddr_in              (9'b0),
-    .gt_drpdi_in                (16'b0),
-    .gt_drpen_in                (1'b0),
-    .gt_drpwe_in                (1'b0),
+    .gt_drpaddr_in              (18'b0),
+    .gt_drpdi_in                (32'b0),
+    .gt_drpen_in                (2'b0),
+    .gt_drpwe_in                (2'b0),
 
-    .gt_txpmareset_in           (1'b0),
-    .gt_rxpmareset_in           (1'b0),
-    .gt_txpcsreset_in           (1'b0),
-    .gt_rxpcsreset_in           (1'b0),
-    .gt_eyescanreset_in         (1'b0),
-    .gt_eyescantrigger_in       (1'b0),
+    .gt_txpmareset_in           (2'b0),
+    .gt_rxpmareset_in           (2'b0),
+    .gt_txpcsreset_in           (2'b0),
+    .gt_rxpcsreset_in           (2'b0),
+    .gt_eyescanreset_in         (2'b0),
+    .gt_eyescantrigger_in       (2'b0),
     .gt_eyescandataerror_out    (),
-    .gt_loopback_in             (3'b0),
-    .gt_rxpolarity_in           (1'b0),
-    .gt_txpolarity_in           (1'b0),
-    .gt_rxlpmen_in              (1'b1),
-    .gt_txprecursor_in          (5'b0),
-    .gt_txpostcursor_in         (5'b0),
+    .gt_loopback_in             (6'b0),
+    .gt_rxpolarity_in           (2'b0),
+    .gt_txpolarity_in           (2'b0),
+    .gt_rxlpmen_in              (2'b11),
+    .gt_txprecursor_in          (10'b0),
+    .gt_txpostcursor_in         (10'b0),
     .gt0_txdiffctrl_in          (4'b1000),
-    .gt_txprbsforceerr_in       (1'b0),
-    .gt_txprbssel_in            (3'b0),
-    .gt_rxprbssel_in            (3'b0),
-    .gt_rxprbscntreset_in       (1'b0),
-    .gt_rxcdrhold_in            (1'b0),
-    .gt_rxdfelpmreset_in        (1'b0),
+    .gt1_txdiffctrl_in          (4'b1000),
+    .gt_txprbsforceerr_in       (2'b0),
+    .gt_txprbssel_in            (6'b0),
+    .gt_rxprbssel_in            (6'b0),
+    .gt_rxprbscntreset_in       (2'b0),
+    .gt_rxcdrhold_in            (2'b0),
+    .gt_rxdfelpmreset_in        (2'b0),
     .gt_rxprbserr_out           (),
     .gt_rxcommadet_out          (),
     .gt_dmonitorout_out         (),

@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+//`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -23,14 +23,13 @@
 module srio_response(
     input             log_clk,
     input             log_rst,
-
-    input      [15:0] dst_id,
+    
     input      [15:0] src_id,
     input             id_override,
     
     // Regs with request data (from DSP to FPGA)
     input             axis_iorx_tvalid,
-    output reg        axis_iorx_tready,
+    output            axis_iorx_tready,
     input             axis_iorx_tlast,
     input      [63:0] axis_iorx_tdata,
     input      [7:0]  axis_iorx_tkeep,
@@ -38,7 +37,7 @@ module srio_response(
     
     // Regs with response data (from FPGA to DSP)
     output reg        axis_iotx_tvalid,
-    output reg        axis_iotx_tlast,
+    output            axis_iotx_tlast,
     output reg [63:0] axis_iotx_tdata,
     output     [7:0]  axis_iotx_tkeep,
     output     [31:0] axis_iotx_tuser,
@@ -47,32 +46,42 @@ module srio_response(
     
     // {{{ local parameters (constants) -----------------
     // ftype
-    localparam [3:0] NREAD  = 4'h2;
-    localparam [3:0] NWRITE = 4'h5;
-    localparam [3:0] SWRITE = 4'h6;
-    localparam [3:0] DOORB  = 4'hA;
-    localparam [3:0] MESSG  = 4'hB;
-    localparam [3:0] RESP   = 4'hD;
+    localparam [3:0] NREAD      = 4'h02;
+    localparam [3:0] NWRITE     = 4'h05;
+    localparam [3:0] SWRITE     = 4'h06;
+    localparam [3:0] DOORB      = 4'h0A;
+    localparam [3:0] MESSG      = 4'h0B;
+    localparam [3:0] RESP       = 4'h0D;
     // ttype
-    localparam [3:0] TNWR   = 4'h4;
-    localparam [3:0] TNWR_R = 4'h5;
-    localparam [3:0] TNRD   = 4'h4;    
-    localparam [3:0] TNDATA = 4'h0; // no data
-    localparam [3:0] MSGRSP = 4'h1; // response to a message transaction
-    localparam [3:0] TWDATA = 4'h8; // with data    
+    localparam [3:0] TNWR       = 4'h04;
+    localparam [3:0] TNWR_R     = 4'h05;
+    localparam [3:0] TNRD       = 4'h04;    
+    localparam [3:0] TNDATA     = 4'h00; // no data
+    localparam [3:0] MSGRSP     = 4'h01; // response to a message transaction
+    localparam [3:0] TWDATA     = 4'h08; // with data    
+    
+    localparam RESERVE          = 1'b0;
+    localparam ERROR            = 1'b1;
+    // FSM    
+    localparam [2:0] IDLE_S     = 3'h00;
+    localparam [2:0] WAIT_REQ_S = 3'h01; // wait request    
+    localparam [2:0] SEND_HD_S  = 3'h02; // send header
+    localparam [2:0] SEND_DT_S  = 3'h04; // send data
     // }}} End local parameters -------------
     
     // {{{ wire declarations ----------------
+    wire [15:0] dst_id;           // ID of destination device
     wire        fifo_EMPTY;       // fifo is empty, flag
     wire        fifo_FULL;        // fifo is full, flag
-    wire        wr_fifo;          // write enable flag
-    wire        rd_fifo;          // read enable flag
-    reg         d_rd_fifo, dd_rd_fifo; // delay read enable flag
+    wire        wr_fifo;          // write enable flag    
+    reg         en_rd;            // enable for read enable
+    reg         rd_fifo;          // read enable flag    
     wire [63:0] din_fifo;         // buffer of input data (into fifo)
     wire [63:0] dout_fifo;        // buffer of output data (from fifo)
     
     wire        treq_advance_condition  = axis_iorx_tready && axis_iorx_tvalid;
     wire        tresp_advance_condition = axis_iotx_tready && axis_iotx_tvalid;
+    wire        request_header_accept;
     reg         d_treq_advance_condition;
                   
     // incoming packet fields
@@ -81,65 +90,179 @@ module srio_response(
     wire [3:0]  request_ttype;
     wire [7:0]  request_size;
     wire [1:0]  request_prio;
-    wire [33:0] request_addr;
+    wire [33:0] request_addr;    
     // outgoing packet fields
+    wire [7:0]  response_size;
+    wire [1:0]  response_prio;
     wire [7:0]  response_tid;
     wire [3:0]  response_ftype;
     wire [3:0]  response_ttype;
-    wire [7:0]  response_size;
-    wire [1:0]  response_prio;
-    reg  [63:0] response_data;
+    reg         response_tlast = 1'b0;
+    reg  [7:0]  d_response_tid;   // delay for response_tid signal 
+    reg  [7:0]  d_response_size;
+    reg  [3:0]  d_response_ftype;
+    reg  [3:0]  d_response_ttype;         
     
-    reg  [7:0]  current_bit_cnt;
-    reg  [7:0]  srcTID;  
-    reg         first_bit;
-    reg         first_packet_transfer;
-    reg         d_first_packet_transfer;
-    reg         need_response;
-    wire [63:0] header_pkt;
-    reg         end_send;
-    reg         d_end_send;
-    // }}} End wire declarations ------------
+    reg  [7:0]  array_tid [15:0]; // 16 8-bit elements
     
-    assign din_fifo = axis_iorx_tdata;//{ axis_iorx_tdata[31:0], axis_iorx_tdata[63:32]}; 
+    reg  [8:0]  current_bit_cnt;     
+    reg  [7:0]  count_req;        // request counter
+    reg         first_bit;        // first byte (header) in request packet 
+    wire        end_request;      // end of request packet
+    wire        need_response;    // the package needs a response
+    reg         only_header_sent; // response contains only header   
+    reg  [3:0]  iter_input;       // iterator for incoming TID 
+    reg  [3:0]  iter_output;      // iterator for outputting TID
+
+    reg  [2:0]  next_state, state;
     
+    reg         transm_end;       // end of transmission, flag
+    reg  [7:0]  delay;            // delay counter
+    reg         delay_start;      // start of count delay
+    //reg  [7:0]  tmp_counter;    // for debug, count response packets
+    // }}} End of wire declarations ------------
+    
+    // {{{ Wire initializations ------------  
+    assign din_fifo              = axis_iorx_tdata;
+    assign request_header_accept = first_bit && treq_advance_condition;
+    assign dst_id                = axis_iorx_tuser[31:16];
     // get data from received packet
-    assign request_tid   = axis_iorx_tdata[63:56];
-    assign request_ftype = axis_iorx_tdata[55:52]; 
-    assign request_ttype = axis_iorx_tdata[51:48];
-    assign request_size  = axis_iorx_tdata[43:36];
-    assign request_prio  = axis_iorx_tdata[46:45] + 2'b01; 
-    assign request_addr  = axis_iorx_tdata[33:0];
-
-    assign axis_iotx_tkeep = 8'hFF;
-    assign axis_iotx_tuser = { 8'h00, src_id, 8'h00, dst_id };
-    //assign axis_iotx_tdata = response_data;
-
-    assign response_prio = request_prio + 2'b01;  // the priority of the answer should be greater by one
-    assign response_size = request_size; 
-    
-    assign wr_fifo = treq_advance_condition && d_treq_advance_condition; 
-    assign rd_fifo = need_response && ( axis_iotx_tready || !axis_iotx_tvalid );
-
-    always @( posedge log_clk or posedge log_rst ) begin
-        if( log_rst ) begin
-            d_rd_fifo  <= 1'b0;
-            dd_rd_fifo <= 1'b0;
-        end else begin
-            d_rd_fifo  <= rd_fifo;
-            dd_rd_fifo <= d_rd_fifo;
-        end
-    end
+    assign request_tid      = axis_iorx_tdata[63:56];
+    assign request_ftype    = axis_iorx_tdata[55:52]; 
+    assign request_ttype    = axis_iorx_tdata[51:48];
+    assign request_size     = axis_iorx_tdata[43:36];
+    assign request_prio     = axis_iorx_tdata[46:45] + 2'b01; 
+    assign request_addr     = axis_iorx_tdata[33:0];
        
-    always @( posedge log_clk or posedge log_rst ) begin 
-        if( log_rst ) 
-            axis_iorx_tready <= 1'b1;            
-        else if( fifo_FULL )           // buffer full condition
-            axis_iorx_tready <= 1'b0;            
-        else 
-            axis_iorx_tready <= 1'b1;                
+    assign response_tid     = ( request_header_accept ) ? request_tid   : d_response_tid;
+    assign response_ftype   = ( request_header_accept ) ? request_ftype : d_response_ftype;
+    assign response_ttype   = ( request_header_accept ) ? request_ttype : d_response_ttype;
+    assign response_prio    = ( request_prio == 2'h03 ) ? ( 2'h03 ):
+                                                        ( request_prio + 2'b01 ); // the priority of the answer should be greater by one
+    assign response_size    = ( ( request_ftype == NREAD ) 
+                            && ( treq_advance_condition == 1'b1 ) ) ? request_size : 
+                                                                    d_response_size;            
+    assign axis_iorx_tready = ( !fifo_FULL );   
+    assign axis_iotx_tkeep  = 8'hFF;
+    assign axis_iotx_tuser  = { src_id, dst_id };
+    assign axis_iotx_tlast  = response_tlast;
+    
+    assign wr_fifo          = treq_advance_condition && d_treq_advance_condition 
+                            && ( !fifo_FULL ) && ( !first_bit );    
+    assign end_request      = ( response_ftype == NREAD ) ? request_header_accept : 
+                                                         d_treq_advance_condition && first_bit;
+    assign need_response    = (( response_ftype == NREAD ) 
+                            || ( response_ftype == DOORB ) 
+                            || ( response_ftype == MESSG )   
+                            || ( ( response_ftype == NWRITE ) && ( response_ttype == TNWR_R ) )) 
+                            && end_request ? 1'b1 : RESERVE;        
+    // }}} End of wire initializations ------------
+    
+    /*always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            tmp_counter <= 8'h00;
+        else if( axis_iotx_tvalid && axis_iotx_tlast )             
+            tmp_counter <= tmp_counter + 1'b1;
+    end*/
+    // {{{ Check end of transmission ------------
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            delay <= 8'h00;
+        else if( delay_start && ( delay != 8'h20 ) )             
+            delay <= delay + 1'b1;
+        else if( !delay_start || ( delay == 8'h20 ) )
+            delay <= 8'h00;
+    end    
+    
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            transm_end <= 1'b1;
+        else if( delay_start && ( delay == 8'h20 ) )
+            transm_end <= 1'b1;
+        else if( !delay_start )
+            transm_end <= 1'b0;
+    end
+    // }}} End of check end of transmission -----    
+    
+    // Enable read first 8 bytes
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            en_rd <= 1'b1;
+        else if( transm_end )
+            en_rd <= 1'b1;
+        else
+            en_rd <= 1'b0;
     end
     
+    // {{{ Set iterators for tid's array ------------
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            iter_input = 4'h00;
+        else if( axis_iorx_tvalid && axis_iorx_tlast && ( response_ftype == NREAD ) )
+            iter_input = iter_input + 1'b1;            
+    end
+    
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            iter_output = 4'h00;
+        else if( axis_iotx_tvalid && axis_iotx_tlast && ( response_ftype == NREAD )  )
+            iter_output = iter_output + 1'b1;            
+    end
+    // }}} End of set iterators for tid's array -------
+    
+    // Contains request ids for serial response
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst ) begin            
+            array_tid[0]  <= 8'h00;
+            array_tid[1]  <= 8'h00;
+            array_tid[2]  <= 8'h00;
+            array_tid[3]  <= 8'h00;
+            array_tid[4]  <= 8'h00;
+            array_tid[5]  <= 8'h00;
+            array_tid[6]  <= 8'h00;
+            array_tid[7]  <= 8'h00;
+            array_tid[8]  <= 8'h00;
+            array_tid[9]  <= 8'h00;
+            array_tid[10] <= 8'h00;
+            array_tid[11] <= 8'h00;
+            array_tid[12] <= 8'h00;
+            array_tid[13] <= 8'h00;
+            array_tid[14] <= 8'h00;
+            array_tid[15] <= 8'h00;                            
+        end else if( axis_iorx_tvalid && axis_iorx_tlast && ( response_ftype == NREAD ) ) begin
+            array_tid[iter_input] <= response_tid;
+        end        
+    end
+                
+    // Set some delay signals
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            d_response_tid   <= 8'h00;
+        else 
+            d_response_tid   <= response_tid;
+    end   
+       
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            d_response_size  <= 8'h00;
+        else 
+            d_response_size  <= response_size;
+    end  
+    
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            d_response_ftype <= 4'h00;
+        else 
+            d_response_ftype <= response_ftype;
+    end        
+          
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            d_response_ttype <= 4'h00;
+        else 
+            d_response_ttype <= response_ttype;
+    end
+           
     // for writing into fifo only payload data (without header)
     always @( posedge log_clk or posedge log_rst ) begin
         if( log_rst ) begin
@@ -148,7 +271,7 @@ module srio_response(
             d_treq_advance_condition <= treq_advance_condition;
         end
     end
-    
+        
     // find the header of packet
     always @( posedge log_clk or posedge log_rst ) begin
         if( log_rst ) begin
@@ -158,92 +281,152 @@ module srio_response(
         end else if( treq_advance_condition ) begin
             first_bit <= 1'b0;
         end 
-    end
-    
-    // check incoming packet, is it necessary to send an answer?
-    always @( posedge log_clk or posedge log_rst ) begin
-        if( log_rst ) begin
-            need_response <= 1'b0;
-        end else if( first_bit && treq_advance_condition ) begin
-            need_response <= ( request_ftype == NREAD ) ||
-                             ( request_ftype == DOORB ) ||
-                             ( request_ftype == MESSG ) ||
-                             ( ( request_ftype == NWRITE ) && ( request_ttype == TNWR_R ) );
-        end else begin
-            need_response <= 1'b0;
-        end
-    end        
-    
-    // set read_enable for getting data from FIFO
-    /*always @(posedge log_clk) begin
-        if (log_rst) begin
-            rd_fifo <= 1'b0;
-        end else if (need_response) begin
-            rd_fifo <= axis_iotx_tready || !axis_iotx_tvalid;
-        end else begin
-            rd_fifo <= 1'b0;
-        end                
-    end*/
-     
+    end      
+       
     // count the number of bytes transferred
     always @( posedge log_clk or posedge log_rst ) begin
         if( log_rst ) 
-            current_bit_cnt <= 6'h0;
+            current_bit_cnt <= 6'h00;
         else if( tresp_advance_condition && axis_iotx_tlast ) 
-            current_bit_cnt <= 6'h0;
-        else if( tresp_advance_condition ) 
-            current_bit_cnt <= current_bit_cnt + 1'b1;                
+            current_bit_cnt <= 6'h00;
+        else if( tresp_advance_condition && ( !axis_iotx_tlast ) ) 
+            current_bit_cnt <= current_bit_cnt + 4'h08;                
     end
     
-    // find the last bytes of packet
-    always @( posedge log_clk or posedge log_rst ) begin
+    // find the last bytes of output packet    
+    always @( * ) begin
         if( log_rst ) 
-            axis_iotx_tlast <= 1'b0;    
-        else if( ( current_bit_cnt == request_size ) && tresp_advance_condition ) // TODO: !!!
-            axis_iotx_tlast <= 1'b1;
+            response_tlast <= 1'b0;    
+        else if( ( ( current_bit_cnt - 1 ) == response_size ) && tresp_advance_condition ) 
+            response_tlast <= 1'b1;
+        else if( only_header_sent )
+            response_tlast <= 1'b1;
         else if( axis_iotx_tready || ( !axis_iotx_tvalid ) ) 
-            axis_iotx_tlast <= 1'b0;        
+            response_tlast <= 1'b0;        
     end
    
-    always @( posedge log_clk or posedge log_rst) begin
+    always @(posedge log_clk or posedge log_rst) begin
         if( log_rst ) 
             axis_iotx_tvalid <= 1'b0;
-        else if( need_response ) 
+        else if( end_request && need_response ) 
             axis_iotx_tvalid <= 1'b1;
+        else if( count_req > 8'h01 )
+            axis_iotx_tvalid <= 1'b1;   
+        else if( ( count_req == 8'h01 ) && axis_iotx_tlast ) 
+            axis_iotx_tvalid <= 1'b0; 
         else if( tresp_advance_condition && axis_iotx_tlast ) 
-            axis_iotx_tvalid <= 1'b0;        
+            axis_iotx_tvalid <= 1'b0;                  
     end
     
-    // TODO: !!!
-    // set response packet 
-    always @( posedge log_clk ) begin
-        if( log_rst ) begin
-            srcTID                <= 8'h00;
-            axis_iotx_tdata       <= 64'h00000;        
-            first_packet_transfer <= 1'b0;
-            end_send              <= 1'b0;
-        end else if( need_response && ( request_ftype == NREAD ) ) begin
-            axis_iotx_tdata       <= { srcTID, RESP, TWDATA, 1'b0, response_prio, 1'b0, response_size, 2'b00, request_addr };
-            srcTID                <= srcTID + 1'b1;
-            first_packet_transfer <= 1'b1;           
-        end/* else if( dd_rd_fifo ) begin
-            axis_iotx_tdata       <= dout_fifo;
-            end_send              <= 1'b1;
-            first_packet_transfer <= 1'b0;
-        endelse begin
-            end_send              <= 1'b0;
-            axis_iotx_tdata       <= 64'h00000;
-        end*/
-    end   
-
-    always @( posedge log_clk ) begin
-        if( log_rst )            
-            d_first_packet_transfer <= 1'b0;
-        else 
-            d_first_packet_transfer <= first_packet_transfer;        
+    // Set counter of input NREAD request
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst )
+            count_req <= 8'h00;
+        else if( ( axis_iorx_tlast && axis_iorx_tvalid  // if simultaneously get new request and send old response 
+                && axis_iotx_tlast && axis_iotx_tvalid ) && ( response_ftype == NREAD ) )
+            count_req <= count_req;
+        else if( ( axis_iotx_tlast && axis_iotx_tvalid ) && ( response_ftype == NREAD ) 
+                && ( count_req > 8'h00 ) )
+            count_req <= count_req - 1'h01;     
+        else if( ( axis_iorx_tlast && axis_iorx_tvalid ) && ( response_ftype == NREAD ) ) 
+            count_req <= count_req + 1'h01;           
     end
-              
-    ila_0 ila_ip(
+          
+    // {{{ FSM logic ------------
+    // state register
+    always @( posedge log_clk or posedge log_rst ) begin
+        if( log_rst ) 
+            state <= IDLE_S;
+        else 
+            state <= next_state;
+    end
+    
+    // next-state logic
+    always @( state, need_response, end_request, axis_iotx_tlast, request_ftype ) begin
+        next_state = IDLE_S;
+        case( state )
+            IDLE_S: begin
+                next_state = WAIT_REQ_S;
+            end
+            
+            WAIT_REQ_S: begin
+                if( need_response && end_request ) 
+                    next_state = SEND_HD_S;
+                else
+                    next_state = WAIT_REQ_S;
+            end
+            
+            SEND_HD_S: begin
+                if( response_ftype == NREAD ) 
+                    next_state = SEND_DT_S;                    
+                else
+                    next_state = WAIT_REQ_S;                
+            end
+            
+            SEND_DT_S: begin
+                if( !axis_iotx_tlast )
+                    next_state = SEND_DT_S;
+                else if( count_req > 8'h01 )
+                    next_state = SEND_HD_S;
+                else
+                    next_state = WAIT_REQ_S;
+            end
+            
+            default: begin
+                next_state = IDLE_S;
+            end            
+        endcase
+    end
+        
+    // output logic
+    always @( state ) begin
+        case( state )
+            IDLE_S: begin                           // 0
+                axis_iotx_tdata      <= 64'h00;
+                rd_fifo              <= 1'b0;                               
+            end
+            
+            WAIT_REQ_S: begin                       // 1
+                axis_iotx_tdata      <= 64'h00;                
+                only_header_sent     <= 1'b0;
+                rd_fifo              <= 1'b0;
+                delay_start          <= 1'b1;                           
+            end
+            
+            SEND_HD_S: begin                        // 2
+                delay_start          <= 1'b0;                
+                if( ( response_ftype != NREAD ) && axis_iotx_tready ) begin
+                    axis_iotx_tdata  <= { response_tid, RESP, TNDATA, 1'b0, response_prio, 
+                                          1'b0, 8'h00, RESERVE, 35'h00 };
+                    only_header_sent <= 1'b1;
+                end else begin
+                    axis_iotx_tdata  <= { array_tid[iter_output], RESP, TWDATA, 1'b0, response_prio, 
+                                          1'b0, 8'h00, RESERVE, 35'h00 };
+                    only_header_sent <= 1'b0;
+                    rd_fifo          <= en_rd;                                                         
+                end          
+            end
+            
+            SEND_DT_S: begin                        // 4                
+                delay_start          <= 1'b0;
+                if( axis_iotx_tready )
+                    axis_iotx_tdata  <= dout_fifo;                                           
+                if( fifo_EMPTY || ( !axis_iotx_tready ) )
+                    rd_fifo          <= 1'b0;
+                else
+                    rd_fifo          <= 1'b1;
+            end
+            
+            default: begin
+             //   axis_iotx_tdata     <= 64'h00;               
+            end
+            
+        endcase
+    end       
+    // }}} End of FSM logic ------------
+    
+    // {{{ Include other modules ------------
+    dbg_ila ila_ip(
         .clk     ( log_clk                  ),    
                 
         .probe0  ( din_fifo                 ),
@@ -253,31 +436,41 @@ module srio_response(
         
         .probe4  ( axis_iorx_tlast          ),
         .probe5  ( axis_iorx_tvalid         ),
-        .probe6  ( axis_iorx_tready         ),                        
-        .probe7  ( axis_iorx_tkeep          ),
-        .probe8  ( axis_iorx_tdata          ),            
+        .probe6  ( axis_iorx_tready         ),                                
+        .probe7  ( axis_iorx_tdata          ),            
 
-        .probe9  ( dd_rd_fifo               ),
+        .probe8  ( only_header_sent         ),
         
-        .probe10 ( axis_iotx_tlast          ),
-        .probe11 ( axis_iotx_tvalid         ),
-        .probe12 ( axis_iotx_tready         ),
-        .probe13 ( axis_iotx_tkeep          ),
-        .probe14 ( axis_iotx_tdata          ),
-     
-                                
-        .probe15 ( first_bit                ),
-        .probe16 ( need_response            ),
-        .probe17 ( treq_advance_condition   ),
-        .probe18 ( d_treq_advance_condition ),
-        .probe19 ( end_send                 ),
-
-        .probe20 ( srcTID                   ),
-        .probe21 ( current_bit_cnt          )
+        .probe9  ( axis_iotx_tlast          ),
+        .probe10 ( axis_iotx_tvalid         ),
+        .probe11 ( axis_iotx_tready         ),        
+        .probe12 ( axis_iotx_tdata          ),
+                                     
+        .probe13 ( first_bit                ),
+        .probe14 ( need_response            ),
+        .probe15 ( end_request              ),
+        .probe16 ( treq_advance_condition   ),
+        .probe17 ( d_treq_advance_condition ),
+        .probe18 ( tresp_advance_condition  ),
+                
+        .probe19 ( current_bit_cnt          ),
+        .probe20 ( count_req                ),                     
+                
+        .probe21 ( state                    ),
+        .probe22 ( next_state               ),
+        .probe23 ( fifo_EMPTY               ),
+        .probe24 ( fifo_FULL                ),
+        .probe25 ( response_size            ),        
+        .probe26 ( response_ftype           )
+        /*.probe27 ( en_rd                    ),
+        .probe28 ( delay_start              ),
+        .probe29 ( transm_end               ),
+        .probe30 ( delay                    )
+        .probe31 ( tmp_counter              )*/               
     );
            
     fifo_generator_rx_inst fifo_rx_ip(
-        .srst    ( log_rst    ),      // input
+        .rst     ( log_rst    ),      // input
         .clk     ( log_clk    ),      // input
         .din     ( din_fifo   ),      // input
         .wr_en   ( wr_fifo    ),      // input
@@ -290,6 +483,6 @@ module srio_response(
         //.prog_full     (fifo_ALMOSTFULL),
         //.prog_empty    (fifo_ALMOSTEMPTY)
     );
-    
+    // }}} End of Include other modules ------------
     
 endmodule

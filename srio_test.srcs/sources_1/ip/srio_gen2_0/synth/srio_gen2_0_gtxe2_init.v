@@ -88,6 +88,11 @@ input           gt0_tx_mmcm_lock_in,
 output          gt0_tx_mmcm_reset_out,
 input           gt0_rx_mmcm_lock_in,
 output          gt0_rx_mmcm_reset_out,
+input           gt1_data_valid_in,
+input           gt1_tx_mmcm_lock_in,
+output          gt1_tx_mmcm_reset_out,
+input           gt1_rx_mmcm_lock_in,
+output          gt1_rx_mmcm_reset_out,
 
     //_________________________________________________________________________
     //GT0  (X1Y0)
@@ -147,6 +152,16 @@ output          gt0_rx_mmcm_reset_out,
     output          gt0_rxcommadet_out,
     input           gt0_rxmcommaalignen_in,
     input           gt0_rxpcommaalignen_in,
+    //---------------- Receive Ports - RX Channel Bonding Ports ----------------
+    output          gt0_rxchanbondseq_out,
+    input           gt0_rxchbonden_in,
+    input   [2:0]   gt0_rxchbondlevel_in,
+    input           gt0_rxchbondmaster_in,
+    output  [4:0]   gt0_rxchbondo_out,
+    input           gt0_rxchbondslave_in,
+    //--------------- Receive Ports - RX Channel Bonding Ports  ----------------
+    output          gt0_rxchanisaligned_out,
+    output          gt0_rxchanrealign_out,
     //------------------- Receive Ports - RX Equalizer Ports -------------------
     input           gt0_rxdfelpmreset_in,
     output  [6:0]   gt0_rxmonitorout_out,
@@ -162,6 +177,8 @@ output          gt0_rx_mmcm_reset_out,
     //----------------- Receive Ports - RX8B/10B Decoder Ports -----------------
     output  [3:0]   gt0_rxchariscomma_out,
     output  [3:0]   gt0_rxcharisk_out,
+    //---------------- Receive Ports - Rx Channel Bonding Ports ----------------
+    input   [4:0]   gt0_rxchbondi_in,
     //------------ Receive Ports -RX Initialization and Reset Ports ------------
     output          gt0_rxresetdone_out,
     //---------------------- TX Configurable Driver Ports ----------------------
@@ -199,6 +216,128 @@ output          gt0_rx_mmcm_reset_out,
     input           gt0_txpolarity_in,
     //---------------- Transmit Ports - pattern Generator Ports ----------------
     input   [2:0]   gt0_txprbssel_in,
+
+    //GT1  (X1Y1)
+    //____________________________CHANNEL PORTS________________________________
+    //------------------------------- CPLL Ports -------------------------------
+    output          gt1_cpllfbclklost_out,
+    output          gt1_cplllock_out,
+    input           gt1_cplllockdetclk_in,
+    input           gt1_cpllreset_in,
+    //------------------------ Channel - Clocking Ports ------------------------
+    input           gt1_gtrefclk0_in,
+    //-------------------------- Channel - DRP Ports  --------------------------
+    input   [8:0]   gt1_drpaddr_in,
+    input           gt1_drpclk_in,
+    input   [15:0]  gt1_drpdi_in,
+    output  [15:0]  gt1_drpdo_out,
+    input           gt1_drpen_in,
+    output          gt1_drprdy_out,
+    input           gt1_drpwe_in,
+    //------------------------- Digital Monitor Ports --------------------------
+    output  [7:0]   gt1_dmonitorout_out,
+    //----------------------------- Loopback Ports -----------------------------
+    input   [2:0]   gt1_loopback_in,
+    //------------------- RX Initialization and Reset Ports --------------------
+    input           gt1_eyescanreset_in,
+    input           gt1_rxuserrdy_in,
+    //------------------------ RX Margin Analysis Ports ------------------------
+    output          gt1_eyescandataerror_out,
+    input           gt1_eyescantrigger_in,
+    //----------------------- Receive Ports - CDR Ports ------------------------
+    input           gt1_rxcdrhold_in,
+    //----------------- Receive Ports - Clock Correction Ports -----------------
+    output  [1:0]   gt1_rxclkcorcnt_out,
+    //---------------- Receive Ports - FPGA RX Interface Ports -----------------
+    input           gt1_rxusrclk_in,
+    input           gt1_rxusrclk2_in,
+    //---------------- Receive Ports - FPGA RX interface Ports -----------------
+    output  [31:0]  gt1_rxdata_out,
+    //----------------- Receive Ports - Pattern Checker Ports ------------------
+    output          gt1_rxprbserr_out,
+    input   [2:0]   gt1_rxprbssel_in,
+    //----------------- Receive Ports - Pattern Checker ports ------------------
+    input           gt1_rxprbscntreset_in,
+    //---------------- Receive Ports - RX 8B/10B Decoder Ports -----------------
+    output  [3:0]   gt1_rxdisperr_out,
+    output  [3:0]   gt1_rxnotintable_out,
+    //------------------------- Receive Ports - RX AFE -------------------------
+    input           gt1_gtxrxp_in,
+    //---------------------- Receive Ports - RX AFE Ports ----------------------
+    input           gt1_gtxrxn_in,
+    //----------------- Receive Ports - RX Buffer Bypass Ports -----------------
+    input           gt1_rxbufreset_in,
+    output  [2:0]   gt1_rxbufstatus_out,
+    //------------ Receive Ports - RX Byte and Word Alignment Ports ------------
+    output          gt1_rxbyteisaligned_out,
+    output          gt1_rxbyterealign_out,
+    output          gt1_rxcommadet_out,
+    input           gt1_rxmcommaalignen_in,
+    input           gt1_rxpcommaalignen_in,
+    //---------------- Receive Ports - RX Channel Bonding Ports ----------------
+    output          gt1_rxchanbondseq_out,
+    input           gt1_rxchbonden_in,
+    input   [2:0]   gt1_rxchbondlevel_in,
+    input           gt1_rxchbondmaster_in,
+    output  [4:0]   gt1_rxchbondo_out,
+    input           gt1_rxchbondslave_in,
+    //--------------- Receive Ports - RX Channel Bonding Ports  ----------------
+    output          gt1_rxchanisaligned_out,
+    output          gt1_rxchanrealign_out,
+    //------------------- Receive Ports - RX Equalizer Ports -------------------
+    input           gt1_rxdfelpmreset_in,
+    output  [6:0]   gt1_rxmonitorout_out,
+    input   [1:0]   gt1_rxmonitorsel_in,
+    //----------- Receive Ports - RX Initialization and Reset Ports ------------
+    input           gt1_gtrxreset_in,
+    input           gt1_rxpcsreset_in,
+    input           gt1_rxpmareset_in,
+    //---------------- Receive Ports - RX Margin Analysis ports ----------------
+    input           gt1_rxlpmen_in,
+    //--------------- Receive Ports - RX Polarity Control Ports ----------------
+    input           gt1_rxpolarity_in,
+    //----------------- Receive Ports - RX8B/10B Decoder Ports -----------------
+    output  [3:0]   gt1_rxchariscomma_out,
+    output  [3:0]   gt1_rxcharisk_out,
+    //---------------- Receive Ports - Rx Channel Bonding Ports ----------------
+    input   [4:0]   gt1_rxchbondi_in,
+    //------------ Receive Ports -RX Initialization and Reset Ports ------------
+    output          gt1_rxresetdone_out,
+    //---------------------- TX Configurable Driver Ports ----------------------
+    input   [4:0]   gt1_txpostcursor_in,
+    input   [4:0]   gt1_txprecursor_in,
+    //------------------- TX Initialization and Reset Ports --------------------
+    input           gt1_gttxreset_in,
+    input           gt1_txuserrdy_in,
+    //---------------- Transmit Ports - FPGA TX Interface Ports ----------------
+    input           gt1_txusrclk_in,
+    input           gt1_txusrclk2_in,
+    //---------------- Transmit Ports - Pattern Generator Ports ----------------
+    input           gt1_txprbsforceerr_in,
+    //-------------------- Transmit Ports - TX Buffer Ports --------------------
+    output  [1:0]   gt1_txbufstatus_out,
+    //------------- Transmit Ports - TX Configurable Driver Ports --------------
+    input   [3:0]   gt1_txdiffctrl_in,
+    input           gt1_txinhibit_in,
+    //---------------- Transmit Ports - TX Data Path interface -----------------
+    input   [31:0]  gt1_txdata_in,
+    //-------------- Transmit Ports - TX Driver and OOB signaling --------------
+    output          gt1_gtxtxn_out,
+    output          gt1_gtxtxp_out,
+    //--------- Transmit Ports - TX Fabric Clock Output Control Ports ----------
+    output          gt1_txoutclk_out,
+    output          gt1_txoutclkfabric_out,
+    output          gt1_txoutclkpcs_out,
+    //------------------- Transmit Ports - TX Gearbox Ports --------------------
+    input   [3:0]   gt1_txcharisk_in,
+    //----------- Transmit Ports - TX Initialization and Reset Ports -----------
+    input           gt1_txpcsreset_in,
+    input           gt1_txpmareset_in,
+    output          gt1_txresetdone_out,
+    //--------------- Transmit Ports - TX Polarity Control Ports ---------------
+    input           gt1_txpolarity_in,
+    //---------------- Transmit Ports - pattern Generator Ports ----------------
+    input   [2:0]   gt1_txprbssel_in,
 
 
     //____________________________COMMON PORTS________________________________
@@ -246,6 +385,33 @@ output          gt0_rx_mmcm_reset_out,
     wire           gt0_rxlpmhfhold_i;
 
 
+    wire           gt1_rxpmaresetdone_i;
+    wire           gt1_txpmaresetdone_i;
+    wire           gt1_cpllreset_i;
+    wire           gt1_cpllreset_t;
+    wire           gt1_cpllrefclklost_i;
+    wire           gt1_cplllock_i;
+    wire           gt1_txresetdone_i;
+    wire           gt1_rxresetdone_i;
+    wire           gt1_gttxreset_i;
+    wire           gt1_gttxreset_t;
+    wire           gt1_gtrxreset_i;
+    wire           gt1_gtrxreset_t;
+    wire           gt1_txpcsreset_i;
+    wire           gt1_rxpcsreset_i;
+    wire           gt1_txpmareset_i;
+    wire           gt1_rxdfelpmreset_i;
+    wire           gt1_txuserrdy_i;
+    wire           gt1_txuserrdy_t;
+    wire           gt1_rxuserrdy_i;
+    wire           gt1_rxuserrdy_t;
+
+    wire           gt1_rxdfeagchold_i;
+    wire           gt1_rxdfelfhold_i;
+    wire           gt1_rxlpmlfhold_i;
+    wire           gt1_rxlpmhfhold_i;
+
+
 
     wire           gt0_qpllreset_i;
     wire           gt0_qpllreset_t;
@@ -264,6 +430,14 @@ output          gt0_rx_mmcm_reset_out,
     wire           gt0_recclk_stable_i;
     reg            gt0_rx_cdrlocked;
     integer  gt0_rx_cdrlock_counter= 0;
+
+    wire           gt1_txoutclk_i;
+    wire           gt1_rxoutclk_i;
+    wire           gt1_rxoutclk_i2;
+    wire           gt1_txoutclk_i2;
+    wire           gt1_recclk_stable_i;
+    reg            gt1_rx_cdrlocked;
+    integer  gt1_rx_cdrlock_counter= 0;
 
 
 
@@ -393,6 +567,16 @@ assign  tied_to_vcc_i                        =  1'b1;
         .gt0_rxcommadet_out             (gt0_rxcommadet_out), // output wire gt0_rxcommadet_out
         .gt0_rxmcommaalignen_in         (gt0_rxmcommaalignen_in), // input wire gt0_rxmcommaalignen_in
         .gt0_rxpcommaalignen_in         (gt0_rxpcommaalignen_in), // input wire gt0_rxpcommaalignen_in
+        //---------------- Receive Ports - RX Channel Bonding Ports ----------------
+        .gt0_rxchanbondseq_out          (gt0_rxchanbondseq_out), // output wire gt0_rxchanbondseq_out
+        .gt0_rxchbonden_in              (gt0_rxchbonden_in), // input wire gt0_rxchbonden_in
+        .gt0_rxchbondlevel_in           (gt0_rxchbondlevel_in), // input wire [2:0] gt0_rxchbondlevel_in
+        .gt0_rxchbondmaster_in          (gt0_rxchbondmaster_in), // input wire gt0_rxchbondmaster_in
+        .gt0_rxchbondo_out              (gt0_rxchbondo_out), // output wire [4:0] gt0_rxchbondo_out
+        .gt0_rxchbondslave_in           (gt0_rxchbondslave_in), // input wire gt0_rxchbondslave_in
+        //--------------- Receive Ports - RX Channel Bonding Ports  ----------------
+        .gt0_rxchanisaligned_out        (gt0_rxchanisaligned_out), // output wire gt0_rxchanisaligned_out
+        .gt0_rxchanrealign_out          (gt0_rxchanrealign_out), // output wire gt0_rxchanrealign_out
         //------------------- Receive Ports - RX Equalizer Ports -------------------
         .gt0_rxdfeagchold_in            (gt_rxdfeagchold_i), // input wire gt_rxdfeagchold_i
         .gt0_rxdfelfhold_in             (gt_rxdfelfhold_i), // input wire gt_rxdfelfhold_i
@@ -412,6 +596,8 @@ assign  tied_to_vcc_i                        =  1'b1;
         //----------------- Receive Ports - RX8B/10B Decoder Ports -----------------
         .gt0_rxchariscomma_out          (gt0_rxchariscomma_out), // output wire [3:0] gt0_rxchariscomma_out
         .gt0_rxcharisk_out              (gt0_rxcharisk_out), // output wire [3:0] gt0_rxcharisk_out
+        //---------------- Receive Ports - Rx Channel Bonding Ports ----------------
+        .gt0_rxchbondi_in               (gt0_rxchbondi_in), // input wire [4:0] gt0_rxchbondi_in
         //------------ Receive Ports -RX Initialization and Reset Ports ------------
         .gt0_rxresetdone_out            (gt0_rxresetdone_i), // output wire gt0_rxresetdone_i
         //---------------------- TX Configurable Driver Ports ----------------------
@@ -451,6 +637,137 @@ assign  tied_to_vcc_i                        =  1'b1;
         .gt0_txprbssel_in               (gt0_txprbssel_in), // input wire [2:0] gt0_txprbssel_in
 
 
+ 
+        //_____________________________________________________________________
+        //_____________________________________________________________________
+        //GT1  (X1Y1)
+
+        //------------------------------- CPLL Ports -------------------------------
+        .gt1_cpllfbclklost_out          (gt1_cpllfbclklost_out), // output wire gt1_cpllfbclklost_out
+        .gt1_cplllock_out               (gt1_cplllock_i), // output wire gt1_cplllock_i
+        .gt1_cplllockdetclk_in          (gt1_cplllockdetclk_in), // input wire gt1_cplllockdetclk_in
+        .gt1_cpllrefclklost_out         (gt1_cpllrefclklost_i), // output wire gt1_cpllrefclklost_i
+        .gt1_cpllreset_in               (gt1_cpllreset_i), // input wire gt1_cpllreset_i
+        //------------------------ Channel - Clocking Ports ------------------------
+        .gt1_gtrefclk0_in               (gt1_gtrefclk0_in), // input wire gt1_gtrefclk0_in
+        //-------------------------- Channel - DRP Ports  --------------------------
+        .gt1_drpaddr_in                 (gt1_drpaddr_in), // input wire [8:0] gt1_drpaddr_in
+        .gt1_drpclk_in                  (gt1_drpclk_in), // input wire gt1_drpclk_in
+        .gt1_drpdi_in                   (gt1_drpdi_in), // input wire [15:0] gt1_drpdi_in
+        .gt1_drpdo_out                  (gt1_drpdo_out), // output wire [15:0] gt1_drpdo_out
+        .gt1_drpen_in                   (gt1_drpen_in), // input wire gt1_drpen_in
+        .gt1_drprdy_out                 (gt1_drprdy_out), // output wire gt1_drprdy_out
+        .gt1_drpwe_in                   (gt1_drpwe_in), // input wire gt1_drpwe_in
+        //------------------------- Digital Monitor Ports --------------------------
+        .gt1_dmonitorout_out            (gt1_dmonitorout_out), // output wire [7:0] gt1_dmonitorout_out
+        //----------------------------- Loopback Ports -----------------------------
+        .gt1_loopback_in                (gt1_loopback_in), // input wire [2:0] gt1_loopback_in
+        //------------------- RX Initialization and Reset Ports --------------------
+        .gt1_eyescanreset_in            (gt1_eyescanreset_in), // input wire gt1_eyescanreset_in
+        .gt1_rxuserrdy_in               (gt1_rxuserrdy_i), // input wire gt1_rxuserrdy_i
+        //------------------------ RX Margin Analysis Ports ------------------------
+        .gt1_eyescandataerror_out       (gt1_eyescandataerror_out), // output wire gt1_eyescandataerror_out
+        .gt1_eyescantrigger_in          (gt1_eyescantrigger_in), // input wire gt1_eyescantrigger_in
+        //----------------------- Receive Ports - CDR Ports ------------------------
+        .gt1_rxcdrhold_in               (gt1_rxcdrhold_in), // input wire gt1_rxcdrhold_in
+        //----------------- Receive Ports - Clock Correction Ports -----------------
+        .gt1_rxclkcorcnt_out            (gt1_rxclkcorcnt_out), // output wire [1:0] gt1_rxclkcorcnt_out
+        //---------------- Receive Ports - FPGA RX Interface Ports -----------------
+        .gt1_rxusrclk_in                (gt1_rxusrclk_in), // input wire gt1_rxusrclk_in
+        .gt1_rxusrclk2_in               (gt1_rxusrclk2_in), // input wire gt1_rxusrclk2_in
+        //---------------- Receive Ports - FPGA RX interface Ports -----------------
+        .gt1_rxdata_out                 (gt1_rxdata_out), // output wire [31:0] gt1_rxdata_out
+        //----------------- Receive Ports - Pattern Checker Ports ------------------
+        .gt1_rxprbserr_out              (gt1_rxprbserr_out), // output wire gt1_rxprbserr_out
+        .gt1_rxprbssel_in               (gt1_rxprbssel_in), // input wire [2:0] gt1_rxprbssel_in
+        //----------------- Receive Ports - Pattern Checker ports ------------------
+        .gt1_rxprbscntreset_in          (gt1_rxprbscntreset_in), // input wire gt1_rxprbscntreset_in
+        //---------------- Receive Ports - RX 8B/10B Decoder Ports -----------------
+        .gt1_rxdisperr_out              (gt1_rxdisperr_out), // output wire [3:0] gt1_rxdisperr_out
+        .gt1_rxnotintable_out           (gt1_rxnotintable_out), // output wire [3:0] gt1_rxnotintable_out
+        //------------------------- Receive Ports - RX AFE -------------------------
+        .gt1_gtxrxp_in                  (gt1_gtxrxp_in), // input wire gt1_gtxrxp_in
+        //---------------------- Receive Ports - RX AFE Ports ----------------------
+        .gt1_gtxrxn_in                  (gt1_gtxrxn_in), // input wire gt1_gtxrxn_in
+        //----------------- Receive Ports - RX Buffer Bypass Ports -----------------
+        .gt1_rxbufreset_in              (gt1_rxbufreset_in), // input wire gt1_rxbufreset_in
+        .gt1_rxbufstatus_out            (gt1_rxbufstatus_out), // output wire [2:0] gt1_rxbufstatus_out
+        //------------ Receive Ports - RX Byte and Word Alignment Ports ------------
+        .gt1_rxbyteisaligned_out        (gt1_rxbyteisaligned_out), // output wire gt1_rxbyteisaligned_out
+        .gt1_rxbyterealign_out          (gt1_rxbyterealign_out), // output wire gt1_rxbyterealign_out
+        .gt1_rxcommadet_out             (gt1_rxcommadet_out), // output wire gt1_rxcommadet_out
+        .gt1_rxmcommaalignen_in         (gt1_rxmcommaalignen_in), // input wire gt1_rxmcommaalignen_in
+        .gt1_rxpcommaalignen_in         (gt1_rxpcommaalignen_in), // input wire gt1_rxpcommaalignen_in
+        //---------------- Receive Ports - RX Channel Bonding Ports ----------------
+        .gt1_rxchanbondseq_out          (gt1_rxchanbondseq_out), // output wire gt1_rxchanbondseq_out
+        .gt1_rxchbonden_in              (gt1_rxchbonden_in), // input wire gt1_rxchbonden_in
+        .gt1_rxchbondlevel_in           (gt1_rxchbondlevel_in), // input wire [2:0] gt1_rxchbondlevel_in
+        .gt1_rxchbondmaster_in          (gt1_rxchbondmaster_in), // input wire gt1_rxchbondmaster_in
+        .gt1_rxchbondo_out              (gt1_rxchbondo_out), // output wire [4:0] gt1_rxchbondo_out
+        .gt1_rxchbondslave_in           (gt1_rxchbondslave_in), // input wire gt1_rxchbondslave_in
+        //--------------- Receive Ports - RX Channel Bonding Ports  ----------------
+        .gt1_rxchanisaligned_out        (gt1_rxchanisaligned_out), // output wire gt1_rxchanisaligned_out
+        .gt1_rxchanrealign_out          (gt1_rxchanrealign_out), // output wire gt1_rxchanrealign_out
+        //------------------- Receive Ports - RX Equalizer Ports -------------------
+        .gt1_rxdfeagchold_in            (gt_rxdfeagchold_i), // input wire gt_rxdfeagchold_i
+        .gt1_rxdfelfhold_in             (gt_rxdfelfhold_i), // input wire gt_rxdfelfhold_i
+        .gt1_rxdfelpmreset_in           (gt1_rxdfelpmreset_in), // input wire gt1_rxdfelpmreset_in
+        .gt1_rxmonitorout_out           (gt1_rxmonitorout_out), // output wire [6:0] gt1_rxmonitorout_out
+        .gt1_rxmonitorsel_in            (gt1_rxmonitorsel_in), // input wire [1:0] gt1_rxmonitorsel_in
+        //------------- Receive Ports - RX Fabric Output Control Ports -------------
+        .gt1_rxoutclk_out               (gt1_rxoutclk_i), // output wire gt1_rxoutclk_i
+        //----------- Receive Ports - RX Initialization and Reset Ports ------------
+        .gt1_gtrxreset_in               (gt1_gtrxreset_i), // input wire gt1_gtrxreset_i
+        .gt1_rxpcsreset_in              (gt1_rxpcsreset_in), // input wire gt1_rxpcsreset_in
+        .gt1_rxpmareset_in              (gt1_rxpmareset_in), // input wire gt1_rxpmareset_in
+        //---------------- Receive Ports - RX Margin Analysis ports ----------------
+        .gt1_rxlpmen_in                 (gt1_rxlpmen_in), // input wire gt1_rxlpmen_in
+        //--------------- Receive Ports - RX Polarity Control Ports ----------------
+        .gt1_rxpolarity_in              (gt1_rxpolarity_in), // input wire gt1_rxpolarity_in
+        //----------------- Receive Ports - RX8B/10B Decoder Ports -----------------
+        .gt1_rxchariscomma_out          (gt1_rxchariscomma_out), // output wire [3:0] gt1_rxchariscomma_out
+        .gt1_rxcharisk_out              (gt1_rxcharisk_out), // output wire [3:0] gt1_rxcharisk_out
+        //---------------- Receive Ports - Rx Channel Bonding Ports ----------------
+        .gt1_rxchbondi_in               (gt1_rxchbondi_in), // input wire [4:0] gt1_rxchbondi_in
+        //------------ Receive Ports -RX Initialization and Reset Ports ------------
+        .gt1_rxresetdone_out            (gt1_rxresetdone_i), // output wire gt1_rxresetdone_i
+        //---------------------- TX Configurable Driver Ports ----------------------
+        .gt1_txpostcursor_in            (gt1_txpostcursor_in), // input wire [4:0] gt1_txpostcursor_in
+        .gt1_txprecursor_in             (gt1_txprecursor_in), // input wire [4:0] gt1_txprecursor_in
+        //------------------- TX Initialization and Reset Ports --------------------
+        .gt1_gttxreset_in               (gt1_gttxreset_i), // input wire gt1_gttxreset_i
+        .gt1_txuserrdy_in               (gt1_txuserrdy_i), // input wire gt1_txuserrdy_i
+        //---------------- Transmit Ports - FPGA TX Interface Ports ----------------
+        .gt1_txusrclk_in                (gt1_txusrclk_in), // input wire gt1_txusrclk_in
+        .gt1_txusrclk2_in               (gt1_txusrclk2_in), // input wire gt1_txusrclk2_in
+        //---------------- Transmit Ports - Pattern Generator Ports ----------------
+        .gt1_txprbsforceerr_in          (gt1_txprbsforceerr_in), // input wire gt1_txprbsforceerr_in
+        //-------------------- Transmit Ports - TX Buffer Ports --------------------
+        .gt1_txbufstatus_out            (gt1_txbufstatus_out), // output wire [1:0] gt1_txbufstatus_out
+        //------------- Transmit Ports - TX Configurable Driver Ports --------------
+        .gt1_txdiffctrl_in              (gt1_txdiffctrl_in), // input wire [3:0] gt1_txdiffctrl_in
+        .gt1_txinhibit_in               (gt1_txinhibit_in), // input wire gt1_txinhibit_in
+        //---------------- Transmit Ports - TX Data Path interface -----------------
+        .gt1_txdata_in                  (gt1_txdata_in), // input wire [31:0] gt1_txdata_in
+        //-------------- Transmit Ports - TX Driver and OOB signaling --------------
+        .gt1_gtxtxn_out                 (gt1_gtxtxn_out), // output wire gt1_gtxtxn_out
+        .gt1_gtxtxp_out                 (gt1_gtxtxp_out), // output wire gt1_gtxtxp_out
+        //--------- Transmit Ports - TX Fabric Clock Output Control Ports ----------
+        .gt1_txoutclk_out               (gt1_txoutclk_i), // output wire gt1_txoutclk_i
+        .gt1_txoutclkfabric_out         (gt1_txoutclkfabric_out), // output wire gt1_txoutclkfabric_out
+        .gt1_txoutclkpcs_out            (gt1_txoutclkpcs_out), // output wire gt1_txoutclkpcs_out
+        //------------------- Transmit Ports - TX Gearbox Ports --------------------
+        .gt1_txcharisk_in               (gt1_txcharisk_in), // input wire [3:0] gt1_txcharisk_in
+        //----------- Transmit Ports - TX Initialization and Reset Ports -----------
+        .gt1_txpcsreset_in              (gt1_txpcsreset_in), // input wire gt1_txpcsreset_in
+        .gt1_txpmareset_in              (gt1_txpmareset_in), // input wire gt1_txpmareset_in
+        .gt1_txresetdone_out            (gt1_txresetdone_i), // output wire gt1_txresetdone_i
+        //--------------- Transmit Ports - TX Polarity Control Ports ---------------
+        .gt1_txpolarity_in              (gt1_txpolarity_in), // input wire gt1_txpolarity_in
+        //---------------- Transmit Ports - pattern Generator Ports ----------------
+        .gt1_txprbssel_in               (gt1_txprbssel_in), // input wire [2:0] gt1_txprbssel_in
+
+
 
 
     //____________________________COMMON PORTS________________________________
@@ -461,15 +778,23 @@ assign  tied_to_vcc_i                        =  1'b1;
 
 assign  gt0_rxpcsreset_i                     =  tied_to_ground_i;
 assign  gt0_txpcsreset_i                     =  tied_to_ground_i;
+assign  gt1_rxpcsreset_i                     =  tied_to_ground_i;
+assign  gt1_txpcsreset_i                     =  tied_to_ground_i;
 
     assign  gt0_rxdfelpmreset_i                  =  tied_to_ground_i;
 assign  gt0_txpmareset_i                     =  tied_to_ground_i;
+    assign  gt1_rxdfelpmreset_i                  =  tied_to_ground_i;
+assign  gt1_txpmareset_i                     =  tied_to_ground_i;
 
 
 assign  gt0_cplllock_out                     =  gt0_cplllock_i;
 assign  gt0_txresetdone_out                  =  gt0_txresetdone_i;
 assign  gt0_rxresetdone_out                  =  gt0_rxresetdone_i;
 assign  gt0_txoutclk_out                     =  gt0_txoutclk_i;
+assign  gt1_cplllock_out                     =  gt1_cplllock_i;
+assign  gt1_txresetdone_out                  =  gt1_txresetdone_i;
+assign  gt1_rxresetdone_out                  =  gt1_rxresetdone_i;
+assign  gt1_txoutclk_out                     =  gt1_txoutclk_i;
 
 generate
 if (EXAMPLE_USE_CHIPSCOPE == 1) 
@@ -479,6 +804,11 @@ assign  gt0_gttxreset_i                      =  gt0_gttxreset_in || gt_gttxreset
 assign  gt0_gtrxreset_i                      =  gt0_gtrxreset_in || gt_gtrxreset_t;
 assign  gt0_txuserrdy_i                      =  gt0_txuserrdy_in || gt_txuserrdy_t;
 assign  gt0_rxuserrdy_i                      =  gt0_rxuserrdy_in || gt_rxuserrdy_t;
+assign  gt1_cpllreset_i                      =  gt1_cpllreset_in || gt_cpllreset_t;
+assign  gt1_gttxreset_i                      =  gt1_gttxreset_in || gt_gttxreset_t;
+assign  gt1_gtrxreset_i                      =  gt1_gtrxreset_in || gt_gtrxreset_t;
+assign  gt1_txuserrdy_i                      =  gt1_txuserrdy_in || gt_txuserrdy_t;
+assign  gt1_rxuserrdy_i                      =  gt1_rxuserrdy_in || gt_rxuserrdy_t;
 end
 endgenerate 
 
@@ -490,6 +820,11 @@ assign  gt0_gttxreset_i                      =  gt_gttxreset_t;
 assign  gt0_gtrxreset_i                      =  gt_gtrxreset_t;
 assign  gt0_txuserrdy_i                      =  gt_txuserrdy_t;
 assign  gt0_rxuserrdy_i                      =  gt_rxuserrdy_t;
+assign  gt1_cpllreset_i                      =  gt_cpllreset_t;
+assign  gt1_gttxreset_i                      =  gt_gttxreset_t;
+assign  gt1_gtrxreset_i                      =  gt_gtrxreset_t;
+assign  gt1_txuserrdy_i                      =  gt_txuserrdy_t;
+assign  gt1_rxuserrdy_i                      =  gt_rxuserrdy_t;
 end
 endgenerate 
 
@@ -528,15 +863,19 @@ gt_txresetfsm_i
            );
 
     assign gt_cplllock_i = 
-                                gt0_cplllock_i ;
+                                gt0_cplllock_i &
+                                gt1_cplllock_i ;
 
     assign gt_txresetdone_i = 
-                                gt0_txresetdone_i ;
+                                gt0_txresetdone_i &
+                                gt1_txresetdone_i ;
 
     assign gt_tx_mmcm_lock_i = 
-                                gt0_tx_mmcm_lock_in ;
+                                gt0_tx_mmcm_lock_in &
+                                gt1_tx_mmcm_lock_in ;
 
 assign gt0_tx_mmcm_reset_out = gt_tx_mmcm_reset_i;
+assign gt1_tx_mmcm_reset_out = gt_tx_mmcm_reset_i;
 
 
  
@@ -592,17 +931,22 @@ gt_rxresetfsm_i
 
 
     assign gt_rxresetdone_i = 
-                                gt0_rxresetdone_i ;
+                                gt0_rxresetdone_i &
+                                gt1_rxresetdone_i ;
 
     assign gt_recclk_stable_i = 
-                                gt0_recclk_stable_i ;
+                                gt0_recclk_stable_i &
+                                gt1_recclk_stable_i ;
     assign gt_data_valid_i = 
-                                gt0_data_valid_in ;
+                                gt0_data_valid_in &
+                                gt1_data_valid_in ;
 
     assign gt_rx_mmcm_lock_i = 
-                                gt0_rx_mmcm_lock_in ;
+                                gt0_rx_mmcm_lock_in &
+                                gt1_rx_mmcm_lock_in ;
 
 assign gt0_rx_mmcm_reset_out = gt_rx_mmcm_reset_i;
+assign gt1_rx_mmcm_reset_out = gt_rx_mmcm_reset_i;
 
 
   always @(posedge sysclk_in)
@@ -621,7 +965,24 @@ assign gt0_rx_mmcm_reset_out = gt_rx_mmcm_reset_i;
           gt0_rx_cdrlock_counter <= `DLY    gt0_rx_cdrlock_counter + 1;
   end 
 
+  always @(posedge sysclk_in)
+  begin
+        if(gt1_gtrxreset_i)
+        begin
+          gt1_rx_cdrlocked       <= `DLY    1'b0;
+          gt1_rx_cdrlock_counter <= `DLY    0;      
+        end                
+        else if (gt1_rx_cdrlock_counter == WAIT_TIME_CDRLOCK) 
+        begin
+          gt1_rx_cdrlocked       <= `DLY    1'b1;
+          gt1_rx_cdrlock_counter <= `DLY    gt1_rx_cdrlock_counter;
+        end
+        else
+          gt1_rx_cdrlock_counter <= `DLY    gt1_rx_cdrlock_counter + 1;
+  end 
+
 assign  gt0_recclk_stable_i                  =  gt0_rx_cdrlocked;
+assign  gt1_recclk_stable_i                  =  gt1_rx_cdrlocked;
 
 
 

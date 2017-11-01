@@ -30,9 +30,24 @@ set_property PACKAGE_PIN H6 [get_ports sys_clkp]
 
 set_property LOC R4  [get_ports srio_rxp0]
 set_property LOC R3  [get_ports srio_rxn0]
-
 set_property LOC P2  [get_ports srio_txp0]
 set_property LOC P1  [get_ports srio_txn0]
+
+set_property LOC N4  [get_ports srio_rxp1]
+set_property LOC N3  [get_ports srio_rxn1]
+set_property LOC M2  [get_ports srio_txp1]
+set_property LOC M1  [get_ports srio_txn1]
+
+#set_property LOC L4  [get_ports srio_rxp2]
+#set_property LOC L3  [get_ports srio_rxn2]
+#set_property LOC K2  [get_ports srio_txp2]
+#set_property LOC K1  [get_ports srio_txn2]
+
+#set_property LOC J4  [get_ports srio_rxp3]
+#set_property LOC J3  [get_ports srio_rxn3]
+#set_property LOC H2  [get_ports srio_txp3]
+#set_property LOC H1  [get_ports srio_txn3]
+
 #set_property PACKAGE_PIN P1 [get_ports srio_txn0]
 #set_property PACKAGE_PIN P2 [get_ports srio_txp0]
                                                  

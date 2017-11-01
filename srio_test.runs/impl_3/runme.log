@@ -14,39 +14,39 @@ Design is defaulting to constrset: constrs_1
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/srio_gen2_0.dcp' for cell 'srio_ip'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/vio_0/vio_0.dcp' for cell 'vio_ip'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.dcp' for cell 'srio_rx/fifo_rx_ip'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.dcp' for cell 'srio_rx/ila_ip'
-INFO: [Netlist 29-17] Analyzing 486 Unisim elements for replacement
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.dcp' for cell 'srio_rx/ila_ip'
+INFO: [Netlist 29-17] Analyzing 516 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2016.3
 INFO: [Device 21-403] Loading part xc7k325tffg676-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 2 IBUFs to IO ports without IO buffers.
+Parsing XDC File [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/ila_v6_2/constraints/ila.xdc] for cell 'srio_rx/ila_ip/inst'
+Finished Parsing XDC File [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/ila_v6_2/constraints/ila.xdc] for cell 'srio_rx/ila_ip/inst'
 Parsing XDC File [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/srio_gen2_0_core.xdc] for cell 'srio_ip'
 Finished Parsing XDC File [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/srio_gen2_0_core.xdc] for cell 'srio_ip'
 Parsing XDC File [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/vio_0/vio_0.xdc] for cell 'vio_ip'
 Finished Parsing XDC File [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/vio_0/vio_0.xdc] for cell 'vio_ip'
 Parsing XDC File [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst/fifo_generator_rx_inst.xdc] for cell 'srio_rx/fifo_rx_ip/U0'
 Finished Parsing XDC File [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst/fifo_generator_rx_inst.xdc] for cell 'srio_rx/fifo_rx_ip/U0'
-Parsing XDC File [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/ila_v6_2/constraints/ila.xdc] for cell 'srio_rx/ila_ip/inst'
-Finished Parsing XDC File [c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/ila_v6_2/constraints/ila.xdc] for cell 'srio_rx/ila_ip/inst'
 Parsing XDC File [C:/Projects/srio_test/srio_test/top.xdc]
-WARNING: [Vivado 12-180] No cells matched '.*/gt_wrapper_i/gt0_gt_wrapper_i/gt.e2_i'. [C:/Projects/srio_test/srio_test/top.xdc:42]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/srio_test/srio_test/top.xdc:42]
+WARNING: [Vivado 12-180] No cells matched '.*/gt_wrapper_i/gt0_gt_wrapper_i/gt.e2_i'. [C:/Projects/srio_test/srio_test/top.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Projects/srio_test/srio_test/top.xdc:57]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Projects/srio_test/srio_test/top.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.dcp'
 INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/srio_gen2_0.dcp'
 INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/vio_0/vio_0.dcp'
 INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.dcp'
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 282 instances were transformed.
-  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 260 instances
+  A total of 286 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 264 instances
   LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 1 instances
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 17 instances
   RAM32X1D => RAM32X1D (RAMD32, RAMD32): 4 instances
 
-link_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 601.621 ; gain = 391.746
+link_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 597.207 ; gain = 386.980
 INFO: [Vivado_Tcl 4-424] Cannot write hardware definition file as there are no IPI block design hardware handoff files present
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
@@ -58,7 +58,7 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.998 . Memory (MB): peak = 605.719 ; gain = 4.098
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.983 . Memory (MB): peak = 607.832 ; gain = 8.672
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
 
@@ -70,76 +70,76 @@ INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.3/data/ip'.
 INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:2.0 for cell dbg_hub_CV.
 INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:xsdbm:2.0", from Vivado IP cache entry "e7546a6698f6369e".
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1244.707 ; gain = 0.000
-Phase 1 Generate And Synthesize Debug Cores | Checksum: 1a955c12e
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1263.898 ; gain = 0.000
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 180858642
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:33 . Memory (MB): peak = 1244.707 ; gain = 85.406
-Implement Debug Cores | Checksum: 176947c2b
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:29 . Memory (MB): peak = 1263.898 ; gain = 101.926
+Implement Debug Cores | Checksum: 1f5b78777
 
 Phase 2 Retarget
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 21 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 2 Retarget | Checksum: 248533056
+Phase 2 Retarget | Checksum: 18fca1f0e
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:35 . Memory (MB): peak = 1245.465 ; gain = 86.164
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:31 . Memory (MB): peak = 1264.699 ; gain = 102.727
 
 Phase 3 Constant propagation
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
-INFO: [Opt 31-10] Eliminated 765 cells.
-Phase 3 Constant propagation | Checksum: 1b7e30f3c
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 7 load pin(s).
+INFO: [Opt 31-10] Eliminated 770 cells.
+Phase 3 Constant propagation | Checksum: b6894cf9
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:36 . Memory (MB): peak = 1245.465 ; gain = 86.164
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:33 . Memory (MB): peak = 1264.699 ; gain = 102.727
 
 Phase 4 Sweep
-INFO: [Opt 31-12] Eliminated 1279 unconnected nets.
-INFO: [Opt 31-11] Eliminated 724 unconnected cells.
-Phase 4 Sweep | Checksum: 1ce258de8
+INFO: [Opt 31-12] Eliminated 1443 unconnected nets.
+INFO: [Opt 31-11] Eliminated 749 unconnected cells.
+Phase 4 Sweep | Checksum: 1044ad2c9
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:38 . Memory (MB): peak = 1245.465 ; gain = 86.164
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:34 . Memory (MB): peak = 1264.699 ; gain = 102.727
 
 Phase 5 BUFG optimization
-INFO: [Opt 31-12] Eliminated 2 unconnected nets.
+INFO: [Opt 31-12] Eliminated 1 unconnected nets.
 INFO: [Opt 31-11] Eliminated 0 unconnected cells.
-Phase 5 BUFG optimization | Checksum: 28be8acdd
+Phase 5 BUFG optimization | Checksum: 12c89d039
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1245.465 ; gain = 86.164
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 1264.699 ; gain = 102.727
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 1245.465 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 28be8acdd
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1264.699 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 12c89d039
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1245.465 ; gain = 86.164
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:37 . Memory (MB): peak = 1264.699 ; gain = 102.727
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
 INFO: [Pwropt 34-9] Applying IDT optimizations ...
 INFO: [Pwropt 34-10] Applying ODC optimizations ...
 
-Finished Running Vector-less Activity Propagation
-
 
 Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 16 BRAM(s) out of a total of 33 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 16 BRAM(s) out of a total of 51 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 8 WE to EN ports
-Number of BRAM Ports augmented: 9 newly gated: 8 Total Ports: 66
-Ending PowerOpt Patch Enables Task | Checksum: 1e02fb836
+Number of BRAM Ports augmented: 6 newly gated: 8 Total Ports: 102
+Ending PowerOpt Patch Enables Task | Checksum: 16ef0bf99
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 1532.996 ; gain = 0.000
-Ending Power Optimization Task | Checksum: 1e02fb836
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 1608.066 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 16ef0bf99
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 1532.996 ; gain = 287.531
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1608.066 ; gain = 343.367
 INFO: [Common 17-83] Releasing license: Implementation
 46 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:38 ; elapsed = 00:01:01 . Memory (MB): peak = 1532.996 ; gain = 931.375
+opt_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:57 . Memory (MB): peak = 1608.066 ; gain = 1010.859
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1608.066 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/srio_test/srio_test/srio_test.runs/impl_3/srio_example_test_opt.dcp' has been generated.
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Coretcl 2-168] The results of DRC are in file C:/Projects/srio_test/srio_test/srio_test.runs/impl_3/srio_example_test_drc_opted.rpt.
@@ -201,79 +201,79 @@ Starting Placer Task
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
 
 Phase 1 Placer Initialization
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1608.066 ; gain = 0.000
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 16bd42008
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 16e3c3378
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 1.2 Build Placer Netlist Model
-Phase 1.2 Build Placer Netlist Model | Checksum: 225545c91
+Phase 1.2 Build Placer Netlist Model | Checksum: 21a630d98
 
-Time (s): cpu = 00:01:01 ; elapsed = 00:00:39 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:38 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 1.3 Constrain Clocks/Macros
-Phase 1.3 Constrain Clocks/Macros | Checksum: 225545c91
+Phase 1.3 Constrain Clocks/Macros | Checksum: 21a630d98
 
-Time (s): cpu = 00:01:01 ; elapsed = 00:00:39 . Memory (MB): peak = 1532.996 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 225545c91
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:38 . Memory (MB): peak = 1608.066 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 21a630d98
 
-Time (s): cpu = 00:01:01 ; elapsed = 00:00:39 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:38 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 2 Global Placement
-Phase 2 Global Placement | Checksum: 11ac9f6ba
+Phase 2 Global Placement | Checksum: 1a3dfb4e0
 
-Time (s): cpu = 00:01:22 ; elapsed = 00:00:52 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:23 ; elapsed = 00:00:52 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 11ac9f6ba
+Phase 3.1 Commit Multi Column Macros | Checksum: 1a3dfb4e0
 
-Time (s): cpu = 00:01:22 ; elapsed = 00:00:52 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:23 ; elapsed = 00:00:52 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: e9a6787b
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1b32f880b
 
-Time (s): cpu = 00:01:27 ; elapsed = 00:00:55 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:29 ; elapsed = 00:00:56 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 1703f90ca
+Phase 3.3 Area Swap Optimization | Checksum: 19b8aabf8
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:00:56 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:29 ; elapsed = 00:00:56 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 125f62087
+Phase 3.4 Pipeline Register Optimization | Checksum: 14a6c1330
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:00:56 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:29 ; elapsed = 00:00:56 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 3.5 Timing Path Optimizer
-Phase 3.5 Timing Path Optimizer | Checksum: 1e136b785
+Phase 3.5 Timing Path Optimizer | Checksum: 14c1d81d3
 
-Time (s): cpu = 00:01:29 ; elapsed = 00:00:57 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:30 ; elapsed = 00:00:57 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 3.6 Small Shape Detail Placement
-Phase 3.6 Small Shape Detail Placement | Checksum: 1a3f6c29a
+Phase 3.6 Small Shape Detail Placement | Checksum: 161362f5b
 
-Time (s): cpu = 00:01:36 ; elapsed = 00:01:07 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:37 ; elapsed = 00:01:07 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 16751f072
+Phase 3.7 Re-assign LUT pins | Checksum: 1f6a5c180
 
-Time (s): cpu = 00:01:37 ; elapsed = 00:01:07 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:38 ; elapsed = 00:01:07 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: 18019825e
+Phase 3.8 Pipeline Register Optimization | Checksum: 1f6a5c180
 
-Time (s): cpu = 00:01:37 ; elapsed = 00:01:08 . Memory (MB): peak = 1532.996 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: 18019825e
+Time (s): cpu = 00:01:38 ; elapsed = 00:01:08 . Memory (MB): peak = 1608.066 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 1f6a5c180
 
-Time (s): cpu = 00:01:37 ; elapsed = 00:01:08 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:38 ; elapsed = 00:01:08 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -281,47 +281,47 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-INFO: [Place 30-746] Post Placement Timing Summary WNS=3.864. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: e9c1056e
+INFO: [Place 30-746] Post Placement Timing Summary WNS=3.586. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 18648313e
 
-Time (s): cpu = 00:01:43 ; elapsed = 00:01:12 . Memory (MB): peak = 1532.996 ; gain = 0.000
-Phase 4.1 Post Commit Optimization | Checksum: e9c1056e
+Time (s): cpu = 00:01:44 ; elapsed = 00:01:12 . Memory (MB): peak = 1608.066 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 18648313e
 
-Time (s): cpu = 00:01:43 ; elapsed = 00:01:12 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:45 ; elapsed = 00:01:12 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: e9c1056e
+Phase 4.2 Post Placement Cleanup | Checksum: 18648313e
 
-Time (s): cpu = 00:01:44 ; elapsed = 00:01:12 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:45 ; elapsed = 00:01:12 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: e9c1056e
+Phase 4.3 Placer Reporting | Checksum: 18648313e
 
-Time (s): cpu = 00:01:44 ; elapsed = 00:01:12 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:45 ; elapsed = 00:01:12 . Memory (MB): peak = 1608.066 ; gain = 0.000
 
 Phase 4.4 Final Placement Cleanup
-Phase 4.4 Final Placement Cleanup | Checksum: 12fae4c8c
+Phase 4.4 Final Placement Cleanup | Checksum: 1159f14ff
 
-Time (s): cpu = 00:01:44 ; elapsed = 00:01:13 . Memory (MB): peak = 1532.996 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 12fae4c8c
+Time (s): cpu = 00:01:45 ; elapsed = 00:01:12 . Memory (MB): peak = 1608.066 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1159f14ff
 
-Time (s): cpu = 00:01:44 ; elapsed = 00:01:13 . Memory (MB): peak = 1532.996 ; gain = 0.000
-Ending Placer Task | Checksum: 10d68ea88
+Time (s): cpu = 00:01:45 ; elapsed = 00:01:13 . Memory (MB): peak = 1608.066 ; gain = 0.000
+Ending Placer Task | Checksum: fe766f33
 
-Time (s): cpu = 00:01:45 ; elapsed = 00:01:13 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Time (s): cpu = 00:01:46 ; elapsed = 00:01:13 . Memory (MB): peak = 1608.066 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 64 Infos, 43 Warnings, 1 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:01:49 ; elapsed = 00:01:16 . Memory (MB): peak = 1532.996 ; gain = 0.000
+place_design: Time (s): cpu = 00:01:51 ; elapsed = 00:01:16 . Memory (MB): peak = 1608.066 ; gain = 0.000
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 1532.996 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1608.066 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/srio_test/srio_test/srio_test.runs/impl_3/srio_example_test_placed.dcp' has been generated.
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1532.996 ; gain = 0.000
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.219 . Memory (MB): peak = 1532.996 ; gain = 0.000
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1532.996 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1608.066 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.218 . Memory (MB): peak = 1608.066 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1608.066 ; gain = 0.000
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
@@ -333,103 +333,103 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: a76016ae ConstDB: 0 ShapeSum: 6608d3da RouteDB: 0
+Checksum: PlaceDB: b7ca6795 ConstDB: 0 ShapeSum: 46ac079e RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: 1a342155c
+Phase 1 Build RT Design | Checksum: 2b4557e5
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:22 . Memory (MB): peak = 1613.922 ; gain = 80.926
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:21 . Memory (MB): peak = 1645.715 ; gain = 37.648
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 1a342155c
+Phase 2.1 Create Timer | Checksum: 2b4557e5
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:22 . Memory (MB): peak = 1613.922 ; gain = 80.926
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:21 . Memory (MB): peak = 1645.715 ; gain = 37.648
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 1a342155c
+Phase 2.2 Fix Topology Constraints | Checksum: 2b4557e5
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:23 . Memory (MB): peak = 1613.922 ; gain = 80.926
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:21 . Memory (MB): peak = 1645.715 ; gain = 37.648
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 1a342155c
+Phase 2.3 Pre Route Cleanup | Checksum: 2b4557e5
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:23 . Memory (MB): peak = 1613.922 ; gain = 80.926
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:21 . Memory (MB): peak = 1645.715 ; gain = 37.648
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 1683c1847
+Phase 2.4 Update Timing | Checksum: 243dd279d
 
-Time (s): cpu = 00:00:46 ; elapsed = 00:00:29 . Memory (MB): peak = 1629.313 ; gain = 96.316
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.854  | TNS=0.000  | WHS=-0.358 | THS=-553.742|
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:29 . Memory (MB): peak = 1661.668 ; gain = 53.602
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.576  | TNS=0.000  | WHS=-0.628 | THS=-1875.405|
 
-Phase 2 Router Initialization | Checksum: 1d3c6e2ba
+Phase 2 Router Initialization | Checksum: 17dd32024
 
-Time (s): cpu = 00:00:51 ; elapsed = 00:00:32 . Memory (MB): peak = 1629.313 ; gain = 96.316
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:32 . Memory (MB): peak = 1661.668 ; gain = 53.602
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: b7e5bc37
+Phase 3 Initial Routing | Checksum: 8bca239b
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:00:35 . Memory (MB): peak = 1629.313 ; gain = 96.316
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:35 . Memory (MB): peak = 1661.668 ; gain = 53.602
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 1456
- Number of Nodes with overlaps = 60
+ Number of Nodes with overlaps = 1542
+ Number of Nodes with overlaps = 55
  Number of Nodes with overlaps = 0
 
 Phase 4.1.1 Update Timing
-Phase 4.1.1 Update Timing | Checksum: 24981b18f
+Phase 4.1.1 Update Timing | Checksum: 12268dd80
 
-Time (s): cpu = 00:01:03 ; elapsed = 00:00:39 . Memory (MB): peak = 1629.313 ; gain = 96.316
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.868  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:44 . Memory (MB): peak = 1664.875 ; gain = 56.809
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.622  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 1d6878efd
+Phase 4.1 Global Iteration 0 | Checksum: 11d866834
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:39 . Memory (MB): peak = 1629.313 ; gain = 96.316
-Phase 4 Rip-up And Reroute | Checksum: 1d6878efd
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:45 . Memory (MB): peak = 1664.875 ; gain = 56.809
+Phase 4 Rip-up And Reroute | Checksum: 11d866834
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:40 . Memory (MB): peak = 1629.313 ; gain = 96.316
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:45 . Memory (MB): peak = 1664.875 ; gain = 56.809
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
-Phase 5.1 Delay CleanUp | Checksum: 1d6878efd
+Phase 5.1 Delay CleanUp | Checksum: 11d866834
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:40 . Memory (MB): peak = 1629.313 ; gain = 96.316
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:45 . Memory (MB): peak = 1664.875 ; gain = 56.809
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 1d6878efd
+Phase 5.2 Clock Skew Optimization | Checksum: 11d866834
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:40 . Memory (MB): peak = 1629.313 ; gain = 96.316
-Phase 5 Delay and Skew Optimization | Checksum: 1d6878efd
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:45 . Memory (MB): peak = 1664.875 ; gain = 56.809
+Phase 5 Delay and Skew Optimization | Checksum: 11d866834
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:40 . Memory (MB): peak = 1629.313 ; gain = 96.316
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:45 . Memory (MB): peak = 1664.875 ; gain = 56.809
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 233134414
+Phase 6.1.1 Update Timing | Checksum: 1708cd890
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:41 . Memory (MB): peak = 1629.313 ; gain = 96.316
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.955  | TNS=0.000  | WHS=-0.034 | THS=-0.156 |
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:47 . Memory (MB): peak = 1664.875 ; gain = 56.809
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.709  | TNS=0.000  | WHS=-0.034 | THS=-0.302 |
 
-Phase 6.1 Hold Fix Iter | Checksum: 1567959a9
+Phase 6.1 Hold Fix Iter | Checksum: 1779a85cb
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:41 . Memory (MB): peak = 1629.313 ; gain = 96.316
-Phase 6 Post Hold Fix | Checksum: 1c003ab56
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:47 . Memory (MB): peak = 1664.875 ; gain = 56.809
+Phase 6 Post Hold Fix | Checksum: 1b3a7a088
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:41 . Memory (MB): peak = 1629.313 ; gain = 96.316
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:47 . Memory (MB): peak = 1664.875 ; gain = 56.809
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.82934 %
-  Global Horizontal Routing Utilization  = 1.14724 %
+  Global Vertical Routing Utilization    = 1.12322 %
+  Global Horizontal Routing Utilization  = 1.41728 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -438,142 +438,15 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 1edda75d4
+Phase 7 Route finalize | Checksum: 160800d2a
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:42 . Memory (MB): peak = 1629.313 ; gain = 96.316
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:48 . Memory (MB): peak = 1664.875 ; gain = 56.809
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 1edda75d4
+Phase 8 Verifying routed nets | Checksum: 160800d2a
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:42 . Memory (MB): peak = 1629.313 ; gain = 96.316
+Time (s): cpu = 00:01:17 ; elapsed = 00:00:48 . Memory (MB): peak = 1664.875 ; gain = 56.809
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 1bfd996a3
-
-Time (s): cpu = 00:01:09 ; elapsed = 00:00:43 . Memory (MB): peak = 1629.313 ; gain = 96.316
-
-Phase 10 Post Router Timing
-
-Phase 10.1 Update Timing
-Phase 10.1 Update Timing | Checksum: 1918c3212
-
-Time (s): cpu = 00:01:10 ; elapsed = 00:00:44 . Memory (MB): peak = 1629.313 ; gain = 96.316
-INFO: [Route 35-57] Estimated Timing Summary | WNS=3.955  | TNS=0.000  | WHS=-0.034 | THS=-0.156 |
-
-WARNING: [Route 35-328] Router estimated timing not met.
-Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
-Phase 10 Post Router Timing | Checksum: 1918c3212
-
-Time (s): cpu = 00:01:10 ; elapsed = 00:00:44 . Memory (MB): peak = 1629.313 ; gain = 96.316
-WARNING: [Route 35-426] Router was unable to fix hold violation on unroutable pins. The router cannot add routing detours to improve hold time because the pins are part of one or more of the following unroutable types: partition pins, fixed routes and intra-site connections.
-Resolution: Run report_timing_summary to analyze the hold violations.
-INFO: [Route 35-16] Router Completed Successfully
-
-Time (s): cpu = 00:01:10 ; elapsed = 00:00:44 . Memory (MB): peak = 1629.313 ; gain = 96.316
-
-Routing Is Done.
-INFO: [Common 17-83] Releasing license: Implementation
-76 Infos, 45 Warnings, 1 Critical Warnings and 0 Errors encountered.
-route_design completed successfully
-route_design: Time (s): cpu = 00:01:15 ; elapsed = 00:00:46 . Memory (MB): peak = 1629.313 ; gain = 96.316
-Writing placer database...
-Writing XDEF routing.
-Writing XDEF routing logical nets.
-Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 1629.313 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Projects/srio_test/srio_test/srio_test.runs/impl_3/srio_example_test_routed.dcp' has been generated.
-INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file C:/Projects/srio_test/srio_test/srio_test.runs/impl_3/srio_example_test_drc_routed.rpt.
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-INFO: [DRC 23-133] Running Methodology with 2 threads
-INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Projects/srio_test/srio_test/srio_test.runs/impl_3/srio_example_test_methodology_drc_routed.rpt.
-report_methodology: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1648.703 ; gain = 19.391
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-Command: report_power -file srio_example_test_power_routed.rpt -pb srio_example_test_power_summary_routed.pb -rpx srio_example_test_power_routed.rpx
-Running Vector-less Activity Propagation...
-
-Finished Running Vector-less Activity Propagation
-WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
-Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
-86 Infos, 46 Warnings, 1 Critical Warnings and 0 Errors encountered.
-report_power completed successfully
-Command: write_bitstream -force -no_partial_bitfile srio_example_test.bit
-Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
-Running DRC as a precondition to command write_bitstream
-INFO: [DRC 23-27] Running DRC with 2 threads
-WARNING: [DRC 23-20] Rule violation (CFGBVS-1) Missing CFGBVS and CONFIG_VOLTAGE Design Properties - Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
-
- set_property CFGBVS value1 [current_design]
- #where value1 is either VCCO or GND
-
- set_property CONFIG_VOLTAGE value2 [current_design]
- #where value2 is the voltage provided to configuration bank 0
-
-Refer to the device configuration user guide for more information.
-WARNING: [DRC 23-20] Rule violation (CHECK-3) Report rule limit reached - REQP-1839 rule limit reached: 20 violations have been found.
-WARNING: [DRC 23-20] Rule violation (CHECK-3) Report rule limit reached - REQP-1840 rule limit reached: 20 violations have been found.
-WARNING: [DRC 23-20] Rule violation (PDRC-153) Gated clock check - Net srio_rx/only_header_sent_reg_i_2_n_1 is a gated clock net sourced by a combinational pin srio_rx/only_header_sent_reg_i_2/O, cell srio_rx/only_header_sent_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-WARNING: [DRC 23-20] Rule violation (PDRC-153) Gated clock check - Net srio_rx/response_tlast_reg/G0 is a gated clock net sourced by a combinational pin srio_rx/response_tlast_reg/L3_2/O, cell srio_rx/response_tlast_reg/L3_2 (in srio_rx/response_tlast_reg macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/RSTREGB (net: srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/buf_log_rst_q_reg) which is driven by a register (srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_log_rst_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/RSTREGB (net: srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/buf_log_rst_q_reg) which is driven by a register (srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_log_rst_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/RSTREGB (net: srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/buf_log_rst_q_reg) which is driven by a register (srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_log_rst_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/RSTREGB (net: srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_rx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/buf_log_rst_q_reg) which is driven by a register (srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_rx_inst/buf_log_rst_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/RSTRAMB (net: srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/buf_phy_rst_q_reg) which is driven by a register (srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_phy_rst_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/RSTRAMB (net: srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/buf_phy_rst_q_reg) which is driven by a register (srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_phy_rst_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/RSTRAMB (net: srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/buf_phy_rst_q_reg) which is driven by a register (srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_phy_rst_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/RSTRAMB (net: srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_bram_bank_inst/blk_mem_inst/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/buf_phy_rst_q_reg) which is driven by a register (srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_phy_rst_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[10] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[7]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[11] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[8]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[12] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[9]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[13] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[10]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[14] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[11]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[3] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[0]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[4] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[1]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[5] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[2]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[6] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[3]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[7] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[4]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[8] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[5]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram/ADDRARDADDR[9] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/Q[6]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[10] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[8]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[11] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[9]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[12] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[10]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[13] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[11]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[2] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[0]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[3] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[1]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[4] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[2]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[5] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[3]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[6] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[4]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[7] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[5]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[8] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[6]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRARDADDR[9] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/Q[7]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRBWRADDR[10] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc0.count_d1_reg[11][8]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRBWRADDR[11] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc0.count_d1_reg[11][9]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRBWRADDR[12] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc0.count_d1_reg[11][10]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRBWRADDR[13] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc0.count_d1_reg[11][11]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRBWRADDR[6] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc0.count_d1_reg[11][4]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRBWRADDR[7] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc0.count_d1_reg[11][5]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRBWRADDR[8] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc0.count_d1_reg[11][6]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (REQP-1840) RAMB18 async control check - The RAMB18E1 srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has an input control pin srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ADDRBWRADDR[9] (net: srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/gc0.count_d1_reg[11][7]) which is driven by a register (srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC 23-20] Rule violation (RTSTAT-10) No routable loads - 39 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/RUNTEST, dbg_hub/inst/TCK, dbg_hub/inst/TMS, dbg_hub/inst/UPDATE_temp_i, srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_sync_unit_inst/real_sync_unit.dist_ram_afifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v2_0_1_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_flags[7:0], dbg_hub/inst/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, srio_rx/fifo_rx_ip/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, dbg_hub/inst/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v2_0_1_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_sync_unit_inst/real_sync_unit.dist_ram_afifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, srio_ip/inst/srio_gen2_0_block_inst/srio_gen2_v4_0_5_unifiedtop_inst/buf_core_inst/buf_top_inst/buf_tx_inst/buf_tx_sync_unit_inst/srl16_fifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i (the first 15 of 32 listed).
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 46 Warnings
-INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
-Loading data files...
-Loading site data...
-Loading route data...
-Processing options...
-Creating bitmap...
-Creating bitstream...
-Writing bitstream ./srio_example_test.bit...
-INFO: [Vivado 12-1842] Bitgen Completed Successfully.
-INFO: [Common 17-83] Releasing license: Implementation
-92 Infos, 92 Warnings, 1 Critical Warnings and 0 Errors encountered.
-write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 2197.980 ; gain = 488.496
-INFO: [Vivado_Tcl 4-395] Unable to parse hwdef file srio_example_test.hwdef
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 03 11:06:16 2017...

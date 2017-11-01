@@ -3,5 +3,8 @@
 
 # XDC: C:/Projects/srio_test/srio_test/top.xdc
 
+# IP: ip/dbg_ila/dbg_ila.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==dbg_ila || ORIG_REF_NAME==dbg_ila}]
+
 # IP: ip/srio_gen2_0/srio_gen2_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==srio_gen2_0 || ORIG_REF_NAME==srio_gen2_0}]

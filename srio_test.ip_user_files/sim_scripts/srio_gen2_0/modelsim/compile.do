@@ -49,7 +49,7 @@ vlog -work xil_defaultlib -64 -incr \
 "../../../../srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_rx_startup_fsm.v" \
 "../../../../srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_sync_block.v" \
 "../../../../srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_gtxe2_tx_startup_fsm.v" \
-"../../../../srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gt_wrapper_srio_gen2_0_k7_1x.v" \
+"../../../../srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gt_wrapper_srio_gen2_0_k7_2x.v" \
 "../../../../srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_support.v" \
 "../../../../srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_block.v" \
 "../../../../srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0.v" \

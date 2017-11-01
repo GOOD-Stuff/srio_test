@@ -458,7 +458,7 @@
         <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
       </probeOptions>
       <nets>
-        <net name="srio_rx/treq_advance_condition"/>
+        <net name="srio_rx/end_request"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
@@ -471,7 +471,7 @@
         <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
       </probeOptions>
       <nets>
-        <net name="srio_rx/d_treq_advance_condition"/>
+        <net name="srio_rx/treq_advance_condition"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
@@ -484,27 +484,20 @@
         <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
       </probeOptions>
       <nets>
-        <net name="srio_rx/end_request"/>
+        <net name="srio_rx/d_treq_advance_condition"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
         <Option Id="CORE_LOCATION" value="1:0"/>
         <Option Id="HW_ILA" value="srio_rx/ila_ip"/>
         <Option Id="PROBE_PORT" value="18"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="8"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
       </probeOptions>
       <nets>
-        <net name="srio_rx/srcTID[7]"/>
-        <net name="srio_rx/srcTID[6]"/>
-        <net name="srio_rx/srcTID[5]"/>
-        <net name="srio_rx/srcTID[4]"/>
-        <net name="srio_rx/srcTID[3]"/>
-        <net name="srio_rx/srcTID[2]"/>
-        <net name="srio_rx/srcTID[1]"/>
-        <net name="srio_rx/srcTID[0]"/>
+        <net name="srio_rx/tresp_advance_condition"/>
       </nets>
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
@@ -528,17 +521,24 @@
         <net name="srio_rx/current_bit_cnt[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
         <Option Id="CORE_LOCATION" value="1:0"/>
         <Option Id="HW_ILA" value="srio_rx/ila_ip"/>
         <Option Id="PROBE_PORT" value="20"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="8"/>
       </probeOptions>
       <nets>
-        <net name="srio_rx/tresp_advance_condition"/>
+        <net name="srio_rx/count_req[7]"/>
+        <net name="srio_rx/count_req[6]"/>
+        <net name="srio_rx/count_req[5]"/>
+        <net name="srio_rx/count_req[4]"/>
+        <net name="srio_rx/count_req[3]"/>
+        <net name="srio_rx/count_req[2]"/>
+        <net name="srio_rx/count_req[1]"/>
+        <net name="srio_rx/count_req[0]"/>
       </nets>
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
@@ -584,24 +584,53 @@
         <net name="srio_rx/fifo_EMPTY"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
         <Option Id="CORE_LOCATION" value="1:0"/>
         <Option Id="HW_ILA" value="srio_rx/ila_ip"/>
         <Option Id="PROBE_PORT" value="24"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/fifo_FULL"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="srio_rx/ila_ip"/>
+        <Option Id="PROBE_PORT" value="25"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
         <Option Id="PROBE_PORT_BIT_COUNT" value="8"/>
       </probeOptions>
       <nets>
-        <net name="srio_rx/din_fifo_2[43]"/>
-        <net name="srio_rx/din_fifo_2[42]"/>
-        <net name="srio_rx/din_fifo_2[41]"/>
-        <net name="srio_rx/din_fifo_2[40]"/>
-        <net name="srio_rx/din_fifo_2[39]"/>
-        <net name="srio_rx/din_fifo_2[38]"/>
-        <net name="srio_rx/din_fifo_2[37]"/>
-        <net name="srio_rx/din_fifo_2[36]"/>
+        <net name="srio_rx/response_size[7]"/>
+        <net name="srio_rx/response_size[6]"/>
+        <net name="srio_rx/response_size[5]"/>
+        <net name="srio_rx/response_size[4]"/>
+        <net name="srio_rx/response_size[3]"/>
+        <net name="srio_rx/response_size[2]"/>
+        <net name="srio_rx/response_size[1]"/>
+        <net name="srio_rx/response_size[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="srio_rx/ila_ip"/>
+        <Option Id="PROBE_PORT" value="26"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="4"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/response_ftype[3]"/>
+        <net name="srio_rx/response_ftype[2]"/>
+        <net name="srio_rx/response_ftype[1]"/>
+        <net name="srio_rx/response_ftype[0]"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
@@ -609,12 +638,78 @@
         <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
         <Option Id="CORE_LOCATION" value="1:0"/>
         <Option Id="HW_ILA" value="srio_rx/ila_ip"/>
-        <Option Id="PROBE_PORT" value="25"/>
+        <Option Id="PROBE_PORT" value="27"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
         <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
       </probeOptions>
       <nets>
-        <net name="srio_rx/fifo_FULL"/>
+        <net name="srio_rx/en_rd"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="srio_rx/ila_ip"/>
+        <Option Id="PROBE_PORT" value="28"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/delay_start"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="srio_rx/ila_ip"/>
+        <Option Id="PROBE_PORT" value="29"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/transm_end"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="srio_rx/ila_ip"/>
+        <Option Id="PROBE_PORT" value="30"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="8"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/delay[7]"/>
+        <net name="srio_rx/delay[6]"/>
+        <net name="srio_rx/delay[5]"/>
+        <net name="srio_rx/delay[4]"/>
+        <net name="srio_rx/delay[3]"/>
+        <net name="srio_rx/delay[2]"/>
+        <net name="srio_rx/delay[1]"/>
+        <net name="srio_rx/delay[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="srio_rx/ila_ip"/>
+        <Option Id="PROBE_PORT" value="31"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="8"/>
+      </probeOptions>
+      <nets>
+        <net name="srio_rx/tmp_counter[7]"/>
+        <net name="srio_rx/tmp_counter[6]"/>
+        <net name="srio_rx/tmp_counter[5]"/>
+        <net name="srio_rx/tmp_counter[4]"/>
+        <net name="srio_rx/tmp_counter[3]"/>
+        <net name="srio_rx/tmp_counter[2]"/>
+        <net name="srio_rx/tmp_counter[1]"/>
+        <net name="srio_rx/tmp_counter[0]"/>
       </nets>
     </probe>
     <probe type="vio_input" busType="net" source="netlist" spec="VIO_INPUT_V2_RT">

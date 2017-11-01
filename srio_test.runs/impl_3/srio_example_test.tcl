@@ -58,14 +58,16 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet C:/Projects/srio_test/srio_test/srio_test.runs/synth_3/srio_example_test.dcp
+  add_files -quiet C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.dcp
+  set_property netlist_only true [get_files C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.dcp]
   add_files -quiet c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/srio_gen2_0.dcp
   set_property netlist_only true [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/srio_gen2_0.dcp]
   add_files -quiet c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/vio_0/vio_0.dcp
   set_property netlist_only true [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/vio_0/vio_0.dcp]
   add_files -quiet c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.dcp
   set_property netlist_only true [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.dcp]
-  add_files -quiet c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.dcp
-  set_property netlist_only true [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.dcp]
+  read_xdc -ref dbg_ila -cells inst c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/ila_v6_2/constraints/ila.xdc
+  set_property processing_order EARLY [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/ila_v6_2/constraints/ila.xdc]
   read_xdc -ref srio_gen2_0 c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/srio_gen2_0_core.xdc
   set_property processing_order EARLY [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/srio_gen2_0_core.xdc]
   read_xdc -mode out_of_context -ref vio_0 c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/vio_0/vio_0_ooc.xdc
@@ -76,10 +78,6 @@ set rc [catch {
   set_property processing_order EARLY [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst_ooc.xdc]
   read_xdc -ref fifo_generator_rx_inst -cells U0 c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst/fifo_generator_rx_inst.xdc
   set_property processing_order EARLY [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst/fifo_generator_rx_inst.xdc]
-  read_xdc -mode out_of_context -ref dbg_ila -cells inst c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila_ooc.xdc
-  set_property processing_order EARLY [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila_ooc.xdc]
-  read_xdc -ref dbg_ila -cells inst c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/ila_v6_2/constraints/ila.xdc
-  set_property processing_order EARLY [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/ila_v6_2/constraints/ila.xdc]
   read_xdc C:/Projects/srio_test/srio_test/top.xdc
   link_design -top srio_example_test -part xc7k325tffg676-1
   write_hwdef -file srio_example_test.hwdef

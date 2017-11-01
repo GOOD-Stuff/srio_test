@@ -58,8 +58,8 @@ module srio_gen2_0
   #(
    // {{{ Parameter declarations -----------
     parameter TCQ                     = 100, // in pS
-    parameter LINK_WIDTH              = 1,
-    parameter C_LINK_WIDTH            = 1
+    parameter LINK_WIDTH              = 2,
+    parameter C_LINK_WIDTH            = 2
    )
    (
     // Clocks and Resets
@@ -95,9 +95,13 @@ module srio_gen2_0
     // Serial IO Interface
     input             srio_rxn0,               // Serial Receive Data
     input             srio_rxp0,               // Serial Receive Data
+    input             srio_rxn1,               // Serial Receive Data
+    input             srio_rxp1,               // Serial Receive Data
 
     output            srio_txn0,               // Serial Transmit Data
     output            srio_txp0,               // Serial Transmit Data
+    output            srio_txn1,               // Serial Transmit Data
+    output            srio_txp1,               // Serial Transmit Data
 
     // LOG User I/O Interface
     input             s_axis_iotx_tvalid,             // Indicates Valid Input on the Request Channel
@@ -219,9 +223,13 @@ inst (
 
       .srio_rxn0               (srio_rxn0),
       .srio_rxp0               (srio_rxp0),
+      .srio_rxn1               (srio_rxn1),
+      .srio_rxp1               (srio_rxp1),
 
       .srio_txn0               (srio_txn0),
       .srio_txp0               (srio_txp0),
+      .srio_txn1               (srio_txn1),
+      .srio_txp1               (srio_txp1),
       .s_axis_iotx_tvalid      (s_axis_iotx_tvalid),
       .s_axis_iotx_tready      (s_axis_iotx_tready),
       .s_axis_iotx_tlast       (s_axis_iotx_tlast),

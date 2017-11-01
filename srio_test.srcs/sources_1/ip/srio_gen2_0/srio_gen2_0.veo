@@ -132,7 +132,11 @@ srio_gen2_0 your_instance_name (
   .srio_txn0(srio_txn0),                                          // output wire srio_txn0
   .srio_txp0(srio_txp0),                                          // output wire srio_txp0
   .srio_rxn0(srio_rxn0),                                          // input wire srio_rxn0
-  .srio_rxp0(srio_rxp0)                                          // input wire srio_rxp0
+  .srio_rxp0(srio_rxp0),                                          // input wire srio_rxp0
+  .srio_txn1(srio_txn1),                                          // output wire srio_txn1
+  .srio_txp1(srio_txp1),                                          // output wire srio_txp1
+  .srio_rxn1(srio_rxn1),                                          // input wire srio_rxn1
+  .srio_rxp1(srio_rxp1)                                          // input wire srio_rxp1
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

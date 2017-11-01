@@ -73,9 +73,9 @@ module srio_gen2_0_k7_v7_gtxe2_common
    //_________________________________________________________________________
    //_________________________GTXE2_COMMON____________________________________
     // ground and vcc signals
-                                 // 8/23/2013
-    parameter QPLL_FBDIV_TOP =  16;          // 1x-1.25,
 
+                                 // 8/23/2013
+    parameter QPLL_FBDIV_TOP =  40;
 
 
 

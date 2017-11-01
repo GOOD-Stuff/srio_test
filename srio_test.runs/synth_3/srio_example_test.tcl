@@ -22,12 +22,15 @@ add_files -quiet c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/vio
 set_property used_in_implementation false [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/vio_0/vio_0.dcp]
 add_files -quiet c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.dcp
 set_property used_in_implementation false [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/fifo_generator_rx_inst/fifo_generator_rx_inst.dcp]
-add_files -quiet c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.dcp
-set_property used_in_implementation false [get_files c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.dcp]
 read_verilog -library xil_defaultlib {
   C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/imports/new/srio_response.v
   C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/new/srio_example_test.v
 }
+read_ip -quiet C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.xci
+set_property used_in_implementation false [get_files -all c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila_ooc.xdc]
+set_property is_locked true [get_files C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/dbg_ila/dbg_ila.xci]
+
 read_ip -quiet C:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/srio_gen2_0.xci
 set_property used_in_implementation false [get_files -all c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/srio_gen2_0_core.xdc]
 set_property used_in_implementation false [get_files -all c:/Projects/srio_test/srio_test/srio_test.srcs/sources_1/ip/srio_gen2_0/synth/srio_gen2_0_ooc.xdc]

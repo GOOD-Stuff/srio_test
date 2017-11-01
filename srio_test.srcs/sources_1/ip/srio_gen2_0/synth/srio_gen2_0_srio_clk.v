@@ -149,14 +149,16 @@ module srio_gen2_0_srio_clk
    (.O (gt_pcs_clk),
     .I (clkout2));
 
-  // Note that this bufg is a duplicate of the log_clk bufg, and is not necessary if BUFG resources are limited.
-  BUFG phy_clk_bufg_inst
+  BUFGMUX phy_clk_bufg_inst
    (.O (phy_clk),
-    .I (clkout1));
+    .I0(clkout2),
+    .I1(clkout1),
+    .S (mode_1x));
 
-(* DONT_TOUCH = "true" *) BUFG log_clk_bufg_inst
+  // Note that this bufg is a duplicate of the gt_pcs_clk bufg, and is not necessary if BUFG resources are limited.
+  BUFG log_clk_bufg_inst
    (.O (log_clk),
-    .I (clkout1));
+    .I (clkout2));
  
   // End output buffering
 //______________________________________________________________________________

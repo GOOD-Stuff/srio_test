@@ -9,15 +9,21 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="4398627fs"></ZoomEndTime>
-      <Cursor1Time time="1955000fs"></Cursor1Time>
+      <ZoomStartTime time="3444500fs"></ZoomStartTime>
+      <ZoomEndTime time="4018501fs"></ZoomEndTime>
+      <Cursor1Time time="3811000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="207"></NameColumnWidth>
-      <ValueColumnWidth column_width="125"></ValueColumnWidth>
+      <ValueColumnWidth column_width="223"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="26" />
+   <WVObjectSize size="29" />
+   <wave_markers>
+      <marker time="2429000" label="" />
+      <marker time="1969000" label="" />
+      <marker time="1288000" label="" />
+      <marker time="1458000" label="" />
+   </wave_markers>
    <wvobject fp_name="srio_rx/din_fifo_1" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">srio_rx/din_fifo_1[63:0]</obj_property>
@@ -129,6 +135,8 @@
       <obj_property name="ElementShortName">srio_rx/end_request</obj_property>
       <obj_property name="ObjectShortName">end_request</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="srio_rx/need_response" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
@@ -138,23 +146,10 @@
       <obj_property name="CustomSignalColor">#800000</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="srio_rx/rd_fifo" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/rd_fifo</obj_property>
-      <obj_property name="ObjectShortName">rd_fifo</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
    <wvobject fp_name="srio_rx/wr_fifo" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">srio_rx/wr_fifo</obj_property>
       <obj_property name="ObjectShortName">wr_fifo</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/srcTID" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/srcTID[7:0]</obj_property>
-      <obj_property name="ObjectShortName">srcTID[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
    <wvobject fp_name="srio_rx/treq_advance_condition" type="logic">
@@ -168,20 +163,6 @@
       <obj_property name="ElementShortName">srio_rx/tresp_advance_condition</obj_property>
       <obj_property name="ObjectShortName">tresp_advance_condition</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/fifo_EMPTY" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/fifo_EMPTY</obj_property>
-      <obj_property name="ObjectShortName">fifo_EMPTY</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="srio_rx/din_fifo_2" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">srio_rx/din_fifo_2[43:36]</obj_property>
-      <obj_property name="ObjectShortName">din_fifo_2[43:36]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="label">srio_rx/request_size[43:36]</obj_property>
    </wvobject>
    <wvobject fp_name="srio_rx/state" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
@@ -201,16 +182,68 @@
       <obj_property name="CustomSignalColor">#A0A0A4</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="srio_rx/only_header_sent" type="logic">
+   <wvobject fp_name="srio_rx/fifo_EMPTY" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/only_header_sent</obj_property>
-      <obj_property name="ObjectShortName">only_header_sent</obj_property>
+      <obj_property name="ElementShortName">srio_rx/fifo_EMPTY</obj_property>
+      <obj_property name="ObjectShortName">fifo_EMPTY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/response_size" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/response_size[7:0]</obj_property>
+      <obj_property name="ObjectShortName">response_size[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject fp_name="srio_rx/fifo_FULL" type="logic">
+   <wvobject fp_name="srio_rx/count_req" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">srio_rx/fifo_FULL</obj_property>
-      <obj_property name="ObjectShortName">fifo_FULL</obj_property>
+      <obj_property name="ElementShortName">srio_rx/count_req[7:0]</obj_property>
+      <obj_property name="ObjectShortName">count_req[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="CustomSignalColor">#008080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/delay" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/delay[7:0]</obj_property>
+      <obj_property name="ObjectShortName">delay[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/delay_start" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/delay_start</obj_property>
+      <obj_property name="ObjectShortName">delay_start</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/transm_end" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/transm_end</obj_property>
+      <obj_property name="ObjectShortName">transm_end</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/en_rd" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/en_rd</obj_property>
+      <obj_property name="ObjectShortName">en_rd</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/rd_fifo" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/rd_fifo</obj_property>
+      <obj_property name="ObjectShortName">rd_fifo</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="srio_rx/tmp_counter" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">srio_rx/tmp_counter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_counter[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
 </wave_config>

@@ -1,0 +1,56 @@
+
+****** Vivado v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source get_cs_ip.tcl
+# set_param project.singleFileAddWarning.threshold 0
+# set_param xicom.use_bs_reader 1
+# set_param chipscope.flow 0
+# set part xc7k325tffg676-1
+# set ip_vlnv xilinx.com:ip:xsdbm:2.0
+# set ip_module_name dbg_hub_CV
+# set params {{{PARAM_VALUE.C_BSCAN_MODE} {false} {PARAM_VALUE.C_BSCAN_MODE_WITH_CORE} {false} {PARAM_VALUE.C_CLK_INPUT_FREQ_HZ} {300000000} {PARAM_VALUE.C_ENABLE_CLK_DIVIDER} {false} {PARAM_VALUE.C_NUM_BSCAN_MASTER_PORTS} {0} {PARAM_VALUE.C_TWO_PRIM_MODE} {false} {PARAM_VALUE.C_USER_SCAN_CHAIN} {1} {PARAM_VALUE.C_USE_EXT_BSCAN} {false} {PARAM_VALUE.C_XSDB_NUM_SLAVES} {2}}}
+# set output_xci c:/Projects/srio_test/srio_test/srio_test.runs/impl_3/.Xil/Vivado-2736-vldmr-PC/dbg_hub_CV.0/out/result.xci
+# set output_dcp c:/Projects/srio_test/srio_test/srio_test.runs/impl_3/.Xil/Vivado-2736-vldmr-PC/dbg_hub_CV.0/out/result.dcp
+# set output_dir c:/Projects/srio_test/srio_test/srio_test.runs/impl_3/.Xil/Vivado-2736-vldmr-PC/dbg_hub_CV.0/out
+# set ip_repo_paths {}
+# set ip_output_repo C:/Projects/srio_test/srio_test/srio_test.cache/ip
+# set ip_cache_permissions {read write}
+# set oopbus_ip_repo_paths [get_param chipscope.oopbus_ip_repo_paths]
+# set synth_opts {}
+# set xdc_files {}
+# source {C:/Xilinx/Vivado/2016.3/scripts/ip/ipxchipscope.tcl}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'c:/Projects/srio_test/srio_test/srio_test.runs/impl_3/.Xil/Vivado-2736-vldmr-PC/dbg_hub_CV.0/run'
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.3/data/ip'.
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'dbg_hub_CV'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'dbg_hub_CV'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'dbg_hub_CV'...
+synth_opts = 
+INFO: [Netlist 29-17] Analyzing 18 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.3
+INFO: [Device 21-403] Loading part xc7k325tffg676-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  RAM32M => RAM32M (RAMS32, RAMS32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2016.3 (64-bit) build 1682563
+INFO: [Coretcl 2-1485] Using cached IP synthesis design for IP c:/Projects/srio_test/srio_test/srio_test.runs/impl_3/.Xil/Vivado-2736-vldmr-PC/dbg_hub_CV.0/run/prj_ip_0.srcs/sources_1/ip/dbg_hub_CV/dbg_hub_CV.xci : c:/Projects/srio_test/srio_test/srio_test.cache/ip/e7546a6698f6369e/dbg_hub_CV.dcp
+Running: write_checkpoint -force dbg_hub_CV.dcp
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint 'c:/Projects/srio_test/srio_test/srio_test.runs/impl_3/.Xil/Vivado-2736-vldmr-PC/dbg_hub_CV.0/run/dbg_hub_CV.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1152.863 ; gain = 560.375
+INFO: [#UNDEF] Time taken for copying files = 2429
+# set failed [catch {ipx::chipscope::gen_and_synth_ip $part $ip_vlnv $ip_module_name $params $output_xci $output_dcp $output_dir $ip_repo_paths $ip_output_repo $ip_cache_permissions $oopbus_ip_repo_paths $synth_opts $xdc_files} errMessage]
+# if { $failed } {
+#   puts "Caught exception:"
+#   puts "$errMessage"
+#   exit 1
+# }
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 01 17:14:24 2017...

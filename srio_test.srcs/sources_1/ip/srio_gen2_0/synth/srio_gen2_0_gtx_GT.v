@@ -183,6 +183,16 @@ module srio_gen2_0_GT #
     output          rxcommadet_out,
     input           rxmcommaalignen_in,
     input           rxpcommaalignen_in,
+    //---------------- Receive Ports - RX Channel Bonding Ports ----------------
+    output          rxchanbondseq_out,
+    input           rxchbonden_in,
+    input   [2:0]   rxchbondlevel_in,
+    input           rxchbondmaster_in,
+    output  [4:0]   rxchbondo_out,
+    input           rxchbondslave_in,
+    //--------------- Receive Ports - RX Channel Bonding Ports  ----------------
+    output          rxchanisaligned_out,
+    output          rxchanrealign_out,
     //------------------- Receive Ports - RX Equalizer Ports -------------------
     input           rxdfeagchold_in,
     input           rxdfelfhold_in,
@@ -202,6 +212,8 @@ module srio_gen2_0_GT #
     //----------------- Receive Ports - RX8B/10B Decoder Ports -----------------
     output  [3:0]   rxchariscomma_out,
     output  [3:0]   rxcharisk_out,
+    //---------------- Receive Ports - Rx Channel Bonding Ports ----------------
+    input   [4:0]   rxchbondi_in,
     //------------ Receive Ports -RX Initialization and Reset Ports ------------
     output          rxresetdone_out,
     //---------------------- TX Configurable Driver Ports ----------------------
@@ -348,8 +360,8 @@ reg     ack_flag = 1'b0;
             .CBCC_DATA_SOURCE_SEL                   ("DECODED"),
             .CLK_COR_SEQ_2_USE                      ("FALSE"),
             .CLK_COR_KEEP_IDLE                      ("FALSE"),
-            .CLK_COR_MAX_LAT                        (14),
-            .CLK_COR_MIN_LAT                        (11),
+            .CLK_COR_MAX_LAT                        (36),
+            .CLK_COR_MIN_LAT                        (31),
             .CLK_COR_PRECEDENCE                     ("TRUE"),
             .CLK_COR_REPEAT_WAIT                    (0),
             .CLK_COR_SEQ_LEN                        (2),
@@ -367,13 +379,13 @@ reg     ack_flag = 1'b0;
 
            //----------------------RX Channel Bonding Attributes----------------------
             .CHAN_BOND_KEEP_ALIGN                   ("FALSE"),
-            .CHAN_BOND_MAX_SKEW                     (1),
+            .CHAN_BOND_MAX_SKEW                     (8),
             .CHAN_BOND_SEQ_LEN                      (1),
-            .CHAN_BOND_SEQ_1_1                      (10'b0000000000),
+            .CHAN_BOND_SEQ_1_1                      (10'b0111111011),
             .CHAN_BOND_SEQ_1_2                      (10'b0000000000),
             .CHAN_BOND_SEQ_1_3                      (10'b0000000000),
             .CHAN_BOND_SEQ_1_4                      (10'b0000000000),
-            .CHAN_BOND_SEQ_1_ENABLE                 (4'b1111),
+            .CHAN_BOND_SEQ_1_ENABLE                 (4'b0001),
             .CHAN_BOND_SEQ_2_1                      (10'b0000000000),
             .CHAN_BOND_SEQ_2_2                      (10'b0000000000),
             .CHAN_BOND_SEQ_2_3                      (10'b0000000000),
@@ -720,15 +732,15 @@ reg     ack_flag = 1'b0;
         .RXMCOMMAALIGNEN                (rxmcommaalignen_in),
         .RXPCOMMAALIGNEN                (rxpcommaalignen_in),
         //---------------- Receive Ports - RX Channel Bonding Ports ----------------
-        .RXCHANBONDSEQ                  (),
-        .RXCHBONDEN                     (tied_to_ground_i),
-        .RXCHBONDLEVEL                  (tied_to_ground_vec_i[2:0]),
-        .RXCHBONDMASTER                 (tied_to_ground_i),
-        .RXCHBONDO                      (),
-        .RXCHBONDSLAVE                  (tied_to_ground_i),
+        .RXCHANBONDSEQ                  (rxchanbondseq_out),
+        .RXCHBONDEN                     (rxchbonden_in),
+        .RXCHBONDLEVEL                  (rxchbondlevel_in),
+        .RXCHBONDMASTER                 (rxchbondmaster_in),
+        .RXCHBONDO                      (rxchbondo_out),
+        .RXCHBONDSLAVE                  (rxchbondslave_in),
         //--------------- Receive Ports - RX Channel Bonding Ports  ----------------
-        .RXCHANISALIGNED                (),
-        .RXCHANREALIGN                  (),
+        .RXCHANISALIGNED                (rxchanisaligned_out),
+        .RXCHANREALIGN                  (rxchanrealign_out),
         //------------------ Receive Ports - RX Equailizer Ports -------------------
         .RXLPMHFHOLD                    (tied_to_ground_i),
         .RXLPMHFOVRDEN                  (tied_to_ground_i),
@@ -795,7 +807,7 @@ reg     ack_flag = 1'b0;
         .RXCHARISCOMMA                  ({rxchariscomma_float_i,rxchariscomma_out}),
         .RXCHARISK                      ({rxcharisk_float_i,rxcharisk_out}),
         //---------------- Receive Ports - Rx Channel Bonding Ports ----------------
-        .RXCHBONDI                      (5'b00000),
+        .RXCHBONDI                      (rxchbondi_in),
         //------------ Receive Ports -RX Initialization and Reset Ports ------------
         .RXRESETDONE                    (rxresetdone_out),
         //------------------------------ Rx AFE Ports ------------------------------

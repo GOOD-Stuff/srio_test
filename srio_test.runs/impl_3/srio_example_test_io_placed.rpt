@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Tue Oct 03 11:04:20 2017
+| Date         : Wed Nov 01 17:16:07 2017
 | Host         : vldmr-PC running 64-bit Service Pack 1  (build 7601)
 | Command      : report_io -file srio_example_test_io_placed.rpt
 | Design       : srio_example_test
@@ -23,7 +23,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|             6 |
+|            10 |
 +---------------+
 
 
@@ -475,8 +475,8 @@ Table of Contents
 | L24        |             | High Range       | IO_L8N_T1_13                 | User IO       |             |      13 |            |      |                     |                      |           |            |           |          |      |                  |
 | L25        |             | High Range       | IO_L3N_T0_DQS_13             | User IO       |             |      13 |            |      |                     |                      |           |            |           |          |      |                  |
 | L26        |             |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
-| M1         |             |                  | MGTXTXN1_115                 | Gigabit       |             |         |            |      |                     |                      |           |            |           |          |      |                  |
-| M2         |             |                  | MGTXTXP1_115                 | Gigabit       |             |         |            |      |                     |                      |           |            |           |          |      |                  |
+| M1         | srio_txn1   |                  | MGTXTXN1_115                 | OUTPUT        |             |         |            | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
+| M2         | srio_txp1   |                  | MGTXTXP1_115                 | OUTPUT        |             |         |            | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | M3         |             |                  | MGTAVTT                      | Gigabit Power |             |         |            |      |                     |                      |           |            |           |          |      |                  |
 | M4         |             |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
 | M5         |             |                  | MGTAVTTRCAL_115              | Gigabit       |             |         |            |      |                     |                      |           |            |           |          |      |                  |
@@ -503,8 +503,8 @@ Table of Contents
 | M26        |             | High Range       | IO_L5N_T0_13                 | User IO       |             |      13 |            |      |                     |                      |           |            |           |          |      |                  |
 | N1         |             |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
 | N2         |             |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
-| N3         |             |                  | MGTXRXN1_115                 | Gigabit       |             |         |            |      |                     |                      |           |            |           |          |      |                  |
-| N4         |             |                  | MGTXRXP1_115                 | Gigabit       |             |         |            |      |                     |                      |           |            |           |          |      |                  |
+| N3         | srio_rxn1   |                  | MGTXRXN1_115                 | INPUT         |             |         |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
+| N4         | srio_rxp1   |                  | MGTXRXP1_115                 | INPUT         |             |         |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | N5         |             |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
 | N6         |             |                  | MGTVCCAUX                    | Gigabit Power |             |         |            |      |                     |                      |           |            |           |          |      |                  |
 | N7         |             |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |

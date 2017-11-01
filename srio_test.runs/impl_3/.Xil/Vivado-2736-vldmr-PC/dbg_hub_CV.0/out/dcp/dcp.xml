@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Checkpoint Version="5" Minor="0">
+	<BUILD_NUMBER Name="1682563"/>
+	<FULL_BUILD Name="SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016"/>
+	<PRODUCT Name="Vivado v2016.3 (64-bit)"/>
+	<Part Name="xc7k325tffg676-1"/>
+	<Top Name="dbg_hub_CV"/>
+	<DisableAutoIOBuffers Name="1"/>
+	<OutOfContext Name="1"/>
+	<HDPlatform Name="0"/>
+	<File Type="XDC_IN_CONTEXT" Name="dbg_hub_CV_in_context.xdc" ModTime="1509545664"/>
+	<File Type="SHAPE" Name="dbg_hub_CV.shape" ModTime="1509545664"/>
+	<File Type="EDIF" Name="dbg_hub_CV.edf" ModTime="1509545664"/>
+	<File Type="VERILOG_STUB" Name="dbg_hub_CV_stub.v" ModTime="1509545664"/>
+	<File Type="VHDL_STUB" Name="dbg_hub_CV_stub.vhdl" ModTime="1509545664"/>
+	<File Type="XN" Name="dbg_hub_CV.xn" ModTime="1509545664"/>
+	<File Type="INCR" Name="dbg_hub_CV.incr" ModTime="1509545664"/>
+	<File Type="RDA" Name="dbg_hub_CV.rda" ModTime="1509545664"/>
+	<File Type="REPLAY" Name="dbg_hub_CV_iPhysOpt.tcl" ModTime="1509545664"/>
+	<File Type="WDF" Name="dbg_hub_CV.wdf" ModTime="1509545664"/>
+</Checkpoint>
+
